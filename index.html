@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href=""><img src="./img/logo.png" alt="" /></a>
+      </div>
+      <div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li class="header-nav-li-animated"><a href="">Why</a></li>
+            <li><a href="">What</a></li>
+            <li><a href="">How</a></li>
+            <li class="li-background"><a href="">Sign up for beta</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="main-section">
+        <div class="main-display-rectangle-bg"></div>
+        <div class="main-text-wrapper">
+          <h1>A brand-new solution that will</h1>
+          <h2>Make your wish come true 🛍️</h2>
+          <p>
+            Givell is a brand-new way to create a wishlist and share it with
+            anyone you want. With Givell, you can make a wishlist, share it and
+            track the progress in order to get the perfect gift.
+          </p>
+          <a href="#">Sign up for beta</a>
+        </div>
+        <div><img src="./img/main-display-photo.png" alt="" /></div>
+      </section>
+      <div class="locomotive">
+        <div class="locomotive-text">
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+        </div>
+      </div>
+      <section class="main-second-page">
+        <div class="second-img-wrapper">
+          <div class="second-page-bg-rectangle"></div>
+          <img src="./img/main-photo-2.png" alt="" />
+        </div>
+        <div class="second-page-text-wrapper">
+          <h2>Why we exist?</h2>
+          <h3>To make wishlisting seamless with help of your community 🎉</h3>
+          <p>
+            Givell was created to make charitable giving easier, more fun and
+            more effective for everyone! With the Givell app and widget, you can
+            create an easy-to-use and fast wishlist that allows your viewers to
+            donate time or money. Our goal is to become the most user-friendly
+            online donation system in the world.
+          </p>
+          <a href="">Sign up for beta</a>
+        </div>
+      </section>
+      <section class="slider">
+        <nav class="slider-nav">
+          <ul>
+            <li><a href="">Wishlist App</a></li>
+            <li><a href="">Widget</a></li>
+            <li><a href="">Flexibility</a></li>
+            <li><a href="">Safety </a></li>
+          </ul>
+        </nav>
+        <div>
+          <div class="slider-wrapper" id="sliderWindow">
+            <div class="slider-line" id="slider-line">
+              <div class="slider-element">
+                <div class="slider-element-left-wrap">
+                  <h2>Create, track and share your wishlist.</h2>
+                  <p>
+                    We created a brand-new app with many new features and a
+                    better design to fulfill your wishes. Let your viewers
+                    donate to your wishlist and track their progress on Givell.
+                    Never miss a thing, notifications will keep everything in
+                    check.
+                  </p>
+                </div>
+                <img src="./img/slider-photo-1.png" alt="" />
+              </div>
+              <div class="slider-element">
+                <div class="slider-element-left-wrap">
+                  <h2>Create, track and share your wishlist.</h2>
+                  <p>
+                    We created a brand-new app with many new features and a
+                    better design to fulfill your wishes. Let your viewers
+                    donate to your wishlist and track their progress on Givell.
+                    Never miss a thing, notifications will keep everything in
+                    check.
+                  </p>
+                </div>
+                <img src="./img/slider-photo-1.png" alt="" />
+              </div>
+              <div class="slider-element">
+                <div class="slider-element-left-wrap">
+                  <h2>Create, track and share your wishlist.</h2>
+                  <p>
+                    We created a brand-new app with many new features and a
+                    better design to fulfill your wishes. Let your viewers
+                    donate to your wishlist and track their progress on Givell.
+                    Never miss a thing, notifications will keep everything in
+                    check.
+                  </p>
+                </div>
+                <img src="./img/slider-photo-1.png" alt="" />
+              </div>
+              <div class="slider-element">
+                <div class="slider-element-left-wrap">
+                  <h2>Create, track and share your wishlist.</h2>
+                  <p>
+                    We created a brand-new app with many new features and a
+                    better design to fulfill your wishes. Let your viewers
+                    donate to your wishlist and track their progress on Givell.
+                    Never miss a thing, notifications will keep everything in
+                    check.
+                  </p>
+                </div>
+                <img src="./img/slider-photo-1.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="scrollbar"></div>
+        </div>
+      </section>
+    </main>
+    <script>
+      let counter = 0;
+      const sliderWindow = document.getElementById("sliderWindow")
+      const sliderLine = document.getElementById("slider-line")
+
+     
+
+      sliderWindow.addEventListener('wheel', function(e) {
+        console.log(e)
+        
+      })
+    </script>
+  </body>
+</html>
