@@ -33,15 +33,22 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 @font-face {
   font-family: 'Subjectivity';
-  src: url(./Subjectivity/Subjectivity-Bold.woff2);
+  src: url(givell/Subjectivity/Subjectivity-Bold.woff2);
 }
 
 @font-face {
   font-family: 'Subjectivity';
-  src: url(./Subjectivity/Subjectivity-Regular.woff2);
+  src: url(givell/Subjectivity/Subjectivity-Regular.woff2);
 }
 
-
+.background-test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 900px;
+  background: #F8F6FF;
+}
 body {
   /* max-width: 1440px;
   min-width: 1200px; */
@@ -60,7 +67,6 @@ header{
   margin-left: auto;
   margin-right: auto;
   max-width: 1440px;
-  min-width: 1200px;
   position: relative;
   z-index: 1;
   margin-top: 20px;
@@ -91,7 +97,7 @@ align-items: center;
 justify-content: center;
 width: 209px !important;
 height: 40px;
-background: url(/givell/img/little-yellow-Subtract.png) 14px 8px no-repeat, #CDBFF5;
+background: url(/givell/img/little-yellow-Subtract.svg) 14px 8px no-repeat, #CDBFF5;
 border: 2px solid #101010;
 box-shadow: 2px 2px 0px #101010;
 border-radius: 5px;
@@ -103,21 +109,23 @@ header > div > img {
 }
 .header-nav-li-animated a{
   padding-left: 20px;
-  background: url(/givell/img/little-black-substract.png) 0px -1px no-repeat;
+  background: url(/givell/img/little-black-substract.svg) 0px -1px no-repeat;
 }
 main {
    
- /*   overflow: hidden;  */
+    /* overflow-x: hidden;   */
  
  
 
 }
 .main-section {
   position: relative;
-  overflow: hidden; 
   margin-top: -160px;
   padding-top: 260px;
   display: flex;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-display-rectangle-bg {
@@ -137,7 +145,7 @@ background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50
  /*  width: 50%;  */
   padding: 320px 129px 285px 50px;
   margin-top: -160px;
-  /* background: url(/givell/img/main-display-bg.png) right no-repeat; */
+  /* background: url(/givell/img/main-display-bg.svg) right no-repeat; */
   background-color: #F8F6FF;
   
   position: relative;
@@ -201,18 +209,15 @@ color: #101010;
 /* margin-bottom: 400px; */
 }
 .main-section-img-wrapper {
-/* width: 50%; */
+ width: 50%; 
 margin-right: 0;
 position: relative;
   z-index: 2;
-  margin-right: auto;
 }
 .main-section {
   margin-bottom: 176px;
 }
-.main-section img {
-display: block;
-  margin-right: 0px;
+.main-section-img-wrapper img {
   margin-left: -50px;
 }
 .locomotive-wrapper {
@@ -223,7 +228,7 @@ border: 1px solid black;
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: -530px;
+  margin-left: -430px;
   z-index: 1;
   height: 121px;
   width: 2700px;
@@ -253,12 +258,14 @@ width: 600px;
 
 .main-second-page {
   margin-top: -50px;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 214px;
   padding: 0px 50px 170px 14px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 .second-img-wrapper {
@@ -329,25 +336,29 @@ font-weight: 700;
 font-size: 16px;
 line-height: 16px;
 color: #101010;
-background: url(/givell/img/little-yellow-Subtract.png) 14px 13px no-repeat, #CDBFF5;
+background: url(/givell/img/little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
 }
 
 .slider {
-  background: url(/givell/img/slider-bg.png);
-  padding: 50px;
- padding-bottom: 120px;
+  background: url(/givell/img/slider-bg.svg) bottom repeat-x;
+  padding: 50px 68px 120px 50px;
+ height: 100vh;
+ overflow: hidden;
 
 }
 
 .position-sticky {
   position: sticky;
+  z-index: 10;
   top: 0;
   left: 0;
 }
 
 .slider-nav {
   position: relative;
-
+max-width: 1440px;
+margin-left: auto;
+margin-right: auto;
 }
 .slider-nav ul{
 display: flex;
@@ -356,7 +367,7 @@ align-items: flex-start;
 padding: 0px;
 gap: 24px;
 
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
 .slider-nav > ul >li> button {
   display: flex;
@@ -376,8 +387,7 @@ color: #101010;
 background: transparent;
 }
 .slider-wrapper {
-  width: 1335px;
-height: 660px;
+height: 78.5vh;
 margin-left: auto;
 margin-right: auto;
 position: relative;
@@ -386,13 +396,15 @@ overflow-x: hidden;
 
 }
 .slider-line {
+  width: 161.4vh;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   transition: all 1s;
+margin-left: -80.7vh;
 }
-.slider-line:nth-child(4) {
- 
+.slider-line div:nth-child(4) {
+  margin-bottom: 0;
 }
 .slider-element {
   display: flex;
@@ -404,20 +416,24 @@ overflow-x: hidden;
 }
 .slider-element-left-wrap {
 padding: 40px;
-width: 568px;
+max-width: 568px;
 background: #FFFFFF;
 border: 3px solid #101010;
 box-shadow: 3px 3px 0px #101010;
 border-radius: 5px;
+}
 
+.slider-element img{
+display: block;
+width: 73vh;
+height: 78vh;
 }
-.scrollbar {
-}
+
 .slider-element-left-wrap h2 {
 font-family: 'Subjectivity';
 font-style: normal;
 font-weight: 700;
-font-size: 40px;
+font-size:  2.75vw;
 line-height: 50px;
 color: #101010;
 margin-bottom: 12px;
@@ -427,7 +443,7 @@ margin-bottom: 12px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 16px;
+font-size: 1.1vw;
 line-height: 180%;
 color: #101010;
 }
@@ -491,7 +507,7 @@ position: absolute;
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: url(/givell/img/arrow-tracker.png) center no-repeat; 
+  background: url(/givell/img/arrow-tracker.svg) center no-repeat; 
  transform: rotate(30deg);
   cursor: pointer;
    box-shadow: -400px 0 0 400px #000; 
@@ -502,7 +518,7 @@ position: absolute;
   width: 23px;
   height: 24px;
   border: 0;
-  background: url(/givell/img/little-black-substract.png);
+  background: url(/givell/img/little-black-substract.svg);
   cursor: pointer;
 } 
 
@@ -519,18 +535,28 @@ position: absolute;
   position: absolute;
   z-index: 2;
   right: -23px;
-  top: -7px;
+  top: -3px;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
+ width: 13px;
+  
 }
 .tracker-img.active {
   opacity: 1;
   visibility: visible;
 }
+
+
 .main-third-page {
+
+  background: url(/givell/img/light-bg.svg);
+}
+.main-third-page-content {
   height: 900px;
-  background: url(/givell/img/light-bg.png);
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -539,7 +565,7 @@ position: absolute;
   padding: 0 50px;
 }
 
-.main-third-page > div {
+.main-third-page >div> div {
   background: #C1F4F8;
 border: 3px solid #101010;
 box-shadow: 3px 3px 0px #101010;
@@ -550,7 +576,7 @@ flex-direction: column;
 align-items: flex-start;
 gap: 12px;
 }
-.main-third-page > div > h3 {
+.main-third-page > div > div > h3 {
   font-family: 'Subjectivity';
   font-style: normal;
   font-weight: 700;
@@ -558,7 +584,7 @@ gap: 12px;
   line-height: 40px; 
   color: #101010;
 }
-.main-third-page > div > p {
+.main-third-page > div > div > p {
   font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
@@ -566,10 +592,10 @@ font-size: 16px;
 line-height: 180%;
 color: #101010;
 }
-.main-third-page > div:nth-child(2) {
+.main-third-page > div >div:nth-child(2) {
   background: #FEE5C7;
 }
-.main-third-page > div:last-child {
+.main-third-page > div> div:last-child {
 background: #FFDCDC;
 }
 .locomotive-bottom {
@@ -579,7 +605,7 @@ flex-direction: row;
 align-items: flex-start;
 gap: 40px;
 padding: 40px 0;
-  margin-left: -530px;
+  margin-left: -430px;
   height: 121px;
   overflow: hidden;
 margin-top: -55px;
@@ -608,12 +634,10 @@ width: 2700px;
   color: #101010;
 }
 
-.locomotive-bottom-text p:nth-child(even) {
-  padding-top: 20px;
-}
+
 
 .form-section {
-  background: url(/givell/img/footer-bg.png) left;
+  background: url(/givell/img/footer-bg.svg) left;
   margin-top: -61px;
   padding-top: 61px;
   display: flex;
@@ -693,7 +717,7 @@ margin-top: 14px;
 }
 .form > button span {
  padding-left: 23px;
- background: url(/givell/img/little-yellow-Subtract.png) 0px 15px no-repeat;
+ background: url(/givell/img/little-yellow-Subtract.svg) 0px 15px no-repeat;
 font-family: 'Subjectivity';
 font-style: normal;
 font-weight: 700;
@@ -715,11 +739,13 @@ font-size: 18px;
 line-height: 19px;
 color: #101010;
 padding-left: 20px;
-background: url(/givell/img/little\ orange\ substract.png) 2px 0px no-repeat;
+background: url(/givell/img/little\ orange\ substract.svg) 2px 0px no-repeat;
 margin-bottom: 12px;
 }
-.no-nackground {
+.no-background {
   background: none;
+  background: none !important;
+  padding-left: 0 !important;
 }
 .form input::placeholder, textarea::placeholder {
   font-family: 'Subjectivity';
@@ -805,10 +831,28 @@ color: #101010;
 
 }
 
-/*  .display-hidden {
+  .display-hidden {
   display: none;
-} */
+} 
  
 /* body::-webkit-scrollbar {
   display: none;
 } */
+
+@media (max-width: 1440px) {
+  
+
+}
+
+@media (max-width: 1024px) {
+  body {
+    background: red;
+  }
+}
+
+@media (max-width: 476px) {
+  body {
+    background: blue;
+  }
+}
+
