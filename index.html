@@ -18,7 +18,8 @@
       <div class="logo-wrapper">
         <a href=""><img src="img/logo.svg" alt="" /></a>
       </div>
-      <div>
+      <a class="display-none mobile-button" href="#what">Sign up for beta</a>
+      <div class="mobile-display-none">
         <nav class="header-nav">
           <ul>
             <li><a href="/">Home</a></li>
@@ -32,8 +33,8 @@
     </header>
     <main>
       <div class="background-test"></div>
+      <div class="main-display-rectangle-bg mobile-display-none"></div>
       <section class="main-section">
-        <div class="main-display-rectangle-bg"></div>
         <div class="main-text-wrapper">
           <h1>A brand-new solution that will</h1>
           <h2>
@@ -46,32 +47,40 @@
             track the progress in order to get the perfect gift.
           </p>
           <a href="#what">Sign up for beta</a>
-          <img
+          <!-- <img
             class="white-substracts-bg"
             src="img/main-display-bg-substracts.svg"
             alt=""
-          />
+          /> -->
         </div>
-        <div class="main-section-img-wrapper">
+        <div class="main-section-img-wrapper mobile-display-none">
           <img src="img/main-display-photo.svg" alt="" />
         </div>
       </section>
-      
-        <div class="locomotive">
-          <div class="locomotive-text" id="locomotive-text">
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-          </div>
+      <img
+        class="display-none mobile-main-img"
+        src="./img/mobile-main-img.svg"
+        alt=""
+      />
+      <div class="locomotive">
+        <div class="locomotive-text" id="locomotive-text">
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
         </div>
-     
-    
+      </div>
+
       <section class="main-second-page">
         <div class="second-img-wrapper">
           <div class="second-page-bg-rectangle"></div>
-          <img src="img/main-photo-2.svg" alt="" />
+          <img class="mobile-display-none" src="img/main-photo-2.svg" alt="" />
+          <img
+            class="display-none"
+            src="./img/mobile-sub-main-img.svg"
+            alt=""
+          />
         </div>
         <div class="second-page-text-wrapper" id="why">
           <h2>Why we exist?</h2>
@@ -86,7 +95,7 @@
           <a href="#what">Sign up for beta</a>
         </div>
       </section>
-      <section class="slider" id="slider-block">
+      <section class="slider mobile-display-none" id="slider-block">
         <nav class="slider-nav" id="what">
           <img
             src="img/slider-arrow-1.svg"
@@ -130,67 +139,132 @@
             </li>
           </ul>
         </nav>
-          <div class="slider-wrapper" id="sliderWindow">
-            <div class="slider-line" id="slider-line">
-              <div class="slider-element" id="slide-1">
-                <div class="slider-element-left-wrap">
-                  <h2>Create, <span class="testFZ">track</span> and share your wishlist.</h2>
-                  <p>
-                    We created a brand-new app with many new features and a
-                    better design to fulfill your wishes. Let your viewers
-                    donate to your wishlist and track their progress on Givell.
-                    Never miss a thing, notifications will keep everything in
-                    check.
-                  </p>
-                </div>
-                
-                  <img src="img/slider-photo-1.png" alt="" />
-                
-              
+        <div class="slider-wrapper" id="sliderWindow">
+          <div class="slider-line" id="slider-line">
+            <div class="slider-element" id="slide-1">
+              <div class="slider-element-left-wrap">
+                <h2>
+                  Create, <span class="testFZ">track</span> and share your
+                  wishlist.
+                </h2>
+                <p>
+                  We created a brand-new app with many new features and a better
+                  design to fulfill your wishes. Let your viewers donate to your
+                  wishlist and track their progress on Givell. Never miss a
+                  thing, notifications will keep everything in check.
+                </p>
               </div>
-              <div class="slider-element" id="slide-2">
-                <div class="slider-element-left-wrap">
-                  <h2>Wishlist widget so your viewers can donate anything.</h2>
-                  <p>
-                    You can install a wishlist widget on your stream and viewers
-                    will be able to donate an item directly from your channel.
-                    Fits into any stream without disrupting your experience.
-                    With our widget embedded into any stream, you can easily add
-                    your wishlist and stay updated.
-                  </p>
-                </div>
-                <img src="img/slider-photo-2.svg" alt="" />
-              </div>
-              <div class="slider-element" id="slide-3">
-                <div class="slider-element-left-wrap">
-                  <h2>It’s more flexible</h2>
-                  <p>
-                    Your wishlist is no longer limited to one platform or
-                    website. You can seamlessly get any wishlist right inside
-                    your stream. Anyone can donate directly in your wishlist,
-                    with a single link to the widget.
-                  </p>
-                </div>
-                <img src="img/slider-photo-3.svg" alt="" />
-              </div>
-              <div class="slider-element" id="slide-4">
-                <div class="slider-element-left-wrap">
-                  <h2>Asafer community</h2>
-                  <p>
-                    We work so hard to ensure that all our lists created on our
-                    platform are safe and not offensive. Givell works on
-                    building the most loyal community! We put security at the
-                    center of our platform and make sure that your money is safe
-                    so you can withdraw them easily.
-                  </p>
-                </div>
-                <img src="img/slider-photo-4.svg" alt="" />
-              </div>
+
+              <img src="img/slider-photo-1.png" alt="" />
             </div>
-          
+            <div class="slider-element" id="slide-2">
+              <div class="slider-element-left-wrap">
+                <h2>Wishlist widget so your viewers can donate anything.</h2>
+                <p>
+                  You can install a wishlist widget on your stream and viewers
+                  will be able to donate an item directly from your channel.
+                  Fits into any stream without disrupting your experience. With
+                  our widget embedded into any stream, you can easily add your
+                  wishlist and stay updated.
+                </p>
+              </div>
+              <img src="img/slider-photo-2.svg" alt="" />
+            </div>
+            <div class="slider-element" id="slide-3">
+              <div class="slider-element-left-wrap">
+                <h2>It’s more flexible</h2>
+                <p>
+                  Your wishlist is no longer limited to one platform or website.
+                  You can seamlessly get any wishlist right inside your stream.
+                  Anyone can donate directly in your wishlist, with a single
+                  link to the widget.
+                </p>
+              </div>
+              <img src="img/slider-photo-3.svg" alt="" />
+            </div>
+            <div class="slider-element" id="slide-4">
+              <div class="slider-element-left-wrap">
+                <h2>Asafer community</h2>
+                <p>
+                  We work so hard to ensure that all our lists created on our
+                  platform are safe and not offensive. Givell works on building
+                  the most loyal community! We put security at the center of our
+                  platform and make sure that your money is safe so you can
+                  withdraw them easily.
+                </p>
+              </div>
+              <img src="img/slider-photo-4.svg" alt="" />
+            </div>
+          </div>
         </div>
       </section>
-      <section class="main-third-page display-hidden" data-id="hided-sections" id="how">
+      <section class="mobile-slider-section display-none">
+        <div class="mobile-slider-element">
+          <div class="mobile-slider-el-text-wrap">
+            <p>Wishlist</p>
+            <div>
+              <h2>Create, track and share your wishlist.</h2>
+              <p>
+                We created a brand-new app with many new features and a better
+                design to fulfill your wishes. Let your viewers donate to your
+                wishlist and track their progress on Givell. Never miss a thing,
+                notifications will keep everything in check.
+              </p>
+            </div>
+          </div>
+          <img src="./img/mobile-slider-img.svg" alt="" />
+        </div>
+        <div class="mobile-slider-element">
+          <div class="mobile-slider-el-text-wrap">
+            <p>Wishlist</p>
+            <div>
+              <h2>Create, track and share your wishlist.</h2>
+              <p>
+                We created a brand-new app with many new features and a better
+                design to fulfill your wishes. Let your viewers donate to your
+                wishlist and track their progress on Givell. Never miss a thing,
+                notifications will keep everything in check.
+              </p>
+            </div>
+          </div>
+          <img src="./img/mobile-slider-img.svg" alt="" />
+        </div>
+        <div class="mobile-slider-element">
+          <div class="mobile-slider-el-text-wrap">
+            <p>Wishlist</p>
+            <div>
+              <h2>Create, track and share your wishlist.</h2>
+              <p>
+                We created a brand-new app with many new features and a better
+                design to fulfill your wishes. Let your viewers donate to your
+                wishlist and track their progress on Givell. Never miss a thing,
+                notifications will keep everything in check.
+              </p>
+            </div>
+          </div>
+          <img src="./img/mobile-slider-img.svg" alt="" />
+        </div>
+        <div class="mobile-slider-element">
+          <div class="mobile-slider-el-text-wrap">
+            <p>Wishlist</p>
+            <div>
+              <h2>Create, track and share your wishlist.</h2>
+              <p>
+                We created a brand-new app with many new features and a better
+                design to fulfill your wishes. Let your viewers donate to your
+                wishlist and track their progress on Givell. Never miss a thing,
+                notifications will keep everything in check.
+              </p>
+            </div>
+          </div>
+          <img src="./img/mobile-slider-img.svg" alt="" />
+        </div>
+      </section>
+      <section
+        class="main-third-page display-none"
+        data-id="hided-sections"
+        id="how"
+      >
         <div class="main-third-page-content">
           <div>
             <img src="img/little-black-substract.svg" alt="" />
@@ -223,7 +297,7 @@
           </div>
         </div>
       </section>
-      <div class="locomotive-bottom display-hidden" data-id="hided-sections">
+      <div class="locomotive-bottom display-none" data-id="hided-sections">
         <div class="locomotive-bottom-text" id="bottom-locomotive-text">
           <p>We make wishes come true</p>
           <p>We make wishes come true</p>
@@ -233,7 +307,11 @@
           <p>We make wishes come true</p>
         </div>
       </div>
-      <section class="form-section display-hidden" data-id="hided-sections" id="form">
+      <section
+        class="form-section display-none"
+        data-id="hided-sections"
+        id="form"
+      >
         <div class="form-wrapper">
           <h2>Sign Up 😏</h2>
           <p>
@@ -273,10 +351,10 @@
             <button type="submit"><span>Submit</span></button>
           </div>
         </div>
-        <div></div>
+        <div class="mobile-display-none"></div>
       </section>
     </main>
-    <footer data-id="hided-sections" class="display-hidden">
+    <footer data-id="hided-sections" class="display-none">
       <img src="img/logo.svg" alt="logo" />
       <h3>Give the gift of awesome</h3>
       <nav class="socials">
@@ -299,9 +377,6 @@
       const bottomLocomotiveText = document.getElementById(
         "bottom-locomotive-text"
       );
-      
-
-      
 
       let timer;
       let index = 0;
@@ -316,21 +391,21 @@
 
         trackers.forEach((el) => el.classList.remove("active"));
         index = +event.target.id[event.target.id.length - 1] - 1;
-        delta = (document.getElementById(`slide-${1}`).offsetHeight + 200) * index;
+        delta =
+          (document.getElementById(`slide-${1}`).offsetHeight + 200) * index;
         document
           .getElementById(`anchor${index + 1}`)
           .classList.add("active-anchor");
         document.getElementById(`tracker${index + 1}`).classList.add("active");
-         sliderWindow.scrollTo({
+        sliderWindow.scrollTo({
           top: delta,
           behavior: "smooth",
-        }); 
-       
+        });
       }
 
       function scrollFn(e) {
         if (e.deltaY > 0 && index === 3) {
-          hidedSections.forEach(el => el.classList.remove("display-hidden"))
+          hidedSections.forEach((el) => el.classList.remove("display-none"));
           return true;
         } else if (e.deltaY < 0 && index === 0) {
           return true;
@@ -354,7 +429,9 @@
               .getElementById(`tracker${index + 1}`)
               .classList.add("active");
 
-              delta = (document.getElementById(`slide-${1}`).offsetHeight + 200) * index;
+            delta =
+              (document.getElementById(`slide-${1}`).offsetHeight + 200) *
+              index;
             sliderWindow.scrollTo({
               top: delta,
               behavior: "smooth",
@@ -373,7 +450,9 @@
               .getElementById(`tracker${index + 1}`)
               .classList.add("active");
 
-              delta = (document.getElementById(`slide-${1}`).offsetHeight + 200) * index;
+            delta =
+              (document.getElementById(`slide-${1}`).offsetHeight + 200) *
+              index;
             sliderWindow.scrollTo({
               top: delta,
               behavior: "smooth",
