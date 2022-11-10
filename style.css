@@ -96,7 +96,7 @@ align-items: center;
 justify-content: center;
 width: 209px !important;
 height: 40px;
-background: url(givell//little-yellow-Subtract.svg) 14px 8px no-repeat, #CDBFF5;
+background: url(givell/img/little-yellow-Subtract.svg) 14px 8px no-repeat, #CDBFF5;
 border: 2px solid #101010;
 box-shadow: 2px 2px 0px #101010;
 border-radius: 5px;
@@ -108,7 +108,7 @@ header > div > img {
 }
 .header-nav-li-animated a{
   padding-left: 20px;
-  background: url(givell//little-black-substract.svg) 0px -1px no-repeat;
+  background: url(givell/img/little-black-substract.svg) 0px -1px no-repeat;
 }
 main {
    
@@ -144,7 +144,7 @@ background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50
  /*  width: 50%;  */
   padding: 320px 129px 285px 50px;
   margin-top: -160px;
-  /* background: url(givell//main-display-bg.svg) right no-repeat; */
+  /* background: url(givell/img/main-display-bg.svg) right no-repeat; */
   background-color: #F8F6FF;
   
   position: relative;
@@ -333,11 +333,11 @@ font-weight: 700;
 font-size: 16px;
 line-height: 16px;
 color: #101010;
-background: url(givell//little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
+background: url(givell/img/little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
 }
 
 .slider {
-  background: url(givell//slider-bg.svg) bottom repeat-x, #CDBFF5;
+  background: url(givell/img/slider-bg.svg) bottom repeat-x, #CDBFF5;
   padding: 50px 68px 120px 50px;
  height: 100vh;
  overflow: hidden;
@@ -504,7 +504,7 @@ position: absolute;
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: url(givell//arrow-tracker.svg) center no-repeat; 
+  background: url(givell/img/arrow-tracker.svg) center no-repeat; 
  transform: rotate(30deg);
   cursor: pointer;
    box-shadow: -400px 0 0 400px #000; 
@@ -515,7 +515,7 @@ position: absolute;
   width: 23px;
   height: 24px;
   border: 0;
-  background: url(givell//little-black-substract.svg);
+  background: url(givell/img/little-black-substract.svg);
   cursor: pointer;
 } 
 
@@ -547,7 +547,7 @@ position: absolute;
 
 .main-third-page {
 
-  background: url(givell//light-bg.svg);
+  background: url(givell/img/light-bg.svg);
 }
 .main-third-page-content {
   height: 900px;
@@ -635,7 +635,7 @@ transform: rotate(-4deg);
 
 
 .form-section {
-  background: url(givell//footer-bg.svg) left;
+  background: url(givell/img/footer-bg.svg) left;
   margin-top: -61px;
   padding-top: 61px;
   display: flex;
@@ -715,7 +715,7 @@ margin-top: 14px;
 }
 .form > button span {
  padding-left: 23px;
- background: url(givell//little-yellow-Subtract.svg) 0px 15px no-repeat;
+ background: url(givell/img/little-yellow-Subtract.svg) 0px 15px no-repeat;
 font-family: 'Subjectivity';
 font-style: normal;
 font-weight: 700;
@@ -737,7 +737,7 @@ font-size: 18px;
 line-height: 19px;
 color: #101010;
 padding-left: 20px;
-background: url(givell//little\ orange\ substract.svg) 2px 0px no-repeat;
+background: url(givell/img/little\ orange\ substract.svg) 2px 0px no-repeat;
 margin-bottom: 12px;
 }
 .no-background {
