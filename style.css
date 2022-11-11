@@ -54,7 +54,8 @@ body {
   /* max-width: 1440px;
   min-width: 1200px; */
   margin: 0 auto;
-   overflow-x: hidden; 
+  overflow-x: hidden; 
+  height: 100%; 
   
 }
 
@@ -113,7 +114,7 @@ header > div > img {
 }
 main {
    
-     overflow-x: hidden;   
+    /*  overflow-x: hidden;    */
  
  
 
@@ -127,6 +128,7 @@ main {
   margin-right: auto;
   padding-top: 100px;
   margin-bottom: 300px;
+  overflow-x: hidden;   
 }
 
 .main-display-rectangle-bg {
@@ -221,7 +223,7 @@ position: relative;
   align-items: center;
   position: relative;
   margin-left: -9px;
-  width: 102vw;
+  width: 100vw;
   z-index: 1;
   height: 121px;
 margin-top: -200px;
@@ -332,11 +334,78 @@ background: url(img/little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
 }
 
 .slider {
-  background: url(img/slider-bg.svg) bottom repeat-x, #CDBFF5;
-  padding: 50px 68px 120px 50px;
- height: 100vh;
- overflow: hidden;
+  background-attachment: scroll;
+  display: block;
+  /* height: 400vh;
+ padding: 50px 0px 120px 0px;
 
+ overflow: hidden; */
+ overflow: visible;
+
+}
+.slider-container {
+  height: 400vh;
+  background-attachment: scroll;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+.slider-container::before {
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2;
+}
+.slider-container::after {
+ clear: both;
+ content: " ";
+ display: table;
+ grid-column-start: 1;
+ grid-row-start: 1;
+ grid-column-end: 2;
+ grid-row-end: 2;
+}
+.slider-content-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 100vh;
+  align-items: flex-start;
+  width: 100%;
+  background: url(./img/slider-bg.svg) bottom repeat-x, #CDBFF5;
+  padding-top: 20px;
+
+}
+.triggers {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+}
+.trigger-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.trigger {
+  width: 100%;
+  height: 1px;
+}
+.first-trigger {
+}
+.second-trigger {
+}
+.third-trigger {
 }
 
 .position-sticky {
@@ -379,13 +448,22 @@ color: #101010;
 background: transparent;
 }
 .slider-wrapper {
-height: 78.5vh;
+background: url(img/slider-bg.svg) bottom repeat-x, #CDBFF5;
+height: 100vh;
+width: 100%;
 margin-left: auto;
 margin-right: auto;
 position: relative;
 overflow: scroll;
 overflow-x: hidden;
+position: sticky;
+top: 0px;
+left: 0px;
 
+}
+.trigger-boxes {
+  position: sticky;
+  height: 400vh;
 }
 .slider-line {
   width: 76.3vw;
@@ -395,6 +473,7 @@ overflow-x: hidden;
   transition: all 1s;
 margin-left: -35.15vw;
 padding-bottom: 65px;
+
 }
 .slider-line div:nth-child(4) {
   margin-bottom: 0;
@@ -403,9 +482,26 @@ padding-bottom: 65px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 0px;
   gap: 117px;
-  margin-bottom: 200px;
+  margin-top: 100px;
+ 
+}
+.first-slide{
+
+}
+ .fadeIn.fadeFlex[style*='display: block']{
+  display: flex !important;
+} 
+.second-slide {
+display: none;
+}
+.third-slide {
+  display: none;
+}
+.fourth-slide {
+  display: none;
 }
 .slider-element-left-wrap {
 padding: 40px;
@@ -600,7 +696,7 @@ align-items: flex-start;
 gap: 40px;
 padding: 40px 0;
 margin-left: -9px;
-width: 102vw;
+width: 100vw;
   height: 121px;
   overflow: hidden;
 margin-top: -55px;
