@@ -18,7 +18,7 @@
       <div class="logo-wrapper">
         <a href=""><img src="img/logo.svg" alt="" /></a>
       </div>
-      <a class="display-none mobile-button" href="#what">Sign up for beta</a>
+      <a class="display-none mobile-button" href="#form">Sign up for beta</a>
       <div class="mobile-display-none">
         <nav class="header-nav">
           <ul>
@@ -46,7 +46,8 @@
             anyone you want. With Givell, you can make a wishlist, share it and
             track the progress in order to get the perfect gift.
           </p>
-          <a href="#what">Sign up for beta</a>
+          <a class="mobile-display-none" href="#what">Sign up for beta</a>
+          <a class="button-display-none" href="#form">Sign up for beta</a>
           <!-- <img
             class="white-substracts-bg"
             src="img/main-display-bg-substracts.svg"
@@ -216,14 +217,15 @@
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
-            <p>Wishlist</p>
+            <p class="bg-pink">Safety</p>
             <div>
-              <h2>Create, track and share your wishlist.</h2>
+              <h2>Asafer community</h2>
               <p>
-                We created a brand-new app with many new features and a better
-                design to fulfill your wishes. Let your viewers donate to your
-                wishlist and track their progress on Givell. Never miss a thing,
-                notifications will keep everything in check.
+                We work so hard to ensure that all our lists created on our
+                platform are safe and not offensive. Givell works on building
+                the most loyal community! We put security at the center of our
+                platform and make sure that your money is safe so you can
+                withdraw them easily.
               </p>
             </div>
           </div>
@@ -231,14 +233,14 @@
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
-            <p>Wishlist</p>
+            <p class="bg-lbrown">Flexibility</p>
             <div>
-              <h2>Create, track and share your wishlist.</h2>
+              <h2>It’s more flexible</h2>
               <p>
-                We created a brand-new app with many new features and a better
-                design to fulfill your wishes. Let your viewers donate to your
-                wishlist and track their progress on Givell. Never miss a thing,
-                notifications will keep everything in check.
+                Your wishlist is no longer limited to one platform or website.
+                You can seamlessly get any wishlist right inside your stream.
+                Anyone can donate directly in your wishlist, with a single link
+                to the widget.
               </p>
             </div>
           </div>
@@ -246,14 +248,15 @@
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
-            <p>Wishlist</p>
+            <p class="bg-yellow">Widget</p>
             <div>
-              <h2>Create, track and share your wishlist.</h2>
+              <h2>Wishlist widget so your viewers can donate anything.</h2>
               <p>
-                We created a brand-new app with many new features and a better
-                design to fulfill your wishes. Let your viewers donate to your
-                wishlist and track their progress on Givell. Never miss a thing,
-                notifications will keep everything in check.
+                You can install a wishlist widget on your stream and viewers
+                will be able to donate an item directly from your channel. Fits
+                into any stream without disrupting your experience. With our
+                widget embedded into any stream, you can easily add your
+                wishlist and stay updated.
               </p>
             </div>
           </div>
@@ -322,28 +325,34 @@
             <div class="names-inp">
               <div>
                 <p>First name</p>
-                <input type="text" placeholder="Enter your first name" />
+                <input
+                  type="text"
+                  placeholder="Enter your first name"
+                  name="firstName"
+                />
               </div>
               <div>
                 <p>Last name</p>
                 <input
                   type="text"
                   placeholder="Enter your last name"
-                  name=""
-                  id=""
+                  name="lastName"
                 />
               </div>
             </div>
             <div>
               <p>Email</p>
-              <input type="text" placeholder="Enter your email" name="" id="" />
+              <input
+                type="email"
+                placeholder="Enter your email"
+                name="E-mail"
+              />
             </div>
             <div>
               <p class="no-background">Private message</p>
               <textarea
                 placeholder="Feel free to share your thoughts and ideas"
-                name=""
-                id=""
+                name="Message"
                 cols="15"
                 rows="4"
               ></textarea>
@@ -383,7 +392,6 @@
       let delta = 0;
       let deltaLocomotiveTop = -1300;
       let deltaLocomotiveBottom = -1300;
-
       function activeAnchor() {
         sliderAnchors.forEach((el) => {
           el.classList.remove("active-anchor");
@@ -397,6 +405,12 @@
           .getElementById(`anchor${index + 1}`)
           .classList.add("active-anchor");
         document.getElementById(`tracker${index + 1}`).classList.add("active");
+        window.scrollTo({
+          top:
+            document.getElementById("slider-block").getBoundingClientRect()
+              .top + window.scrollY,
+          behavior: "smooth",
+        });
         sliderWindow.scrollTo({
           top: delta,
           behavior: "smooth",
@@ -432,6 +446,12 @@
             delta =
               (document.getElementById(`slide-${1}`).offsetHeight + 200) *
               index;
+            window.scrollTo({
+              top:
+                document.getElementById("slider-block").getBoundingClientRect()
+                  .top + window.scrollY,
+              behavior: "smooth",
+            });
             sliderWindow.scrollTo({
               top: delta,
               behavior: "smooth",
@@ -453,12 +473,18 @@
             delta =
               (document.getElementById(`slide-${1}`).offsetHeight + 200) *
               index;
+            window.scrollTo({
+              top:
+                document.getElementById("slider-block").getBoundingClientRect()
+                  .top + window.scrollY,
+              behavior: "smooth",
+            });
             sliderWindow.scrollTo({
               top: delta,
               behavior: "smooth",
             });
           }
-        }, 200);
+        }, 150);
       }
 
       sliderWindow.addEventListener("wheel", scrollFn);
