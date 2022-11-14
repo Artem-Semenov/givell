@@ -33,29 +33,29 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 @font-face {
   font-family: 'Subjectivity';
-  src: url(givell/Subjectivity/Subjectivity-Bold.woff2);
+  src: url(Subjectivity/Subjectivity-Bold.woff2);
 }
 
 @font-face {
   font-family: 'Subjectivity';
-  src: url(givell/Subjectivity/Subjectivity-Regular.woff2);
+  src: url(Subjectivity/Subjectivity-Regular.woff2);
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url(givell/Inter/static/Inter-Bold.ttf);
+  src: url(Inter/static/Inter-Bold.ttf);
 }
 @font-face {
   font-family: 'Inter';
-  src: url(givell/Inter/static/Inter-Medium.ttf);
+  src: url(Inter/static/Inter-Medium.ttf);
 }
 @font-face {
   font-family: 'Inter';
-  src: url(givell/Inter/static/Inter-Regular.ttf);
+  src: url(Inter/static/Inter-Regular.ttf);
 }
 @font-face {
   font-family: 'Inter';
-  src: url(givell/Inter/static/Inter-SemiBold.ttf);
+  src: url(Inter/static/Inter-SemiBold.ttf);
 }
 
 .background-test {
