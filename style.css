@@ -71,7 +71,8 @@ body {
   /* max-width: 1440px;
   min-width: 1200px; */
   margin: 0 auto;
-   overflow-x: hidden; 
+  overflow-x: hidden; 
+  height: 100%; 
   
 }
 
@@ -133,7 +134,7 @@ header > div > img {
 }
 main {
    
-     overflow-x: hidden;   
+    /*  overflow-x: hidden;    */
  
  
 
@@ -410,6 +411,31 @@ background: url(img/little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
   padding-top: 20px;
 
 }
+.triggers {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+}
+.trigger-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.trigger {
+  width: 100%;
+  height: 1px;
+}
+.first-trigger {
+}
+.second-trigger {
+}
+.third-trigger {
+}
 
 .position-sticky {
   position: sticky;
@@ -452,13 +478,22 @@ color: #101010;
 background: transparent;
 }
 .slider-wrapper {
-height: 78.5vh;
+background: url(img/slider-bg.svg) bottom repeat-x, #CDBFF5;
+height: 100vh;
+width: 100%;
 margin-left: auto;
 margin-right: auto;
 position: relative;
 overflow: scroll;
 overflow-x: hidden;
+position: sticky;
+top: 0px;
+left: 0px;
 
+}
+.trigger-boxes {
+  position: sticky;
+  height: 400vh;
 }
 .slider-line {
   width: 76.3vw;
@@ -468,6 +503,7 @@ overflow-x: hidden;
   transition: all 1s;
 margin-left: -35.15vw;
 padding-bottom: 65px;
+
 }
 .slider-line div:nth-child(4) {
   margin-bottom: 0;
@@ -477,6 +513,7 @@ padding-bottom: 65px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 0px;
   gap: 117px;
   margin-top: 30px;
