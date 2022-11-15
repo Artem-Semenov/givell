@@ -75,23 +75,22 @@
           <span>Text</span>
         </p>
       </div> -->
-      
-        <div class="locomotive">
-          <div
-            class="locomotive-text"
-            id="locomotive-text"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="5"
-          >
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-            <p>Give the gift of awesome</p>
-          </div>
+
+      <div class="locomotive">
+        <div
+          class="locomotive-text"
+          id="locomotive-text"
+          data-scroll
+          data-scroll-direction="horizontal"
+          data-scroll-speed="5"
+        >
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
+          <p>Give the gift of awesome</p>
         </div>
-      
+      </div>
 
       <section class="main-second-page">
         <div class="second-img-wrapper">
@@ -308,7 +307,7 @@
           <img src="./img/mobile-slider-img.svg" alt="" />
         </div>
       </section>
-      <section class="main-third-page" data-id="hided-sections" id="how">
+      <section class="main-third-page" id="how">
         <div class="main-third-page-content">
           <div>
             <img src="img/little-black-substract.svg" alt="" />
@@ -341,7 +340,7 @@
           </div>
         </div>
       </section>
-      <div class="locomotive-bottom" data-id="hided-sections">
+      <div class="locomotive-bottom">
         <div class="locomotive-bottom-text" id="bottom-locomotive-text">
           <p>We make wishes come true</p>
           <p>We make wishes come true</p>
@@ -351,21 +350,23 @@
           <p>We make wishes come true</p>
         </div>
       </div>
-      <section class="form-section" data-id="hided-sections" id="form">
+      <section class="form-section" id="form">
         <div class="form-wrapper">
           <h2>Sign Up 😏</h2>
           <p>
             Be one of the first to explore Givell by signing up for the beta
             today!
           </p>
-          <div class="form">
+          <form class="form" id="form"
+          novalidate>
             <div class="names-inp">
               <div>
                 <p>First name</p>
                 <input
                   type="text"
                   placeholder="Enter your first name"
-                  name="firstName"
+                  name="firstname"
+                  id="firstname"
                 />
               </div>
               <div>
@@ -373,7 +374,8 @@
                 <input
                   type="text"
                   placeholder="Enter your last name"
-                  name="lastName"
+                  name="lastname"
+                  id="lastname"
                 />
               </div>
             </div>
@@ -382,35 +384,70 @@
               <input
                 type="email"
                 placeholder="Enter your email"
-                name="E-mail"
+                name="email"
+                id="email"
+
               />
             </div>
             <div>
               <p class="no-background">Private message</p>
               <textarea
                 placeholder="Feel free to share your thoughts and ideas"
-                name="Message"
+                name="message"
                 cols="15"
                 rows="4"
+                id="message"
               ></textarea>
             </div>
-            <button type="submit"><span>Submit</span></button>
+            <button type="submit" id="submitButton" disabled="true">
+              <span>Submit</span>
+            </button>
+          </form>
+        </div>
+        <div class="mobile-display-none empty-relative">
+        </div>
+        <div class="successfull-login" id="pop-up-window">
+          <button id="popup-close-button" class="popup-close-button"><img src="./img/popup-close-button-img.svg" alt=""></button>
+          <div class="successfull-login-content">
+            <h3>Successfully submitted</h3>
+            <p>
+              Thank you for signing up for our beta. We are really pleased that you
+              are interested in becoming a part of Givell's community and looking
+              forward to our launch. We will notify you about all necessary
+              information about when and how Givell will be launched as well as the
+              dates, no spam, we promise.
+            </p>
+            <p class="mt-30">
+              Please consider joining our Discord channell where you can get in
+              touch with founders and community.
+            </p>
+            <a target="_blank" href="">Join Discord</a>
           </div>
         </div>
-        <div class="mobile-display-none"></div>
+        <div class="successfull-login" id="popup-fail">
+          <button id="popup-close-button" class="popup-close-button"><img src="./img/popup-close-button-img.svg" alt=""></button>
+          <div class="successfull-login-content">
+            <h3>Something went wrong...</h3>
+            <p>
+              Please try again later
+            </p>
+            <a target="_blank" href="">Join Discord</a>
+          </div>
+        </div>
       </section>
     </main>
-    <footer data-id="hided-sections">
+    <footer>
       <img src="img/logo.svg" alt="logo" />
       <h3>Give the gift of awesome</h3>
       <nav class="socials">
-        <a href="#"><img src="img/socials-1.svg" alt="LinkedIn" /></a>
-        <a href="#"><img src="img/socials-2.svg" alt="Twitter" /></a>
-        <a href="#"><img src="img/socials-3.svg" alt="Instagram" /></a>
-        <a href="#"><img src="img/socials-4.svg" alt="Instagram" /></a>
+        <a href="/"><img src="img/socials-1.svg" alt="LinkedIn" /></a>
+        <a href="/"><img src="img/socials-2.svg" alt="Twitter" /></a>
+        <a href="/"><img src="img/socials-3.svg" alt="Instagram" /></a>
+        <a href="/"><img src="img/socials-4.svg" alt="Instagram" /></a>
       </nav>
       <p>© Copyright Givell. 2022</p>
     </footer>
+    <div class="overAll" id="overAll"></div>
     <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=62aa9ab662e3d2778653006f"
       type="text/javascript"
@@ -419,256 +456,6 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="locomotive.js"></script>
-    <script>
-      /*     const slider = document.getElementById("slider-block");
-      const sliderWindow = document.getElementById("sliderWindow");
-      const sliderLine = document.getElementById("slider-line");
- */
-      const trackers = document.querySelectorAll('[id^="tracker"]');
-      /*  const hidedSections = document.querySelectorAll(
-        '[data-id^="hided-sections"]'
-      ); */
-      const locomotiveText = document.getElementById("locomotive-text");
-      const bottomLocomotiveText = document.getElementById(
-        "bottom-locomotive-text"
-      );
-
-      const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
-      let deltaLocomotiveTop = -1300;
-      let deltaLocomotiveBottom = -1300;
-      /*  let timer;
-      let index = 0;
-      let delta = 0;
-     
-
-      function activeAnchor() {
-        sliderAnchors.forEach((el) => {
-          el.classList.remove("active-anchor");
-        });
-
-        trackers.forEach((el) => el.classList.remove("active"));
-        index = +event.target.id[event.target.id.length - 1] - 1;
-        delta =
-          (document.getElementById(`slide-${1}`).offsetHeight + 200) * index;
-        document
-          .getElementById(`anchor${index + 1}`)
-          .classList.add("active-anchor");
-        document.getElementById(`tracker${index + 1}`).classList.add("active");
-        window.scrollTo({
-          top:
-            document.getElementById("slider-block").getBoundingClientRect()
-              .top + window.scrollY,
-          behavior: "smooth",
-        });
-        sliderWindow.scrollTo({
-          top: delta,
-          behavior: "smooth",
-        });
-      } */
-      /* 
-      function scrollFn(e) {
-        if (e.deltaY > 0 && index === 3) {
-          hidedSections.forEach((el) => el.classList.remove("display-none"));
-          return true;
-        } else if (e.deltaY < 0 && index === 0) {
-          return true;
-        }
-        e.preventDefault();
-        if (timer) {
-          clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-          if (e.deltaY > 0 && index < 3) {
-            index += 1;
-            sliderAnchors.forEach((el) => {
-              el.classList.remove("active-anchor");
-            });
-
-            trackers.forEach((el) => el.classList.remove("active"));
-            document
-              .getElementById(`anchor${index + 1}`)
-              .classList.add("active-anchor");
-            document
-              .getElementById(`tracker${index + 1}`)
-              .classList.add("active");
-
-            delta =
-              (document.getElementById(`slide-${1}`).offsetHeight + 200) *
-              index;
-            window.scrollTo({
-              top:
-                document.getElementById("slider-block").getBoundingClientRect()
-                  .top + window.scrollY,
-              behavior: "smooth",
-            });
-            sliderWindow.scrollTo({
-              top: delta,
-              behavior: "smooth",
-            });
-          } else if (e.deltaY < 0 && index > 0) {
-            index -= 1;
-            sliderAnchors.forEach((el) => {
-              el.classList.remove("active-anchor");
-            });
-
-            trackers.forEach((el) => el.classList.remove("active"));
-            document
-              .getElementById(`anchor${index + 1}`)
-              .classList.add("active-anchor");
-            document
-              .getElementById(`tracker${index + 1}`)
-              .classList.add("active");
-
-            delta =
-              (document.getElementById(`slide-${1}`).offsetHeight + 200) *
-              index;
-            window.scrollTo({
-              top:
-                document.getElementById("slider-block").getBoundingClientRect()
-                  .top + window.scrollY,
-              behavior: "smooth",
-            });
-            sliderWindow.scrollTo({
-              top: delta,
-              behavior: "smooth",
-            });
-          }
-        }, 150);
-      }
-
-      sliderWindow.addEventListener("wheel", scrollFn);
-
-    
- */
-
-      /** event listeners on slider acnhors*/
-      /* function sliderAnchorsFn() {
-        sliderAnchors.forEach((el) => {
-          el.addEventListener("click", activeAnchor);
-        });
-      }
-      sliderAnchorsFn(); */
-      /** SMOOTH SCROLL */
-      class SmoothAnchorScroll {
-        init() {
-          const anchors = document.querySelectorAll('a[href^="#"]');
-          for (const anchor of anchors) {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute("href"));
-              if (target) {
-                target.scrollIntoView({
-                  behavior: "smooth",
-                });
-              }
-            });
-          }
-        }
-      }
-      const smoothAnchorScroll = new SmoothAnchorScroll();
-      smoothAnchorScroll.init();
-
-      class SliderQuickScroll {
-        init() {
-          for (const anchor of sliderAnchors) {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute("href"));
-              if (target) {
-                target.scrollIntoView({
-                  behavior: "auto",
-                });
-              }
-            });
-          }
-        }
-      }
-      const sliderQuickScroll = new SliderQuickScroll();
-      sliderQuickScroll.init();
-
-      /** LOCOMOTIVE */
-      /* const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true
-});
- */
-
-      document.addEventListener("wheel", function (event) {
-        deltaLocomotiveTop += event.deltaY;
-        deltaLocomotiveBottom -= event.deltaY;
-        locomotiveText.style.left = deltaLocomotiveTop + "px";
-        bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
-        if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
-        if (deltaLocomotiveTop < -1200) {
-          locomotiveText.insertAdjacentHTML(
-            "beforeend",
-            "<p>Give the gift of awesome</p>"
-          );
-        }
-        if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -1300;
-        if (deltaLocomotiveBottom < -1300) {
-          bottomLocomotiveText.insertAdjacentHTML(
-            "afterbegin",
-            "<p>We make wishes come true</p>"
-          );
-        }
-      });
-
-      //////App Scroller/////
-      $(".first-trigger").on("inview", function (event, isInView) {
-        if (isInView) {
-          /*   $('.phone-content').css('opacity', '0');
-       $('.first-mockup').css('opacity', '1'); */
-          $(".slider-element:not(.first-slide)").fadeOut(0);
-          $(".first-slide").fadeIn(300);
-          sliderAnchors.forEach((el) => el.classList.remove("active"));
-          sliderAnchors[0].classList.add("active");
-          trackers.forEach((el) => el.classList.remove("active"));
-          trackers[0].classList.add("active");
-        } else {
-        }
-      });
-
-      $(".second-trigger").on("inview", function (event, isInView) {
-        if (isInView) {
-          /*    $('.phone-content').css('opacity', '0');
-       $('.second-mockup').css('opacity', '1'); */
-          $(".slider-element").fadeOut(0);
-          $(".second-slide").fadeIn(300);
-          sliderAnchors.forEach((el) => el.classList.remove("active"));
-          sliderAnchors[1].classList.add("active");
-          trackers.forEach((el) => el.classList.remove("active"));
-          trackers[1].classList.add("active");
-        } else {
-        }
-      });
-
-      $(".third-trigger").on("inview", function (event, isInView) {
-        if (isInView) {
-          /*  	 $('.phone-content').css('opacity', '0');
-       $('.third-mockup').css('opacity', '1'); */
-          $(".slider-element").fadeOut(0);
-          $(".third-slide").fadeIn(300);
-          sliderAnchors.forEach((el) => el.classList.remove("active"));
-          sliderAnchors[2].classList.add("active");
-          trackers.forEach((el) => el.classList.remove("active"));
-          trackers[2].classList.add("active");
-        } else {
-        }
-      });
-      $(".fourth-trigger").on("inview", function (event, isInView) {
-        if (isInView) {
-          /*  	 $('.phone-content').css('opacity', '0');
-       $('.third-mockup').css('opacity', '1'); */
-          $(".slider-element:not(.fourth-slide)").fadeOut(0);
-          $(".fourth-slide").fadeIn(300);
-          sliderAnchors.forEach((el) => el.classList.remove("active"));
-          sliderAnchors[3].classList.add("active");
-          trackers.forEach((el) => el.classList.remove("active"));
-          trackers[3].classList.add("active");
-        } else {
-        }
-      });
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

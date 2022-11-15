@@ -1,0 +1,276 @@
+"use strict";
+const trackers = document.querySelectorAll('[id^="tracker"]');
+
+const locomotiveText = document.getElementById("locomotive-text");
+const bottomLocomotiveText = document.getElementById("bottom-locomotive-text");
+
+const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
+let deltaLocomotiveTop = -1300;
+let deltaLocomotiveBottom = -1300;
+
+/** SMOOTH SCROLL */
+class SmoothAnchorScroll {
+  init() {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    for (const anchor of anchors) {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+  }
+}
+const smoothAnchorScroll = new SmoothAnchorScroll();
+smoothAnchorScroll.init();
+
+/** QUCK SCROLL FOR SLIDER ANCHORS*/
+class SliderQuickScroll {
+  init() {
+    for (const anchor of sliderAnchors) {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "auto",
+          });
+        }
+      });
+    }
+  }
+}
+const sliderQuickScroll = new SliderQuickScroll();
+sliderQuickScroll.init();
+
+/** LOCOMOTIVE */
+/* const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+});
+ */
+
+document.addEventListener("wheel", function (event) {
+  deltaLocomotiveTop += event.deltaY;
+  deltaLocomotiveBottom -= event.deltaY;
+  locomotiveText.style.left = deltaLocomotiveTop + "px";
+  bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
+  if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
+  if (deltaLocomotiveTop < -1200) {
+    locomotiveText.insertAdjacentHTML(
+      "beforeend",
+      "<p>Give the gift of awesome</p>"
+    );
+  }
+  if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -1300;
+  if (deltaLocomotiveBottom < -1300) {
+    bottomLocomotiveText.insertAdjacentHTML(
+      "afterbegin",
+      "<p>We make wishes come true</p>"
+    );
+  }
+});
+
+//////App Scroller/////
+$(".first-trigger").on("inview", function (event, isInView) {
+  if (isInView) {
+    /*   $('.phone-content').css('opacity', '0');
+       $('.first-mockup').css('opacity', '1'); */
+    $(".slider-element:not(.first-slide)").fadeOut(0);
+    $(".first-slide").fadeIn(300);
+    sliderAnchors.forEach((el) => el.classList.remove("active"));
+    sliderAnchors[0].classList.add("active");
+    trackers.forEach((el) => el.classList.remove("active"));
+    trackers[0].classList.add("active");
+  } else {
+  }
+});
+
+$(".second-trigger").on("inview", function (event, isInView) {
+  if (isInView) {
+    /*    $('.phone-content').css('opacity', '0');
+       $('.second-mockup').css('opacity', '1'); */
+    $(".slider-element").fadeOut(0);
+    $(".second-slide").fadeIn(300);
+    sliderAnchors.forEach((el) => el.classList.remove("active"));
+    sliderAnchors[1].classList.add("active");
+    trackers.forEach((el) => el.classList.remove("active"));
+    trackers[1].classList.add("active");
+  } else {
+  }
+});
+
+$(".third-trigger").on("inview", function (event, isInView) {
+  if (isInView) {
+    /*  	 $('.phone-content').css('opacity', '0');
+       $('.third-mockup').css('opacity', '1'); */
+    $(".slider-element").fadeOut(0);
+    $(".third-slide").fadeIn(300);
+    sliderAnchors.forEach((el) => el.classList.remove("active"));
+    sliderAnchors[2].classList.add("active");
+    trackers.forEach((el) => el.classList.remove("active"));
+    trackers[2].classList.add("active");
+  } else {
+  }
+});
+$(".fourth-trigger").on("inview", function (event, isInView) {
+  if (isInView) {
+    /*  	 $('.phone-content').css('opacity', '0');
+       $('.third-mockup').css('opacity', '1'); */
+    $(".slider-element:not(.fourth-slide)").fadeOut(0);
+    $(".fourth-slide").fadeIn(300);
+    sliderAnchors.forEach((el) => el.classList.remove("active"));
+    sliderAnchors[3].classList.add("active");
+    trackers.forEach((el) => el.classList.remove("active"));
+    trackers[3].classList.add("active");
+  } else {
+  }
+});
+
+/** FORM VALIDATION */
+const popup = document.getElementById("pop-up-window");
+const popupCloseButtons = document.querySelectorAll(".popup-close-button");
+console.log(popupCloseButtons);
+const overlay = document.getElementById("overAll");
+const popupFail = document.getElementById("popup-fail");
+const form = document.forms.form;
+const firstName = form.firstname;
+const lastName = form.lastname;
+const textarea = form.message;
+const email = form.email;
+const emailPlaceholder = email.placeholder;
+const textareaPlaceholder = textarea.placeholder;
+const firstNamePlaceholder = firstName.placeholder;
+const lastNamePlaceholder = lastName.placeholder;
+// const falseValidation = document.getElementById("")
+const submitButton = document.getElementById("submitButton");
+
+form.addEventListener("input", function (event) {
+  if (firstName.value || lastName.value) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+    console.log("closed");
+  }
+});
+
+firstName.addEventListener("focus", function (f) {
+  firstName.placeholder = "";
+  firstName.classList.remove("_error");
+  /* if (firstName.nextElementSibling) {
+    firstName.nextElementSibling.remove();
+  } 
+  firstName.classList.remove("input_error");
+  */
+});
+
+firstName.addEventListener("blur", function (f) {
+  firstName.placeholder = firstNamePlaceholder;
+});
+
+lastName.addEventListener("focus", function (f) {
+  lastName.placeholder = "";
+  lastName.classList.remove("_error");
+  /* if (lastNameShow.nextElementSibling) {
+    lastNameShow.nextElementSibling.remove();
+  } 
+  lastName.classList.remove("input_error");
+  */
+});
+
+lastName.addEventListener("blur", function (f) {
+  lastName.placeholder = lastNamePlaceholder;
+});
+
+textarea.addEventListener("focus", function (f) {
+  textarea.placeholder = "";
+});
+
+textarea.addEventListener("blur", function (f) {
+  textarea.placeholder = textareaPlaceholder;
+});
+
+email.addEventListener("focus", function (f) {
+  email.placeholder = "";
+  email.classList.remove("_error");
+});
+
+email.addEventListener("blur", function (f) {
+  email.placeholder = emailPlaceholder;
+});
+
+function emailTest(input) {
+  const testEmail =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  return testEmail.test(input.value);
+}
+
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  let formData = new FormData(form);
+  if (firstName.value.trim().length < 3) {
+    // event.preventDefault()
+    firstName.classList.add("_error");
+    alert("Name should contain at least 3 letters");
+    console.log("name < 3");
+  } else if (lastName.value.trim().length < 3) {
+    // event.preventDefault()
+    lastName.classList.add("_error");
+    alert("Last name should contain at least 3 letters");
+    console.log("last < 3");
+  } else if (!email.value.trim()) {
+    email.classList.add("_error");
+    alert("Enter email please");
+  } else if (!emailTest(email)) {
+    // event.preventDefault()
+    email.classList.add("_error");
+    alert("Enter your real email please");
+    console.log("email not valid");
+  } else {
+    form.classList.add("_sending");
+    let response = await fetch("sendmail.php", {
+      method: "POST",
+      body: formData,
+    });
+    if (response.ok) {
+      let result = await response.json();
+      form.reset();
+      form.classList.remove("_sending");
+
+      popup.classList.add("show");
+      overlay.classList.add("show");
+      document.addEventListener("click", function (event) {
+        if (event.target.id === "overAll") {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+          return;
+        }
+      });
+    } else {
+      popupFail.classList.add("show");
+      overlay.classList.add("show");
+      document.addEventListener("click", function (event) {
+        if (event.target.id === "overAll") {
+          popupFail.classList.remove("show");
+          overlay.classList.remove("show");
+          return;
+        }
+      });
+
+      form.classList.remove("_sending");
+    }
+  }
+});
+
+popupCloseButtons.forEach((el) => {
+  el.addEventListener("click", function (event) {
+    console.log("tra");
+    popupFail.classList.remove("show");
+    popup.classList.remove("show");
+    overlay.classList.remove("show");
+  });
+});
