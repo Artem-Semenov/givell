@@ -18,14 +18,14 @@
       <div class="logo-wrapper">
         <a href="/"><img src="img/logo.svg" alt="" /></a>
       </div>
-      <a class="display-none mobile-button" href="#what">Sign up for beta</a>
+      <a class="display-none mobile-button" href="#form">Sign up for beta</a>
       <div class="mobile-display-none">
         <nav class="header-nav">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li class="header-nav-li-animated"><a href="#why">Why</a></li>
-            <li><a href="#what">What</a></li>
-            <li><a href="#how">How</a></li>
+            <li><a class="header-anchor active" href="/">Home</a></li>
+            <li><a class="header-anchor" href="#why">Why</a></li>
+            <li><a class="header-anchor" href="#what">What</a></li>
+            <li><a class="header-anchor" href="#how">How</a></li>
             <li class="li-background hover">
               <a href="#form">Sign up for beta</a>
             </li>
@@ -118,8 +118,15 @@
       <section class="slider mobile-display-none" id="slider-block">
         <div class="slider-container">
           <div class="slider-content-wrapper">
-            <img
-              src="img/slider-arrow-1.svg"
+            <svg id="tracker-svg" width="20" height="33" viewBox="0 0 20 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="4" width="4" height="100" fill="black"/> 
+              
+              <path d="M10 33L1.33974 18H18.6603L10 33Z" fill="black"/>
+              
+              <circle cx="10" cy="8" r="8" fill="black"/>
+              </svg>
+            <!-- <img
+              src="img/Group 1.svg"
               class="tracker-img active"
               id="tracker1"
               alt=""
@@ -142,7 +149,7 @@
               id="tracker4"
               alt=""
             />
-
+ -->
             <nav class="slider-nav" id="what">
               <ul>
                 <li>
@@ -357,8 +364,7 @@
             Be one of the first to explore Givell by signing up for the beta
             today!
           </p>
-          <form class="form" id="form"
-          novalidate>
+          <form class="form" id="form" novalidate>
             <div class="names-inp">
               <div>
                 <p>First name</p>
@@ -386,7 +392,6 @@
                 placeholder="Enter your email"
                 name="email"
                 id="email"
-
               />
             </div>
             <div>
@@ -404,18 +409,19 @@
             </button>
           </form>
         </div>
-        <div class="mobile-display-none empty-relative">
-        </div>
+        <div class="mobile-display-none empty-relative"></div>
         <div class="successfull-login popup-success" id="pop-up-window">
-          <button id="popup-close-button" class="popup-close-button"><img src="./img/popup-close-button-img.svg" alt=""></button>
+          <button id="popup-close-button" class="popup-close-button">
+            <img src="./img/popup-close-button-img.svg" alt="" />
+          </button>
           <div class="successfull-login-content">
             <h3>Successfully submitted</h3>
             <p>
-              Thank you for signing up for our beta. We are really pleased that you
-              are interested in becoming a part of Givell's community and looking
-              forward to our launch. We will notify you about all necessary
-              information about when and how Givell will be launched as well as the
-              dates, no spam, we promise.
+              Thank you for signing up for our beta. We are really pleased that
+              you are interested in becoming a part of Givell's community and
+              looking forward to our launch. We will notify you about all
+              necessary information about when and how Givell will be launched
+              as well as the dates, no spam, we promise.
             </p>
             <p class="mt-30">
               Please consider joining our Discord channell where you can get in
@@ -425,12 +431,12 @@
           </div>
         </div>
         <div class="successfull-login" id="popup-fail">
-          <button id="popup-close-button" class="popup-close-button"><img src="./img/popup-close-button-img.svg" alt=""></button>
+          <button id="popup-close-button" class="popup-close-button">
+            <img src="./img/popup-close-button-img.svg" alt="" />
+          </button>
           <div class="successfull-login-content">
             <h3>Something went wrong...</h3>
-            <p>
-              Please try again later
-            </p>
+            <p>Please try again later</p>
             <a target="_blank" href="">Join Discord</a>
           </div>
         </div>

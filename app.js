@@ -1,8 +1,10 @@
 "use strict";
 const trackers = document.querySelectorAll('[id^="tracker"]');
-
+const hedaderNavAnchors = document.querySelectorAll(".header-anchor");
 const locomotiveText = document.getElementById("locomotive-text");
 const bottomLocomotiveText = document.getElementById("bottom-locomotive-text");
+
+const sliderNav = document.querySelector(".slider-nav");
 
 const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
 let deltaLocomotiveTop = -1300;
@@ -84,9 +86,11 @@ $(".first-trigger").on("inview", function (event, isInView) {
     $(".first-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[0].classList.add("active");
-    trackers.forEach((el) => el.classList.remove("active"));
-    trackers[0].classList.add("active");
+/*     trackers.forEach((el) => el.classList.remove("active"));
+    trackers[0].classList.add("active"); */
+    sliderNav.classList.add("show");
   } else {
+    sliderNav.classList.remove("show");
   }
 });
 
@@ -98,8 +102,9 @@ $(".second-trigger").on("inview", function (event, isInView) {
     $(".second-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[1].classList.add("active");
-    trackers.forEach((el) => el.classList.remove("active"));
-    trackers[1].classList.add("active");
+/*     trackers.forEach((el) => el.classList.remove("active"));
+    trackers[1].classList.add("active"); */
+    sliderNav.classList.add("show");
   } else {
   }
 });
@@ -112,8 +117,9 @@ $(".third-trigger").on("inview", function (event, isInView) {
     $(".third-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[2].classList.add("active");
-    trackers.forEach((el) => el.classList.remove("active"));
-    trackers[2].classList.add("active");
+/*     trackers.forEach((el) => el.classList.remove("active"));
+    trackers[2].classList.add("active"); */
+    sliderNav.classList.add("show");
   } else {
   }
 });
@@ -125,8 +131,18 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
     $(".fourth-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[3].classList.add("active");
-    trackers.forEach((el) => el.classList.remove("active"));
-    trackers[3].classList.add("active");
+/*     trackers.forEach((el) => el.classList.remove("active"));
+    trackers[3].classList.add("active"); */
+    sliderNav.classList.add("show");
+  } else {
+  }
+});
+
+/** HEADER NAV - ACTIVE ANCHORS */
+
+$(".second-page-text-wrapper").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
   } else {
   }
 });
@@ -134,7 +150,6 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
 /** FORM VALIDATION */
 const popup = document.getElementById("pop-up-window");
 const popupCloseButtons = document.querySelectorAll(".popup-close-button");
-console.log(popupCloseButtons);
 const overlay = document.getElementById("overAll");
 const popupFail = document.getElementById("popup-fail");
 const form = document.forms.form;
@@ -212,16 +227,16 @@ function emailTest(input) {
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
   let formData = new FormData(form);
-  if (firstName.value.trim().length < 3) {
+  if (!firstName.value?.trim().match(/^[A-Za-z]+$/)) {
     // event.preventDefault()
     firstName.classList.add("_error");
-    alert("Name should contain at least 3 letters");
-    console.log("name < 3");
-  } else if (lastName.value.trim().length < 3) {
+    alert("Please enter your name(without numbers)");
+    console.log("please enter your name(without numbers)");
+  } else if (!lastName.value?.trim().match(/^[A-Za-z]+$/)) {
     // event.preventDefault()
     lastName.classList.add("_error");
-    alert("Last name should contain at least 3 letters");
-    console.log("last < 3");
+    alert("Please enter your last name(without numbers)");
+    console.log("Please enter your last name(without numbers)");
   } else if (!email.value.trim()) {
     email.classList.add("_error");
     alert("Enter email please");
@@ -273,4 +288,39 @@ popupCloseButtons.forEach((el) => {
     popup.classList.remove("show");
     overlay.classList.remove("show");
   });
+});
+
+const svgTracker = document.getElementById("tracker-svg");
+
+console.log((svgTracker.attributes.height.value = 33)); //height of SVG
+console.log((svgTracker.attributes.viewBox.textContent = "0 0 20 33")); // length of viewbox
+console.log((svgTracker.childNodes[1].attributes.height.value = 25)); // length of track
+console.log(
+  (svgTracker.childNodes[3].attributes.d.textContent =
+    "M10 33L1.33974 18H18.6603L10 33Z")
+);
+
+let test = 33;
+function scrollFn(e) {
+  if (e.deltaY > 0) {
+    test += 23;
+  } else if (e.deltaY < 0) {
+    test -= 23;
+  }
+  if (test < 33) test = 33;
+if (test >600) test = 600;
+  svgTracker.attributes.height.value = test;
+  svgTracker.attributes.viewBox.textContent = `0 0 20 ${test}`;
+  svgTracker.childNodes[1].attributes.height.value = test-10;
+  svgTracker.childNodes[3].attributes.d.textContent = `M10 ${test}L1.33974 ${
+    test - 13
+  }H18.6603L10 ${test}Z`;
+}
+
+$(".slider-content-wrapper").on("inview", function (event, isInView) {
+  if (isInView) {
+    document.addEventListener("wheel", scrollFn);
+  } else {
+    document.removeEventListener("wheel", scrollFn);
+  }
 });
