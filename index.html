@@ -18,7 +18,9 @@
       <div class="logo-wrapper">
         <a href="/"><img src="img/logo.svg" alt="" /></a>
       </div>
-      <a class="display-none mobile-button" href="#form">Sign up for beta</a>
+      <a class="display-none mobile-button" href="#form-section"
+        >Sign up for beta</a
+      >
       <div class="mobile-display-none">
         <nav class="header-nav">
           <ul>
@@ -27,14 +29,16 @@
             <li><a class="header-anchor" href="#what">What</a></li>
             <li><a class="header-anchor" href="#how">How</a></li>
             <li class="li-background hover">
-              <a href="#form">Sign up for beta</a>
+              <a class="all-ease" id="header-form-anchor" href="#form-section"
+                >Sign up for beta</a
+              >
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <div class="background-test"></div>
+      <div class="background-test" id="test-id"></div>
       <div class="main-display-rectangle-bg mobile-display-none"></div>
       <section class="main-section">
         <div class="main-text-wrapper">
@@ -48,7 +52,7 @@
             anyone you want. With Givell, you can make a wishlist, share it and
             track the progress in order to get the perfect gift.
           </p>
-          <a href="#form" class="hover">Sign up for beta</a>
+          <a href="#form-section" class="hover all-ease">Sign up for beta</a>
           <!-- <img
             class="white-substracts-bg"
             src="img/main-display-bg-substracts.svg"
@@ -66,17 +70,15 @@
       />
 
       <!-- <div class="test-locomotive-wrapper">
-        <p data-scroll
-        data-scroll-direction="horizontal"
-        data-scroll-speed="5">
+        <p data-scroll data-scroll-direction="horizontal" data-scroll-speed="5">
           <span>Text</span>
           <span>Text</span>
           <span>Text</span>
           <span>Text</span>
         </p>
-      </div> -->
-
-      <div class="locomotive">
+      </div>
+ -->
+       <div class="locomotive">
         <div
           class="locomotive-text"
           id="locomotive-text"
@@ -91,18 +93,18 @@
           <p>Give the gift of awesome</p>
         </div>
       </div>
-
-      <section class="main-second-page">
+ 
+      <section class="main-second-page" id="why">
         <div class="second-img-wrapper">
           <div class="second-page-bg-rectangle"></div>
-          <img class="mobile-display-none" src="img/main-photo-2.svg" alt="" />
-          <img
+          <img class="" src="img/main-photo-2.svg" alt="" />
+          <!-- <img
             class="display-none"
             src="./img/mobile-sub-main-img.svg"
             alt=""
-          />
+          /> -->
         </div>
-        <div class="second-page-text-wrapper" id="why">
+        <div class="second-page-text-wrapper">
           <h2>Why we exist?</h2>
           <h3>To make wishlisting seamless with help of your community 🎉</h3>
           <p>
@@ -112,19 +114,26 @@
             donate time or money. Our goal is to become the most user-friendly
             online donation system in the world.
           </p>
-          <a href="#form">Sign up for beta</a>
+          <a class="all-ease" href="#form-section">Sign up for beta</a>
         </div>
       </section>
       <section class="slider mobile-display-none" id="slider-block">
         <div class="slider-container">
           <div class="slider-content-wrapper">
-            <svg id="tracker-svg" width="20" height="33" viewBox="0 0 20 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="4" width="4" height="100" fill="black"/> 
-              
-              <path d="M10 33L1.33974 18H18.6603L10 33Z" fill="black"/>
-              
-              <circle cx="10" cy="8" r="8" fill="black"/>
-              </svg>
+            <svg
+              id="tracker-svg"
+              width="20"
+              height="33"
+              viewBox="0 0 20 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="8" y="4" width="4" height="100" fill="black" />
+
+              <path d="M10 33L1.33974 18H18.6603L10 33Z" fill="black" />
+
+              <circle cx="10" cy="8" r="8" fill="black" />
+            </svg>
             <!-- <img
               src="img/Group 1.svg"
               class="tracker-img active"
@@ -153,20 +162,28 @@
             <nav class="slider-nav" id="what">
               <ul>
                 <li>
-                  <a href="#trigger1" class="anchor1 active" id="anchor1">
+                  <a
+                    href="#trigger1"
+                    class="anchor1 active all-ease"
+                    id="anchor1"
+                  >
                     Wishlist App
                   </a>
                 </li>
                 <li>
-                  <a href="#trigger2" class="anchor2" id="anchor2">Widget</a>
+                  <a href="#trigger2" class="anchor2 all-ease" id="anchor2"
+                    >Widget</a
+                  >
                 </li>
                 <li>
-                  <a href="#trigger3" class="anchor3" id="anchor3"
+                  <a href="#trigger3" class="anchor3 all-ease" id="anchor3"
                     >Flexibility</a
                   >
                 </li>
                 <li>
-                  <a href="#trigger4" class="anchor4" id="anchor4">Safety</a>
+                  <a href="#trigger4" class="anchor4 all-ease" id="anchor4"
+                    >Safety</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -265,7 +282,7 @@
               </p>
             </div>
           </div>
-          <img src="./img/mobile-slider-img.svg" alt="" />
+          <img src="./img/slider-photo-1.svg" alt="" />
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
@@ -281,7 +298,7 @@
               </p>
             </div>
           </div>
-          <img src="./img/mobile-slider-img.svg" alt="" />
+          <img src="./img/slider-photo-2.svg" alt="" />
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
@@ -296,7 +313,7 @@
               </p>
             </div>
           </div>
-          <img src="./img/mobile-slider-img.svg" alt="" />
+          <img src="./img/slider-photo-3.svg" alt="" />
         </div>
         <div class="mobile-slider-element">
           <div class="mobile-slider-el-text-wrap">
@@ -311,7 +328,7 @@
               </p>
             </div>
           </div>
-          <img src="./img/mobile-slider-img.svg" alt="" />
+          <img src="./img/slider-photo-4.svg" alt="" />
         </div>
       </section>
       <section class="main-third-page" id="how">
@@ -357,7 +374,7 @@
           <p>We make wishes come true</p>
         </div>
       </div>
-      <section class="form-section" id="form">
+      <section class="form-section" id="form-section">
         <div class="form-wrapper">
           <h2>Sign Up 😏</h2>
           <p>
@@ -369,6 +386,7 @@
               <div>
                 <p>First name</p>
                 <input
+                  class="all-ease"
                   type="text"
                   placeholder="Enter your first name"
                   name="firstname"
@@ -378,6 +396,7 @@
               <div>
                 <p>Last name</p>
                 <input
+                  class="all-ease"
                   type="text"
                   placeholder="Enter your last name"
                   name="lastname"
@@ -388,6 +407,7 @@
             <div>
               <p>Email</p>
               <input
+                class="all-ease"
                 type="email"
                 placeholder="Enter your email"
                 name="email"
@@ -397,6 +417,7 @@
             <div>
               <p class="no-background">Private message</p>
               <textarea
+                class="all-ease"
                 placeholder="Feel free to share your thoughts and ideas"
                 name="message"
                 cols="15"
@@ -404,7 +425,12 @@
                 id="message"
               ></textarea>
             </div>
-            <button type="submit" id="submitButton" disabled="true">
+            <button
+              type="submit"
+              class="all-ease submit-button"
+              id="submitButton"
+              disabled="true"
+            >
               <span>Submit</span>
             </button>
           </form>
@@ -446,10 +472,18 @@
       <img src="img/logo.svg" alt="logo" />
       <h3>Give the gift of awesome</h3>
       <nav class="socials">
-        <a href="/"><img src="img/socials-1.svg" alt="LinkedIn" /></a>
-        <a href="/"><img src="img/socials-2.svg" alt="Twitter" /></a>
-        <a href="/"><img src="img/socials-3.svg" alt="Instagram" /></a>
-        <a href="/"><img src="img/socials-4.svg" alt="Instagram" /></a>
+        <a class="all-ease" href="/"
+          ><img src="img/socials-1.svg" alt="LinkedIn"
+        /></a>
+        <a class="all-ease" href="/"
+          ><img src="img/socials-2.svg" alt="Twitter"
+        /></a>
+        <a class="all-ease" href="/"
+          ><img src="img/socials-3.svg" alt="Instagram"
+        /></a>
+        <a class="all-ease" href="/"
+          ><img src="img/socials-4.svg" alt="Instagram"
+        /></a>
       </nav>
       <p>© Copyright Givell. 2022</p>
     </footer>

@@ -3,7 +3,7 @@ const trackers = document.querySelectorAll('[id^="tracker"]');
 const hedaderNavAnchors = document.querySelectorAll(".header-anchor");
 const locomotiveText = document.getElementById("locomotive-text");
 const bottomLocomotiveText = document.getElementById("bottom-locomotive-text");
-
+const headerFormAnchor = document.getElementById("header-form-anchor")
 const sliderNav = document.querySelector(".slider-nav");
 
 const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
@@ -50,13 +50,13 @@ const sliderQuickScroll = new SliderQuickScroll();
 sliderQuickScroll.init();
 
 /** LOCOMOTIVE */
-/* const scroll = new LocomotiveScroll({
+/*  const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
-});
- */
+}); */
+ 
 
-document.addEventListener("wheel", function (event) {
+  document.addEventListener("wheel", function (event) {
   deltaLocomotiveTop += event.deltaY;
   deltaLocomotiveBottom -= event.deltaY;
   locomotiveText.style.left = deltaLocomotiveTop + "px";
@@ -75,18 +75,16 @@ document.addEventListener("wheel", function (event) {
       "<p>We make wishes come true</p>"
     );
   }
-});
+});  
 
 //////App Scroller/////
 $(".first-trigger").on("inview", function (event, isInView) {
   if (isInView) {
-    /*   $('.phone-content').css('opacity', '0');
-       $('.first-mockup').css('opacity', '1'); */
     $(".slider-element:not(.first-slide)").fadeOut(0);
     $(".first-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[0].classList.add("active");
-/*     trackers.forEach((el) => el.classList.remove("active"));
+    /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[0].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
@@ -96,13 +94,11 @@ $(".first-trigger").on("inview", function (event, isInView) {
 
 $(".second-trigger").on("inview", function (event, isInView) {
   if (isInView) {
-    /*    $('.phone-content').css('opacity', '0');
-       $('.second-mockup').css('opacity', '1'); */
     $(".slider-element").fadeOut(0);
     $(".second-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[1].classList.add("active");
-/*     trackers.forEach((el) => el.classList.remove("active"));
+    /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[1].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
@@ -111,13 +107,11 @@ $(".second-trigger").on("inview", function (event, isInView) {
 
 $(".third-trigger").on("inview", function (event, isInView) {
   if (isInView) {
-    /*  	 $('.phone-content').css('opacity', '0');
-       $('.third-mockup').css('opacity', '1'); */
     $(".slider-element").fadeOut(0);
     $(".third-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[2].classList.add("active");
-/*     trackers.forEach((el) => el.classList.remove("active"));
+    /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[2].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
@@ -125,13 +119,11 @@ $(".third-trigger").on("inview", function (event, isInView) {
 });
 $(".fourth-trigger").on("inview", function (event, isInView) {
   if (isInView) {
-    /*  	 $('.phone-content').css('opacity', '0');
-       $('.third-mockup').css('opacity', '1'); */
     $(".slider-element:not(.fourth-slide)").fadeOut(0);
     $(".fourth-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[3].classList.add("active");
-/*     trackers.forEach((el) => el.classList.remove("active"));
+    /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[3].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
@@ -140,12 +132,51 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
 
 /** HEADER NAV - ACTIVE ANCHORS */
 
-$(".second-page-text-wrapper").on("inview", function (event, isInView) {
+$(".main-section").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[0].classList.add("active");
   } else {
   }
 });
+
+$(".second-page-text-wrapper").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[1].classList.add("active");
+  } else {
+  }
+});
+
+/* $(".slider-element").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[2].classList.add("active");
+  } else {
+  }
+});
+ */
+$(".main-third-page-content").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[3].classList.add("active");
+  
+  } else {
+  }
+});
+$(".submit-button").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.add("active");
+  } else {
+  }
+}); 
+
+
 
 /** FORM VALIDATION */
 const popup = document.getElementById("pop-up-window");
@@ -308,10 +339,10 @@ function scrollFn(e) {
     test -= 23;
   }
   if (test < 33) test = 33;
-if (test >600) test = 600;
+  if (test > 600) test = 600;
   svgTracker.attributes.height.value = test;
   svgTracker.attributes.viewBox.textContent = `0 0 20 ${test}`;
-  svgTracker.childNodes[1].attributes.height.value = test-10;
+  svgTracker.childNodes[1].attributes.height.value = test - 10;
   svgTracker.childNodes[3].attributes.d.textContent = `M10 ${test}L1.33974 ${
     test - 13
   }H18.6603L10 ${test}Z`;
@@ -320,7 +351,12 @@ if (test >600) test = 600;
 $(".slider-content-wrapper").on("inview", function (event, isInView) {
   if (isInView) {
     document.addEventListener("wheel", scrollFn);
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[2].classList.add("active");
   } else {
     document.removeEventListener("wheel", scrollFn);
   }
 });
+
+
