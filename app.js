@@ -60,12 +60,13 @@ const scroll = new LocomotiveScroll({
   touchMultiplier: 2,
   smoothMobile: 1,
   smartphone: {
-      smooth: 1,
-      breakpoint: 640
+    lerp: 0.2,
+    smooth: true,
+    breakpoint: 640,
   },
   tablet: {
-      smooth: !1,
-      breakpoint: 1024
+    smooth: true,
+    breakpoint: 1024,
   },
 });
 
