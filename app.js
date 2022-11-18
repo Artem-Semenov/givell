@@ -54,14 +54,18 @@ sliderQuickScroll.init(); */
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  multiplier: 1,
+  lerp: 0.07,
+  multiplier: 1.1,
+  reloadOnContextChange: true,
+  touchMultiplier: 2,
+  smoothMobile: 1,
   smartphone: {
-    smooth: true,
-    multiplier: 2,
+      smooth: 1,
+      breakpoint: 640
   },
   tablet: {
-    smooth: true,
-    multiplier: 2,
+      smooth: !1,
+      breakpoint: 1024
   },
 });
 
