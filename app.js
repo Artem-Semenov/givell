@@ -50,13 +50,22 @@ const sliderQuickScroll = new SliderQuickScroll();
 sliderQuickScroll.init();
 
 /** LOCOMOTIVE */
-/*  const scroll = new LocomotiveScroll({
+  const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
-}); */
+}); 
  
+/* $(".slider").on("inview", function (event, isInView) {
+  if (isInView) {
+   document.getElementById
+  } else {
+  
+  }
+}); */
 
-  document.addEventListener("wheel", function (event) {
+
+
+/*   document.addEventListener("wheel", function (event) {
   deltaLocomotiveTop += event.deltaY;
   deltaLocomotiveBottom -= event.deltaY;
   locomotiveText.style.left = deltaLocomotiveTop + "px";
@@ -76,7 +85,7 @@ sliderQuickScroll.init();
     );
   }
 });  
-
+ */
 //////App Scroller/////
 $(".first-trigger").on("inview", function (event, isInView) {
   if (isInView) {
