@@ -52,7 +52,11 @@ sliderQuickScroll.init();
 /** LOCOMOTIVE */
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+    smooth: true,
+    mobile: {
+      breakpoint: 0,
+      smooth: true,
+    },
 }); 
  
 /* $(".slider").on("inview", function (event, isInView) {
