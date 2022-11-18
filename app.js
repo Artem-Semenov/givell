@@ -1,4 +1,5 @@
 "use strict";
+
 const trackers = document.querySelectorAll('[id^="tracker"]');
 const hedaderNavAnchors = document.querySelectorAll(".header-anchor");
 const locomotiveText = document.getElementById("locomotive-text");
@@ -51,24 +52,54 @@ const sliderQuickScroll = new SliderQuickScroll();
 sliderQuickScroll.init(); */
 
 /** LOCOMOTIVE */
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-  lerp: 0.07,
-  multiplier: 1.1,
-  reloadOnContextChange: true,
-  touchMultiplier: 2,
-  smoothMobile: 1,
-  smartphone: {
-    lerp: 0.2,
+
+if (!navigator.userAgent.includes('Chrome')) {
+
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
     smooth: true,
-    breakpoint: 640,
-  },
-  tablet: {
-    smooth: true,
-    breakpoint: 1024,
-  },
-});
+    lerp: 0.07,
+    multiplier: 1.1,
+    reloadOnContextChange: true,
+    touchMultiplier: 2,
+    smoothMobile: 1,
+    smartphone: {
+      lerp: 0.2,
+      smooth: true,
+      breakpoint: 640,
+    },
+    tablet: {
+      smooth: true,
+      breakpoint: 1024,
+    },
+  });
+  
+} else {
+  document.querySelector("header").style.transform = 'none';
+  class SmoothAnchorScroll {
+    init() {
+      const anchors = document.querySelectorAll('a[href^="#"]');
+      for (const anchor of anchors) {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+    }
+  } 
+  
+  const smoothAnchorScroll = new SmoothAnchorScroll();
+  smoothAnchorScroll.init();
+
+
+  
+}
+
 
 /* $(".slider").on("inview", function (event, isInView) {
   if (isInView) {

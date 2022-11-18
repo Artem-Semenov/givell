@@ -157,6 +157,7 @@ color: #101010;
 }
 .li-background a {
   background: #CDBFF5 !important;
+  padding-left: 0 !important;
 }
 .li-background > a > span {
   padding-left: 25px;
@@ -295,7 +296,7 @@ transform: rotate(3.8deg);
 .locomotive-text {
   display: flex;
   position: absolute;
-  left: -1300px;
+  left: -100px;
    /* transition: 1.2s ease-in-out;  */
 }
 
@@ -723,8 +724,8 @@ flex-direction: row;
 align-items: flex-start;
 gap: 40px;
 padding: 40px 0;
-margin-left: -2px;
-width: 100vw;
+margin-left: -40px;
+width: 110vw;
   height: 121px;
   overflow: hidden;
 margin-top: -55px;
@@ -1406,12 +1407,13 @@ footer {
     margin-left: -8px;
   }
   .locomotive-bottom {
+ 
     padding: 0;
     display: flex;
     align-items: center;
   }
   .locomotive-text, .locomotive-bottom-text {
-    left: -1550px;
+    left: -550px;
   }
   .locomotive-text p, .locomotive-bottom-text p {
     font-size: 25px;
