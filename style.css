@@ -101,11 +101,13 @@ header{
   width: calc(100% - 70px);
   max-width: 1800px;
   position: fixed;
-  top: -15px;
-  left: 50%;
+  top: 5px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   transform: translateX(-50%);
   z-index: 9;
-  margin-top: 20px;
   padding-left: 34px;
   display: flex;
   justify-content: space-between;
@@ -135,9 +137,10 @@ color: #101010;
 }
 .header-nav > ul > li > a {
   color: #101010;
+  padding-left: 20px; 
 }
 .header-nav > ul > li > a.active {
-  padding-left: 20px;
+  
   background: url(img/little-black-substract.svg) 0px -1px no-repeat;
 } 
 .li-background a {
@@ -152,8 +155,14 @@ box-shadow: 2px 2px 0px #101010;
 border-radius: 5px;
 color: #101010;
 }
-.li-background a.active {
-  background: url(img/little-yellow-Subtract.svg) 14px 8px no-repeat,#CDBFF5 !important;
+.li-background a {
+  background: #CDBFF5 !important;
+}
+.li-background > a > span {
+  padding-left: 25px;
+}
+.li-background a.active > span{
+  background: url(img/little-yellow-Subtract.svg) 0px -1px no-repeat
 }
 .li-background:hover a {
   background-color: #F99090;
@@ -175,7 +184,9 @@ header > div > img {
   margin-bottom: 100px;
    overflow-x: hidden;    
 }
-
+ main, footer {
+  will-change: auto;
+} 
 .main-display-rectangle-bg {
 position: absolute;
 z-index: 1;
@@ -272,7 +283,8 @@ position: relative;
   align-items: center;
   position: relative;
   margin-left: -2px;
-  width: 100vw;
+  width: 110vw;
+  margin-left: -40px;
   z-index: 1;
   height: 121px;
 background: #C1F4F8;
@@ -383,11 +395,11 @@ background: url(img/little-yellow-Subtract.svg) 14px 13px no-repeat, #CDBFF5;
   background-color: #F99090;
   box-shadow: none;
 }
+
 .slider {
   background-attachment: scroll;
   display: block;
  overflow: visible;
-
 }
 .slider-container {
   height: 400vh;
@@ -1109,8 +1121,8 @@ color: #101010;
     overflow: hidden;
   }
   .locomotive, .locomotive-bottom {
-    width: 104vw;
-    margin-left: -8px;
+    width: 110vw;
+    margin-left: -28px;
   }
   body {
     font-family: 'Subjectivity';
@@ -1769,3 +1781,11 @@ html.has-scroll-dragging {
     right: auto;
     bottom: 0; }
   
+
+    .has-scroll-smooth {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }

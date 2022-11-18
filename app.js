@@ -3,7 +3,7 @@ const trackers = document.querySelectorAll('[id^="tracker"]');
 const hedaderNavAnchors = document.querySelectorAll(".header-anchor");
 const locomotiveText = document.getElementById("locomotive-text");
 const bottomLocomotiveText = document.getElementById("bottom-locomotive-text");
-const headerFormAnchor = document.getElementById("header-form-anchor")
+const headerFormAnchor = document.getElementById("header-form-anchor");
 const sliderNav = document.querySelector(".slider-nav");
 
 const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
@@ -11,7 +11,7 @@ let deltaLocomotiveTop = -1300;
 let deltaLocomotiveBottom = -1300;
 
 /** SMOOTH SCROLL */
-class SmoothAnchorScroll {
+/*  class SmoothAnchorScroll {
   init() {
     const anchors = document.querySelectorAll('a[href^="#"]');
     for (const anchor of anchors) {
@@ -26,12 +26,13 @@ class SmoothAnchorScroll {
       });
     }
   }
-}
+} 
+
 const smoothAnchorScroll = new SmoothAnchorScroll();
-smoothAnchorScroll.init();
+smoothAnchorScroll.init(); */
 
 /** QUCK SCROLL FOR SLIDER ANCHORS*/
-class SliderQuickScroll {
+/* class SliderQuickScroll {
   init() {
     for (const anchor of sliderAnchors) {
       anchor.addEventListener("click", function (e) {
@@ -47,20 +48,23 @@ class SliderQuickScroll {
   }
 }
 const sliderQuickScroll = new SliderQuickScroll();
-sliderQuickScroll.init();
+sliderQuickScroll.init(); */
 
 /** LOCOMOTIVE */
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
+const scroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  multiplier: 1,
+  smartphone: {
     smooth: true,
-    smartphone: {
-      smooth: true,
-    },
-    tablet: {
-      smooth: true,
-    },
-}); 
- 
+    multiplier: 2,
+  },
+  tablet: {
+    smooth: true,
+    multiplier: 2,
+  },
+});
+
 /* $(".slider").on("inview", function (event, isInView) {
   if (isInView) {
    document.getElementById
@@ -68,8 +72,6 @@ sliderQuickScroll.init();
   
   }
 }); */
-
-
 
 /*   document.addEventListener("wheel", function (event) {
   deltaLocomotiveTop += event.deltaY;
@@ -179,7 +181,6 @@ $(".main-third-page-content").on("inview", function (event, isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
     headerFormAnchor.classList.remove("active");
     hedaderNavAnchors[3].classList.add("active");
-  
   } else {
   }
 });
@@ -189,9 +190,7 @@ $(".submit-button").on("inview", function (event, isInView) {
     headerFormAnchor.classList.add("active");
   } else {
   }
-}); 
-
-
+});
 
 /** FORM VALIDATION */
 const popup = document.getElementById("pop-up-window");
@@ -338,14 +337,14 @@ popupCloseButtons.forEach((el) => {
 
 const svgTracker = document.getElementById("tracker-svg");
 
-console.log((svgTracker.attributes.height.value = 33)); //height of SVG
+/* console.log((svgTracker.attributes.height.value = 33)); //height of SVG
 console.log((svgTracker.attributes.viewBox.textContent = "0 0 20 33")); // length of viewbox
 console.log((svgTracker.childNodes[1].attributes.height.value = 25)); // length of track
 console.log(
   (svgTracker.childNodes[3].attributes.d.textContent =
     "M10 33L1.33974 18H18.6603L10 33Z")
 );
-
+ */
 let test = 33;
 function scrollFn(e) {
   if (e.deltaY > 0) {
@@ -374,4 +373,8 @@ $(".slider-content-wrapper").on("inview", function (event, isInView) {
   }
 });
 
-
+/* setInterval(() => {
+  console.log(document.querySelector(".slider").offsetTop);
+  console.log(window.body.scr);
+}, 1000
+  */
