@@ -1320,7 +1320,7 @@ height: 460px;
   
 }
 .main-third-page >div >div {
-  padding: 40px;
+  padding: 40px !important;
 }
 .main-third-page-content > div {
   max-width: 550px;
@@ -1486,9 +1486,9 @@ background-position-y: 14px;
   
 }
 @media (max-width: 420px) {
-  .main-third-page >div >div {
+  /* .main-third-page >div >div {
     display: none;
-  }
+  } */
   .successfull-login-content a {
     background-position-x: 70px;
   }

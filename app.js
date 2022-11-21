@@ -8,8 +8,8 @@ const headerFormAnchor = document.getElementById("header-form-anchor");
 const sliderNav = document.querySelector(".slider-nav");
 
 const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
-let deltaLocomotiveTop = -1300;
-let deltaLocomotiveBottom = -1300;
+let deltaLocomotiveTop = -550;
+let deltaLocomotiveBottom = -550;
 
 /** SMOOTH SCROLL */
 /*  class SmoothAnchorScroll {
@@ -110,14 +110,71 @@ bottomLocomotiveText.style.transition = 'all ease 1.2s'
         "<p>Give the gift of awesome</p>"
       );
     }
-    if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -1300;
-    if (deltaLocomotiveBottom < -1300) {
+    if (deltaLocomotiveBottom < -1300) deltaLocomotiveBottom = -550;
+    if (deltaLocomotiveBottom > 0) {
        bottomLocomotiveText.insertAdjacentHTML(
         "beforeend",
         "<p>We make wishes come true</p>"
       ); 
     }
   });   
+
+  /** 
+   * mobile locomotive in chrome
+   */
+
+   let x1 = null;
+    let y1 = null;
+
+    document.addEventListener("touchstart", function (e) {
+      const firstTouch = e.touches[0];
+      x1 = firstTouch.clientX;
+      y1 = firstTouch.clientY;
+    
+    });
+
+    document.addEventListener("touchmove", function (event) {
+   
+     
+      // console.log(event.touches[0].clientY);
+      let x2 = event.touches[0].clientX;
+      let y2 = event.touches[0].clientY;
+      let xDiff = x2 - x1;
+      let yDiff = y2 - y1;
+      locomotiveText.style.transition = "all ease 0.4s"
+      bottomLocomotiveText.style.transition = "all ease 0.4s"
+      locomotiveText.style.transform = `translate(${yDiff}px, 0px)`;
+      bottomLocomotiveText.style.transform = `translate(${-yDiff}px, 0px)`;
+/* 
+      if (Math.abs(yDiff) > Math.abs(xDiff)) {
+               
+
+          deltaLocomotiveTop -= yDiff;
+          deltaLocomotiveBottom += yDiff;
+          locomotiveText.style.left = deltaLocomotiveTop + "px";
+          bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
+          if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
+          if (deltaLocomotiveTop < -1200) {
+            locomotiveText.insertAdjacentHTML(
+              "beforeend",
+              "<p>Give the gift of awesome</p>"
+            );
+          }
+          if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -100;
+          if (deltaLocomotiveBottom < -100) {
+             bottomLocomotiveText.insertAdjacentHTML(
+              "beforeend",
+              "<p>We make wishes come true</p>"
+            ); 
+          }
+          x1 = null;
+          y1 = null;
+       
+      } else {
+        return;
+      } */
+    });
+    ////
 }
 
 
