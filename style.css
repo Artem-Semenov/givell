@@ -1120,9 +1120,7 @@ color: #101010;
   header {
     height: 60px;
   }
-  main {
-    overflow: hidden;
-  }
+
   .locomotive, .locomotive-bottom {
     width: 110vw;
     margin-left: -28px;
@@ -1155,7 +1153,10 @@ color: #101010;
   header {
     padding-left: 40px;
   }
-
+  .mobile-button:hover {
+    background-color: #F99090;
+    box-shadow: none;
+  }
  
 .background-test {
   height: 500px;
@@ -1216,8 +1217,12 @@ background-position-y: 13px;
   height: 496px;
 }
 
+.locomotive-wrapper {
+  margin-top: -50px;
+   }
 .second-page-text-wrapper {
   max-width: 550px;
+  padding-top: 60px;
 }
 .second-page-bg-rectangle {
   left: calc(50% - 248px);
@@ -1332,6 +1337,7 @@ height: 460px;
   padding-left: 16px;
   padding-right: 16px;
   height: auto;
+  padding-top: 100px;
 }
 .form {
   width: auto;
@@ -1389,9 +1395,7 @@ footer {
   .mobile-button {
     margin-right: 0;
   }
-  main {
-    overflow: hidden;
-  }
+
   .mobile-display-none {
     display: none;
   }
@@ -1450,7 +1454,9 @@ top: 0px;
 background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50, 237, 0.4) 93.85%);
 filter: blur(80.6736px);
   }
-
+  .locomotive-wrapper {
+    margin-top: -80px;
+  }
   .successfull-login {
 width: calc(100% - 20px) !important;
 margin-left: 10px;
@@ -1469,8 +1475,9 @@ background-position-y: 14px;
     font-size: 30px;
   }
  .form-wrapper {
-  padding-top: 120px;
+  padding-top: 60px;
  }
+
 }
 @media(max-width: 498px) {
   .main-text-wrapper {
@@ -1478,11 +1485,13 @@ background-position-y: 14px;
   }
   
 }
-@media (max-width: 420) {
+@media (max-width: 420px) {
   .main-third-page >div >div {
     display: none;
   }
-  
+  .successfull-login-content a {
+    background-position-x: 70px;
+  }
 }
 @media(max-width: 384px) {
   header {
@@ -1491,9 +1500,7 @@ background-position-y: 14px;
   .background-test{
 height: 530px;
   }
-  .successfull-login-content a {
-    background-position-x: 70px;
-  }
+  
 }
 @media (min-height: 780px) {
   .slider-element {
@@ -1771,6 +1778,12 @@ html.has-scroll-dragging {
     right: auto;
     bottom: 0; }
   
+    .center {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 /* 
     .has-scroll-smooth {
       position: fixed;
