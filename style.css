@@ -182,7 +182,6 @@ header > div > img {
   margin-left: auto;
   margin-right: auto;
   padding-top: 160px;
-  margin-bottom: 100px;
    overflow-x: hidden;    
 }
  main, footer {
@@ -285,7 +284,7 @@ position: relative;
   position: relative;
   margin-left: -2px;
   width: 110vw;
-  margin-left: -40px;
+  margin: 0 -20px;
   z-index: 1;
   height: 121px;
 background: #C1F4F8;
@@ -311,7 +310,7 @@ width: 600px;
 }
 
 .main-second-page {
-  margin-top: -50px;
+  margin-top: -90px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -665,7 +664,7 @@ position: absolute;
 
 
 .main-third-page {
-padding: 200px 0px 250px 0px;
+padding: 200px 0px 0px 0px;
   background: url(img/light-bg.svg);
 }
 .main-third-page-content {
@@ -679,10 +678,10 @@ padding: 200px 0px 250px 0px;
   padding: 0px;
   gap: 30px;
   padding: 0 50px;
-  
+  margin-bottom: 170px;
 }
 
-.main-third-page >div> div {
+.main-third-page >div.main-third-page-content> div {
   background: #C1F4F8;
 border: 3px solid #101010;
 box-shadow: 3px 3px 0px #101010;
@@ -695,7 +694,7 @@ gap: 12px;
 
 
 }
-.main-third-page > div > div > h3 {
+.main-third-page > div.main-third-page-content > div > h3 {
   font-family: 'Subjectivity';
   font-style: normal;
   font-weight: 700;
@@ -703,7 +702,7 @@ gap: 12px;
   line-height: 40px; 
   color: #101010;
 }
-.main-third-page > div > div > p {
+.main-third-page > div.main-third-page-content > div > p {
   font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
@@ -714,7 +713,7 @@ color: #101010;
 .main-third-page > div >div:nth-child(2) {
   background: #FEE5C7;
 }
-.main-third-page > div> div:last-child {
+.main-third-page > div.main-third-page-content> div:last-child {
 background: #FFDCDC;
 }
 .locomotive-bottom {
@@ -724,11 +723,10 @@ flex-direction: row;
 align-items: flex-start;
 gap: 40px;
 padding: 40px 0;
-margin-left: -40px;
+margin: 0 -20px;
 width: 110vw;
   height: 121px;
   overflow: hidden;
-margin-top: -55px;
 background: #F3EC33;
 border: 3px solid #101010;
 box-shadow: 3px 3px 0px #101010;
@@ -757,13 +755,13 @@ transform: rotate(-4deg);
 
 
 .form-section {
-  background: url(img/footer-bg.svg) left;
-  margin-top: -61px;
+  background: url(img/footer-bg.svg) left, #fff;
+  margin-top: -157px;
   padding-top: 61px;
   display: flex;
 }
 .form-wrapper {
-  margin-top: -50px;
+  margin-top: 0px;
   background: #CDBFF5;
   padding: 180px 45px 0px 50px;
   height: 885px;
@@ -1034,6 +1032,10 @@ flex-direction: column;
 align-items: flex-end;
 gap: 20px;
 }
+#popup-success {
+  opacity: 1;
+  visibility: visible;
+}
 .successfull-login.show {
   opacity: 1;
   visibility: visible;
@@ -1056,7 +1058,7 @@ border-radius: 5px;
   flex-direction: column;
   align-items: flex-start;
   padding: 40px;
-  width: 568px !important;
+  width: 570px !important;
   height: 458px;
   background: #FFFFFF;
   border: 3px solid #101010;
@@ -1310,7 +1312,6 @@ height: 460px;
   padding: 70px 16px;
  height: 100%;
  margin-bottom: 0px;
- padding-bottom: 140px;
   
 }
 .main-third-page >div >div {
@@ -1506,8 +1507,9 @@ height: 530px;
 }
  @media(min-width: 1450px) {
 .main-third-page {
-  padding: 300px 0px 350px 0px;
+  padding: 300px 0px 0px 0px;
 }
+
 } 
 @media (min-width: 1830px) {
   .header-nav > ul{
@@ -1695,27 +1697,13 @@ font-size: 36px;
 
 
  
-.test-locomotive-wrapper {
-  background: aqua;
-  height: 120px;
-  width: 100%;
+.locomotive-wrapper{
+  height: 310px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: scroll;
+width: 100vw;
+overflow-x: hidden;
 }
-.test-locomotive-wrapper > p {
-  display:  flex;
-padding: 0 2000px;
-border: 1px dotted black;
-gap: 20px;
-}
-.test-locomotive-wrapper > p > span {
-  font-size: 20px;
-  font-weight: 700;
-} 
-
-
 html.has-scroll-smooth {
   overflow: hidden; }
 
@@ -1783,7 +1771,7 @@ html.has-scroll-dragging {
     right: auto;
     bottom: 0; }
   
-
+/* 
     .has-scroll-smooth {
       position: fixed;
       top: 0;
@@ -1791,3 +1779,38 @@ html.has-scroll-dragging {
       bottom: 0;
       left: 0;
     }
+ */
+
+   /*  html {
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+    } */
+  
+   /*  html.has-scroll-smooth {
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;  
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    transform: translateZ(0);
+  }  */
+
+
+  
+  /*  [data-scroll-container] {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+  }  */
+
+  
