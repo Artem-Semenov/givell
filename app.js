@@ -50,9 +50,27 @@ smoothAnchorScroll.init(); */
 }
 const sliderQuickScroll = new SliderQuickScroll();
 sliderQuickScroll.init(); */
+class SmoothAnchorScroll {
+  init() {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    for (const anchor of anchors) {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+  }
+}
 
+const smoothAnchorScroll = new SmoothAnchorScroll();
+smoothAnchorScroll.init();
 /** LOCOMOTIVE */
-
+/* 
 if (!navigator.userAgent.includes("Chrome")) {
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
@@ -74,25 +92,7 @@ if (!navigator.userAgent.includes("Chrome")) {
   });
 } else {
   document.querySelector("header").style.transform = "none";
-  class SmoothAnchorScroll {
-    init() {
-      const anchors = document.querySelectorAll('a[href^="#"]');
-      for (const anchor of anchors) {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-        });
-      }
-    }
-  }
-
-  const smoothAnchorScroll = new SmoothAnchorScroll();
-  smoothAnchorScroll.init();
+ 
 
   locomotiveText.style.transition = "all ease 1.2s";
   bottomLocomotiveText.style.transition = "all ease 1.2s";
@@ -115,13 +115,13 @@ if (!navigator.userAgent.includes("Chrome")) {
         "<p>We make wishes come true</p>"
       );
     }
-  });
+  }); */
 
   /**
    * mobile locomotive in chrome
    */
 
-  let x1 = null;
+  /* let x1 = null;
   let y1 = null;
 
   document.addEventListener("touchstart", function (e) {
@@ -140,12 +140,15 @@ if (!navigator.userAgent.includes("Chrome")) {
     bottomLocomotiveText.style.transition = "all ease 0s";
 
     if (Math.abs(yDiff) > Math.abs(xDiff)) {
-      if (yDiff > 0) {
+      if (yDiff <
+         0) {
+        console.log('>0');
         deltaLocomotiveTop -= 2;
         deltaLocomotiveBottom += 2;
       } else {
-        deltaLocomotiveTop -= 2;
-        deltaLocomotiveBottom += 2;
+        console.log('<0');
+        deltaLocomotiveTop += 2;
+        deltaLocomotiveBottom -= 2;
       }
 
       locomotiveText.style.left = deltaLocomotiveTop + "px";
@@ -171,7 +174,7 @@ if (!navigator.userAgent.includes("Chrome")) {
     }
   });
   ////
-}
+} */
 
 /*   document.addEventListener("wheel", function (event) {
   deltaLocomotiveTop += event.deltaY;
@@ -504,3 +507,12 @@ $(".slider-content-wrapper").on("inview", function (event, isInView) {
   console.log(window.body.scr);
 }, 1000
   */
+
+window.addEventListener('scroll', function(event) {
+  if (window.pageYOffset === 0 ) {
+    document.getElementById("header").classList.remove("unstick")
+  } else {
+    document.getElementById("header").classList.add("unstick")
+  }
+})
+

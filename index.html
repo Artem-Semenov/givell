@@ -14,52 +14,41 @@
     /> -->
   </head>
   <body id="test1">
-    <div
-      class="data-scroll-container"
-      id="data-scroll-container"
-      data-scroll-container
-    >
-      <main data-scroll-section>
-        <header
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target="#data-scroll-container"
-        >
-          <div class="logo-wrapper">
-            <a href="/"><img src="img/logo.svg" alt="" /></a>
-          </div>
-          <a
-            class="display-none mobile-button all-ease"
-            href="#form-section"
-            data-scroll-to
-            >Sign up for beta</a
-          >
-          <div class="mobile-display-none">
-            <nav class="header-nav">
-              <ul>
-                <li><a class="header-anchor active" href="/">Home</a></li>
-                <li>
-                  <a class="header-anchor" href="#why" data-scroll-to>Why</a>
-                </li>
-                <li>
-                  <a class="header-anchor" href="#what" data-scroll-to>What</a>
-                </li>
-                <li>
-                  <a class="header-anchor" href="#how" data-scroll-to>How</a>
-                </li>
-                <li class="li-background hover">
-                  <a
-                    class="all-ease"
-                    id="header-form-anchor"
-                    href="#form-section"
-                    data-scroll-to
-                    ><span>Sign up for beta</span></a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
+    <header class="header" id="header">
+      <div class="logo-wrapper">
+        <a href="/"><img src="img/logo.svg" alt="" /></a>
+      </div>
+      <a
+        class="display-none mobile-button all-ease"
+        href="#form-section"
+        >Sign up for beta</a
+      >
+      <div class="mobile-display-none">
+        <nav class="header-nav">
+          <ul>
+            <li><a class="header-anchor active" href="/">Home</a></li>
+            <li>
+              <a class="header-anchor" href="#why">Why</a>
+            </li>
+            <li>
+              <a class="header-anchor" href="#what">What</a>
+            </li>
+            <li>
+              <a class="header-anchor" href="#how">How</a>
+            </li>
+            <li class="li-background hover">
+              <a
+                class="all-ease"
+                id="header-form-anchor"
+                href="#form-section">
+                <span>Sign up for beta</span>
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+      <main>
         <div class="background-test" id="test-id"></div>
         <div class="main-display-rectangle-bg mobile-display-none"></div>
         <section class="main-section">
@@ -74,14 +63,10 @@
               anyone you want. With Givell, you can make a wishlist, share it
               and track the progress in order to get the perfect gift.
             </p>
-            <a href="#form-section" data-scroll-to class="hover all-ease"
+            <a href="#form-section" class="hover all-ease"
               >Sign up for beta</a
             >
-            <!-- <img
-            class="white-substracts-bg"
-            src="img/main-display-bg-substracts.svg"
-            alt=""
-          /> -->
+           
           </div>
           <div class="main-section-img-wrapper mobile-display-none">
             <img src="img/main-display-photo.svg" alt="" />
@@ -93,24 +78,12 @@
           alt=""
         />
 
-        <!-- <div class="test-locomotive-wrapper">
-        <p data-scroll data-scroll-direction="horizontal" data-scroll-speed="5">
-          <span>Text</span>
-          <span>Text</span>
-          <span>Text</span>
-          <span>Text</span>
-        </p>
-      </div>
- -->
+      
         <div class="locomotive-wrapper">
           <div class="locomotive">
             <div
               class="locomotive-text"
-              id="locomotive-text"
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed="5"
-            >
+              id="locomotive-text">
               <p>Give the gift of awesome</p>
               <p>Give the gift of awesome</p>
               <p>Give the gift of awesome</p>
@@ -142,7 +115,7 @@
               viewers to donate time or money. Our goal is to become the most
               user-friendly online donation system in the world.
             </p>
-            <a class="all-ease" href="#form-section" data-scroll-to
+            <a class="all-ease" href="#form-section"
               >Sign up for beta</a
             >
           </div>
@@ -150,11 +123,7 @@
         <section class="slider mobile-display-none" id="slider-block">
           <div class="slider-container" id="test">
             <div
-              class="slider-content-wrapper"
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#test"
-            >
+              class="slider-content-wrapper">
               <svg
                 id="tracker-svg"
                 width="20"
@@ -210,7 +179,6 @@
                   <li>
                     <a
                       href="#trigger1"
-                      data-scroll-to
                       class="anchor1 active all-ease"
                       id="anchor1"
                     >
@@ -220,7 +188,6 @@
                   <li>
                     <a
                       href="#trigger2"
-                      data-scroll-to
                       class="anchor2 all-ease"
                       id="anchor2"
                       >Widget</a
@@ -229,7 +196,6 @@
                   <li>
                     <a
                       href="#trigger3"
-                      data-scroll-to
                       class="anchor3 all-ease"
                       id="anchor3"
                       >Flexibility</a
@@ -238,7 +204,6 @@
                   <li>
                     <a
                       href="#trigger4"
-                      data-scroll-to
                       class="anchor4 all-ease"
                       id="anchor4"
                       >Safety</a
@@ -427,10 +392,7 @@
             <div class="locomotive-bottom">
               <div
                 class="locomotive-bottom-text"
-                id="bottom-locomotive-text"
-                data-scroll
-                data-scroll-direction="horizontal"
-                data-scroll-speed="5">
+                id="bottom-locomotive-text">
                 <p>We make wishes come true</p>
                 <p>We make wishes come true</p>
                 <p>We make wishes come true</p>
@@ -445,7 +407,9 @@
         </section>
         
         <section class="form-section" id="form-section">
-          <div class="form-wrapper">
+          <div class="bg-violet"></div>
+           <div class="form-wrapper">
+            <div class="form-content">
             <h2>Sign Up 😏</h2>
             <p>
               Be one of the first to explore Givell by signing up for the beta
@@ -505,10 +469,11 @@
               </button>
             </form>
           </div>
-          <div class="mobile-display-none empty-relative"></div>
+        </div>
+          
         </section>
       </main>
-      <footer data-scroll-section="">
+      <footer>
         <img src="img/logo.svg" alt="logo" />
         <h3>Give the gift of awesome</h3>
         <nav class="socials">
@@ -529,16 +494,10 @@
       </footer>
       <div
         class="successfull-login popup-success"
-        id="pop-up-window"
-        data-scroll-sticky
-        data-scroll-target="#test1"
-      >
+        id="pop-up-window">
         <button
           id="popup-close-button"
-          class="popup-close-button"
-          data-scroll-sticky
-          data-scroll-target="#test1"
-        >
+          class="popup-close-button" >
           <img src="./img/popup-close-button-img.svg" alt="" />
         </button>
         <div class="successfull-login-content">
@@ -568,7 +527,7 @@
         </div>
       </div>
       <div class="overAll" id="overAll"></div>
-    </div>
+    
     <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=62aa9ab662e3d2778653006f"
       type="text/javascript"
@@ -576,7 +535,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-    <script src="locomotive.js"></script>
+   
     <script src="app.js"></script>
   </body>
 </html>
