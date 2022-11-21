@@ -53,8 +53,7 @@ sliderQuickScroll.init(); */
 
 /** LOCOMOTIVE */
 
-if (!navigator.userAgent.includes('Chrome')) {
-
+if (!navigator.userAgent.includes("Chrome")) {
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
@@ -73,9 +72,8 @@ if (!navigator.userAgent.includes('Chrome')) {
       breakpoint: 1024,
     },
   });
-  
 } else {
-  document.querySelector("header").style.transform = 'none';
+  document.querySelector("header").style.transform = "none";
   class SmoothAnchorScroll {
     init() {
       const anchors = document.querySelectorAll('a[href^="#"]');
@@ -91,13 +89,13 @@ if (!navigator.userAgent.includes('Chrome')) {
         });
       }
     }
-  } 
-  
+  }
+
   const smoothAnchorScroll = new SmoothAnchorScroll();
   smoothAnchorScroll.init();
 
- locomotiveText.style.transition = 'all ease 1.2s'
-bottomLocomotiveText.style.transition = 'all ease 1.2s'
+  locomotiveText.style.transition = "all ease 1.2s";
+  bottomLocomotiveText.style.transition = "all ease 1.2s";
   document.addEventListener("wheel", function (event) {
     deltaLocomotiveTop += event.deltaY;
     deltaLocomotiveBottom -= event.deltaY;
@@ -112,76 +110,68 @@ bottomLocomotiveText.style.transition = 'all ease 1.2s'
     }
     if (deltaLocomotiveBottom < -1300) deltaLocomotiveBottom = -550;
     if (deltaLocomotiveBottom > 0) {
-       bottomLocomotiveText.insertAdjacentHTML(
+      bottomLocomotiveText.insertAdjacentHTML(
         "beforeend",
         "<p>We make wishes come true</p>"
-      ); 
+      );
     }
-  });   
+  });
 
-  /** 
+  /**
    * mobile locomotive in chrome
    */
 
-   let x1 = null;
-    let y1 = null;
+  let x1 = null;
+  let y1 = null;
 
-    document.addEventListener("touchstart", function (e) {
-      const firstTouch = e.touches[0];
-      x1 = firstTouch.clientX;
-      y1 = firstTouch.clientY;
-    
-    });
+  document.addEventListener("touchstart", function (e) {
+    const firstTouch = e.touches[0];
+    x1 = firstTouch.clientX;
+    y1 = firstTouch.clientY;
+  });
 
-    document.addEventListener("touchmove", function (event) {
-   
-     
-      // console.log(event.touches[0].clientY);
-      let x2 = event.touches[0].clientX;
-      let y2 = event.touches[0].clientY;
-      let xDiff = x2 - x1;
-      let yDiff = y2 - y1;
-      locomotiveText.style.transition = "all ease 0.4s"
-      bottomLocomotiveText.style.transition = "all ease 0.4s"
-      locomotiveText.style.transform = `translate(${yDiff}px, 0px)`;
-      bottomLocomotiveText.style.transform = `translate(${-yDiff}px, 0px)`;
-/* 
-      if (Math.abs(yDiff) > Math.abs(xDiff)) {
-               
+  document.addEventListener("touchmove", function (event) {
+    // console.log(event.touches[0].clientY);
+    let x2 = event.touches[0].clientX;
+    let y2 = event.touches[0].clientY;
+    let xDiff = x2 - x1;
+    let yDiff = y2 - y1;
+    locomotiveText.style.transition = "all ease 0s";
+    bottomLocomotiveText.style.transition = "all ease 0s";
 
-          deltaLocomotiveTop -= yDiff;
-          deltaLocomotiveBottom += yDiff;
-          locomotiveText.style.left = deltaLocomotiveTop + "px";
-          bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
-          if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
-          if (deltaLocomotiveTop < -1200) {
-            locomotiveText.insertAdjacentHTML(
-              "beforeend",
-              "<p>Give the gift of awesome</p>"
-            );
-          }
-          if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -100;
-          if (deltaLocomotiveBottom < -100) {
-             bottomLocomotiveText.insertAdjacentHTML(
-              "beforeend",
-              "<p>We make wishes come true</p>"
-            ); 
-          }
-          x1 = null;
-          y1 = null;
-       
+    if (Math.abs(yDiff) > Math.abs(xDiff)) {
+      if (yDiff > 0) {
+        deltaLocomotiveTop -= 2;
+        deltaLocomotiveBottom += 2;
       } else {
-        return;
-      } */
-    });
-    ////
+        deltaLocomotiveTop -= 2;
+        deltaLocomotiveBottom += 2;
+      }
+
+      locomotiveText.style.left = deltaLocomotiveTop + "px";
+      bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
+      if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
+      if (deltaLocomotiveTop < -1200) {
+        locomotiveText.insertAdjacentHTML(
+          "beforeend",
+          "<p>Give the gift of awesome</p>"
+        );
+      }
+      if (deltaLocomotiveBottom < -700) deltaLocomotiveBottom = -700;
+      if (deltaLocomotiveBottom > 100) {
+        bottomLocomotiveText.insertAdjacentHTML(
+          "beforeend",
+          "<p>We make wishes come true</p>"
+        );
+      }
+      x1 = null;
+      y1 = null;
+    } else {
+      return;
+    }
+  });
+  ////
 }
-
-
-
-
-
-
 
 /*   document.addEventListener("wheel", function (event) {
   deltaLocomotiveTop += event.deltaY;
@@ -211,8 +201,8 @@ $(".first-trigger").on("inview", function (event, isInView) {
     $(".first-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[0].classList.add("active");
-    test = sizePoint
-    svgRender(sizePoint) 
+    test = sizePoint;
+    svgRender(sizePoint);
     /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[0].classList.add("active"); */
     sliderNav.classList.add("show");
@@ -227,8 +217,8 @@ $(".second-trigger").on("inview", function (event, isInView) {
     $(".second-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[1].classList.add("active");
-    test = 8 * sizePoint -50
-    svgRender(test)
+    test = 8 * sizePoint - 50;
+    svgRender(test);
     /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[1].classList.add("active"); */
     sliderNav.classList.add("show");
@@ -242,8 +232,8 @@ $(".third-trigger").on("inview", function (event, isInView) {
     $(".third-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[2].classList.add("active");
-    test = 16 * sizePoint - 110
-    svgRender(test)
+    test = 16 * sizePoint - 110;
+    svgRender(test);
     /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[2].classList.add("active"); */
     sliderNav.classList.add("show");
@@ -256,8 +246,8 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
     $(".fourth-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[3].classList.add("active");
-    test = 24 * sizePoint - 180
-    svgRender(test)
+    test = 24 * sizePoint - 180;
+    svgRender(test);
     /*     trackers.forEach((el) => el.classList.remove("active"));
     trackers[3].classList.add("active"); */
     sliderNav.classList.add("show");
@@ -266,7 +256,6 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
 });
 
 /** HEADER NAV - ACTIVE ANCHORS */
-
 
 $(".main-section").on("inview", function (event, isInView) {
   if (isInView) {
@@ -456,8 +445,7 @@ popupCloseButtons.forEach((el) => {
 
 const svgTracker = document.getElementById("tracker-svg");
 
-
- /** 
+/** 
 
  console.log(document.body.clientHeight);
 
@@ -468,34 +456,36 @@ console.log(
   (svgTracker.childNodes[3].attributes.d.textContent =
     "M10 33L1.33974 18H18.6603L10 33Z")
 ); */
- 
 
-const sizePoint = document.body.clientHeight / 23
-
-
+const sizePoint = document.body.clientHeight / 23;
 
 function svgRender(num) {
-  svgTracker.attributes.height.value = document.body.clientHeight / 1.05
-  svgTracker.attributes.viewBox.textContent = `0 0 20 ${svgTracker.attributes.height.value}`
-  svgTracker.childNodes[1].attributes.height.value = num-8
-  svgTracker.childNodes[3].attributes.d.textContent =`M10 ${num+10}L1.33974 ${num - 5}H18.6603L10 ${num + 10}Z`  
+  svgTracker.attributes.height.value = document.body.clientHeight / 1.05;
+  svgTracker.attributes.viewBox.textContent = `0 0 20 ${svgTracker.attributes.height.value}`;
+  svgTracker.childNodes[1].attributes.height.value = num - 8;
+  svgTracker.childNodes[3].attributes.d.textContent = `M10 ${
+    num + 10
+  }L1.33974 ${num - 5}H18.6603L10 ${num + 10}Z`;
 }
 
-svgRender(sizePoint)
+svgRender(sizePoint);
 
-let test = sizePoint +10
+let test = sizePoint + 10;
 function scrollFn(e) {
   if (e.deltaY > 0) {
     test += sizePoint - 10;
   } else if (e.deltaY < 0) {
     test -= sizePoint - 10;
   }
-  if (test < sizePoint +10) test = sizePoint +10;
-  if (test >  document.body.clientHeight / 1.26) test =  document.body.clientHeight / 1.26;
+  if (test < sizePoint + 10) test = sizePoint + 10;
+  if (test > document.body.clientHeight / 1.26)
+    test = document.body.clientHeight / 1.26;
   // svgTracker.attributes.height.value = test;
   // svgTracker.attributes.viewBox.textContent = `0 0 20 ${test+20}`;
   svgTracker.childNodes[1].attributes.height.value = test - 10;
-  svgTracker.childNodes[3].attributes.d.textContent = `M10 ${test}L1.33974 ${test - 13}H18.6603L10 ${test}Z`;
+  svgTracker.childNodes[3].attributes.d.textContent = `M10 ${test}L1.33974 ${
+    test - 13
+  }H18.6603L10 ${test}Z`;
 }
 
 $(".slider-content-wrapper").on("inview", function (event, isInView) {
@@ -508,9 +498,6 @@ $(".slider-content-wrapper").on("inview", function (event, isInView) {
     document.removeEventListener("wheel", scrollFn);
   }
 });
-
-
-
 
 /* setInterval(() => {
   console.log(document.querySelector(".slider").offsetTop);
