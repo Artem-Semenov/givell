@@ -9,24 +9,6 @@ const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
 
 /** SMOOTH SCROLL */
 
-/** QUCK SCROLL FOR SLIDER ANCHORS*/
-/* class SliderQuickScroll {
-  init() {
-    for (const anchor of sliderAnchors) {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({
-            behavior: "auto",
-          });
-        }
-      });
-    }
-  }
-}
-const sliderQuickScroll = new SliderQuickScroll();
-sliderQuickScroll.init(); */
 class SmoothAnchorScroll {
   init() {
     const anchors = document.querySelectorAll('a[href^="#"]');
@@ -46,9 +28,9 @@ class SmoothAnchorScroll {
 
 const smoothAnchorScroll = new SmoothAnchorScroll();
 smoothAnchorScroll.init();
-/** LOCOMOTIVE */
 
-//////App Scroller/////
+/** App Scroller */
+
 $(".first-trigger").on("inview", function (event, isInView) {
   if (isInView) {
     $(".slider-element:not(.first-slide)").fadeOut(0);
@@ -121,15 +103,7 @@ $(".slider-content-wrapper").on("inview", function (event, isInView) {
   } else {
   }
 }); 
-/* $(".slider-element").on("inview", function (event, isInView) {
-  if (isInView) {
-    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
-    headerFormAnchor.classList.remove("active");
-    hedaderNavAnchors[2].classList.add("active");
-  } else {
-  }
-});
- */
+
 $(".main-third-page-content").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
@@ -160,7 +134,6 @@ const emailPlaceholder = email.placeholder;
 const textareaPlaceholder = textarea.placeholder;
 const firstNamePlaceholder = firstName.placeholder;
 const lastNamePlaceholder = lastName.placeholder;
-// const falseValidation = document.getElementById("")
 const submitButton = document.getElementById("submitButton");
 
 form.addEventListener("input", function (event) {
@@ -175,11 +148,6 @@ form.addEventListener("input", function (event) {
 firstName.addEventListener("focus", function (f) {
   firstName.placeholder = "";
   firstName.classList.remove("_error");
-  /* if (firstName.nextElementSibling) {
-    firstName.nextElementSibling.remove();
-  } 
-  firstName.classList.remove("input_error");
-  */
 });
 
 firstName.addEventListener("blur", function (f) {
@@ -189,11 +157,6 @@ firstName.addEventListener("blur", function (f) {
 lastName.addEventListener("focus", function (f) {
   lastName.placeholder = "";
   lastName.classList.remove("_error");
-  /* if (lastNameShow.nextElementSibling) {
-    lastNameShow.nextElementSibling.remove();
-  } 
-  lastName.classList.remove("input_error");
-  */
 });
 
 lastName.addEventListener("blur", function (f) {
@@ -227,12 +190,10 @@ form.addEventListener("submit", async function (event) {
   event.preventDefault();
   let formData = new FormData(form);
   if (!firstName.value?.trim().match(/^[A-Za-z]+$/)) {
-    // event.preventDefault()
     firstName.classList.add("_error");
     alert("Please enter your name(without numbers)");
     console.log("please enter your name(without numbers)");
   } else if (!lastName.value?.trim().match(/^[A-Za-z]+$/)) {
-    // event.preventDefault()
     lastName.classList.add("_error");
     alert("Please enter your last name(without numbers)");
     console.log("Please enter your last name(without numbers)");
@@ -240,12 +201,11 @@ form.addEventListener("submit", async function (event) {
     email.classList.add("_error");
     alert("Enter email please");
   } else if (!emailTest(email)) {
-    // event.preventDefault()
     email.classList.add("_error");
     alert("Enter your real email please");
     console.log("email not valid");
   } else {
-    form.classList.add("_sending");
+    overlay.classList.add("show");
     let response = await fetch("sendmail.php", {
       method: "POST",
       body: formData,
@@ -254,9 +214,7 @@ form.addEventListener("submit", async function (event) {
       let result = await response.json();
       form.reset();
       form.classList.remove("_sending");
-
       popup.classList.add("show");
-      overlay.classList.add("show");
       document.addEventListener("click", function (event) {
         if (event.target.id === "overAll") {
           popup.classList.remove("show");
@@ -282,27 +240,17 @@ form.addEventListener("submit", async function (event) {
 
 popupCloseButtons.forEach((el) => {
   el.addEventListener("click", function (event) {
-    console.log("tra");
     popupFail.classList.remove("show");
     popup.classList.remove("show");
     overlay.classList.remove("show");
   });
 });
 
+
+/*
+*SLIDER SVG ARROW RENDERING 
+**/
 const svgTracker = document.getElementById("tracker-svg");
-
-/** 
-
- console.log(document.body.clientHeight);
-
- console.log((svgTracker.attributes.height.value = 33)); //height of SVG
-console.log((svgTracker.attributes.viewBox.textContent = "0 0 20 33")); // length of viewbox
-console.log((svgTracker.childNodes[1].attributes.height.value = 25)); // length of track
-console.log(
-  (svgTracker.childNodes[3].attributes.d.textContent =
-    "M10 33L1.33974 18H18.6603L10 33Z")
-); */
-
 const sliderTriggers = document.getElementById("triggers");
 const arrowSize = sliderTriggers.offsetHeight / 5;
 const minArrowSize = sliderTriggers.offsetHeight / 109
