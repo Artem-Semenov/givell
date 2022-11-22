@@ -94,12 +94,13 @@ body {
 }
 
 .logo-wrapper {
-  margin-left: -25px;
+  margin-left: 20px;
 }
 
 header{
+  box-sizing: content-box;
   width: calc(100% - 70px);
-  max-width: 1820px;
+  max-width: 1835px;
   position: fixed;
   top: 5px;
   left: 50%;
@@ -108,13 +109,13 @@ header{
   margin-right: auto;
   transform: translateX(-50%);
   z-index: 9;
-  padding-left: 34px;
   display: flex;
   justify-content: space-between;
 align-items: center;
 height: 70px;  
 border-radius: 5px;
 transition: all ease 0.5s;
+padding-right: 15px;
 }
 
 .header.unstick{
@@ -160,7 +161,7 @@ color: #101010;
   padding-left: 0 !important;
 }
 .li-background > a > span {
-  padding-left: 25px;
+  padding: 0 25px;
 }
 .li-background a.active > span{
   background: url(img/little-yellow-Subtract.svg) 0px -1px no-repeat
@@ -271,8 +272,10 @@ position: relative;
   z-index: 2;
 }
 
-.main-section-img-wrapper img {
+.main-section-img-wrapper svg {
   margin-left: -60px;
+  width: 970px !important;
+  height: 637px !important;
 }
 
 
@@ -519,25 +522,27 @@ display: none;
 }
 .slider-element-left-wrap {
 padding: 40px;
-width: 34.6vw; 
+max-width: 568px; 
 background: #FFFFFF;
 border: 3px solid #101010;
 box-shadow: 3px 3px 0px #101010;
 border-radius: 5px;
 }
 
-.slider-element img{
+.slider-element svg{
 display: block;
 width: 32vw;
 height: 33vw;
+max-width: 461px;
+max-height: 476px;
 }
 
 .slider-element-left-wrap h2 {
 font-family: 'Subjectivity';
 font-style: normal;
 font-weight: 700;
-font-size:  2.75vw;
-line-height: 3.3vw;
+font-size:  40px;
+line-height: 50px;
 color: #101010;
 margin-bottom: 12px;
 }
@@ -546,7 +551,7 @@ margin-bottom: 12px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 1.1vw;
+font-size: 16px;
 line-height: 180%;
 color: #101010;
 }
@@ -1004,6 +1009,9 @@ color: #101010;
 .all-ease {
   transition: all ease 0.5s;
 }
+#locomotive-wrapper-mobile {
+display: none;
+}
 @media (min-width: 1025px) {
   .button-display-none {
     display: none !important;
@@ -1013,6 +1021,7 @@ color: #101010;
 
 
 @media (max-width: 1024px) {
+ 
   header {
     height: 60px;
     max-width: 550px;
@@ -1287,7 +1296,12 @@ footer {
 }
 
 @media (max-width: 640px) {
-  
+  #locomotive-wrapper-mobile {
+    display: flex;
+    }
+  #locomotive-wrapper-desktop {
+display: none;
+    }
   header {
     width: calc(100% - 30px)
   }
@@ -1309,80 +1323,371 @@ footer {
     height: 86px !important;
   }
  
-  [class*="Give_the_gift_of_awesome"], [class*="We_make_wishes_come_true"] {
-    font-size: 25px !important;
-    line-height: 25px !important;
-    top: 20px !important;
-  }
-/*   .Givell_Landing_Page_Desktop {
-  }
-   .Give_the_gift_of_awesome0 {
-    left: -561.75px !important;
-  }
+ 
+  .Givell_Landing_Page_mobile {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    box-sizing: border-box;
+    width: 110vw;
+    margin: 0 -20px;
+    height: 86px;
+    background: #C1F4F8;
+    border: 3px solid #101010;
+    box-shadow: 3px 3px 0px #101010;
+    transform: rotate(3.8deg);
+    }
 
-  .Give_the_gift_of_awesome {
-left: -105.37px !important;
-  }
-  .Give_the_gift_of_awesome1 {
-left: 472.12px !important;
-  }
-  .Give_the_gift_of_awesome2 {
-left: 1038.87px !important;
-  }
-  .Give_the_gift_of_awesome3 {
-left: 1605.62px;
-  }
-  .Give_the_gift_of_awesome4 {
-left: 2172.62px;
-  }  */
- /*  @keyframes Give_the_gift_of_awesome0 {
-    0% {
-      transform: translateX(0px);
+    .Give_the_gift_of_awesome0_mobile{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: -561.75px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(3.8deg);
     }
-    100% {
-      transform: translateX(468px);
+    
+
+    .Give_the_gift_of_awesome_mobile{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: -145.37px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(3.8deg);
     }
-  }
-  @keyframes Give_the_gift_of_awesome {
-    0% {
-      transform: translateX(0px);
+    
+    .Give_the_gift_of_awesome1_mobile{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 271.01px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(3.8deg);
     }
-    100% {
-      transform: translateX(468px);
+    
+    .Give_the_gift_of_awesome2_mobile{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 687.39px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(3.8deg);
     }
-  }
-  @keyframes Give_the_gift_of_awesome1 {
-    0% {
-      transform: translateX(0px);
+    
+    .Give_the_gift_of_awesome3_mobile{
+      position: absolute;
+    width: 528px;
+    height: 41px;
+    left: 1103.77px;
+    top: 19.91px;
+    font-family: 'Subjectivity';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    color: #101010;
+    transform: rotate(3.8deg);
     }
-    100% {
-      transform: translateX(468px);
+    
+    .Give_the_gift_of_awesome4_mobile {
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 1520.15px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(3.8deg);
     }
-  }
-  @keyframes Give_the_gift_of_awesome2 {
-    0% {
-      transform: translateX(0px);
+    
+    
+    .Give_the_gift_of_awesome_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      
     }
-    100% {
-      transform: translateX(468px);
+    .Give_the_gift_of_awesome0_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
     }
-  }
-  @keyframes Give_the_gift_of_awesome3 {
-    0% {
-      transform: translateX(0px);
+    @keyframes Give_the_gift_of_awesome0_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
     }
-    100% {
-      transform: translateX(468px);
+
+    @keyframes Give_the_gift_of_awesome_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
     }
-  }
-  @keyframes Give_the_gift_of_awesome4 {
-    0% {
-      transform: translateX(0px);
+    .Give_the_gift_of_awesome1_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
     }
-    100% {
-      transform: translateX(468px);
+    @keyframes Give_the_gift_of_awesome1_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
     }
-  } */
+    .Give_the_gift_of_awesome2_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes Give_the_gift_of_awesome2_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
+    }
+    .Give_the_gift_of_awesome3_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes Give_the_gift_of_awesome3_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
+    }
+
+    .Give_the_gift_of_awesome4_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome_mobile ;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    }
+    @keyframes Give_the_gift_of_awesome4_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(416.38px);
+      }
+    }
+
+    .We_make_wishes_come_true_mobile {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 2.79px;
+      top: 19.91px;      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;   
+      color: #101010;
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true1_mobile {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 419.17px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true2_mobile{
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 835.55px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true3_mobile {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 1251.93px;
+      top: 19.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true4_mobile {
+position: absolute;
+width: 578px;
+height: 41px;
+left: 1668.31px;
+top: 19.91px;
+font-family: 'Subjectivity';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 41px;
+display: flex;
+align-items: center;
+color: #101010;
+transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true_mobile;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      
+    }
+    @keyframes We_make_wishes_come_true_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-416.38px);
+      }
+    }
+    .We_make_wishes_come_true1_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true_mobile;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true1_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-416.38px);
+      }
+    }
+    .We_make_wishes_come_true2_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true_mobile;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true2_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-416.38px);
+      }
+    }
+    .We_make_wishes_come_true3_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true_mobile;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true3_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-416.38px);
+      }
+    }
+    
+    .We_make_wishes_come_true4_mobile {
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true_mobile;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true4_mobile {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-416.38px);
+      }
+    }
   .second-page-text-wrapper h3  {
     font-size: 25px;
     line-height: 35px;
@@ -1629,14 +1934,14 @@ overflow-x: hidden;
     
     
     .Give_the_gift_of_awesome {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
       
     }
     .Give_the_gift_of_awesome0 {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1659,7 +1964,7 @@ overflow-x: hidden;
       }
     }
     .Give_the_gift_of_awesome1 {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1674,7 +1979,7 @@ overflow-x: hidden;
       }
     }
     .Give_the_gift_of_awesome2 {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1689,7 +1994,7 @@ overflow-x: hidden;
       }
     }
     .Give_the_gift_of_awesome3 {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1705,7 +2010,7 @@ overflow-x: hidden;
     }
 
     .Give_the_gift_of_awesome4 {
-      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      animation: 2.5s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1821,7 +2126,7 @@ color: #101010;
 transform: rotate(-4deg);
     }
     .We_make_wishes_come_true {
-      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1836,7 +2141,7 @@ transform: rotate(-4deg);
       }
     }
     .We_make_wishes_come_true1 {
-      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1851,7 +2156,7 @@ transform: rotate(-4deg);
       }
     }
     .We_make_wishes_come_true2 {
-      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1866,7 +2171,7 @@ transform: rotate(-4deg);
       }
     }
     .We_make_wishes_come_true3 {
-      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;
@@ -1882,7 +2187,7 @@ transform: rotate(-4deg);
     }
     
     .We_make_wishes_come_true4 {
-      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      animation: 2.5s linear 0s 1 normal forwards running We_make_wishes_come_true;
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation-iteration-count: infinite;

@@ -102,7 +102,7 @@ $(".slider-content-wrapper").on("inview", function (event, isInView) {
     hedaderNavAnchors[2].classList.add("active");
   } else {
   }
-}); 
+});
 
 $(".main-third-page-content").on("inview", function (event, isInView) {
   if (isInView) {
@@ -246,44 +246,95 @@ popupCloseButtons.forEach((el) => {
   });
 });
 
-
 /*
-*SLIDER SVG ARROW RENDERING 
-**/
+ *SLIDER SVG ARROW RENDERING
+ **/
 const svgTracker = document.getElementById("tracker-svg");
 const sliderTriggers = document.getElementById("triggers");
 const arrowSize = sliderTriggers.offsetHeight / 5;
-const minArrowSize = sliderTriggers.offsetHeight / 109
-svgTracker.attributes.height.value = arrowSize +20;
+const minArrowSize = sliderTriggers.offsetHeight / 109;
+svgTracker.attributes.height.value = arrowSize + 20;
 svgTracker.attributes.viewBox.textContent = `0 0 20 ${arrowSize}`;
 
 function svgRender(num) {
-  if (num < minArrowSize) num = minArrowSize
-  if (num > arrowSize) num = arrowSize
- // svgTracker.attributes.height.value = num + 20;
- // svgTracker.attributes.viewBox.textContent = `0 0 20 ${num}`;
-  svgTracker.childNodes[1].attributes.height.value = num ;
+  if (num < minArrowSize) num = minArrowSize;
+  if (num > arrowSize) num = arrowSize;
+  // svgTracker.attributes.height.value = num + 20;
+  // svgTracker.attributes.viewBox.textContent = `0 0 20 ${num}`;
+  svgTracker.childNodes[1].attributes.height.value = num;
   svgTracker.childNodes[3].attributes.d.textContent = `M10 ${
     num + 10
   }L1.33974 ${num - 5}H18.6603L10 ${num + 10}Z`;
 }
 
-
-svgRender(minArrowSize)
+svgRender(minArrowSize);
 
 window.addEventListener("scroll", function (event) {
   if (window.pageYOffset === 0) {
     document.getElementById("header").classList.remove("unstick");
-    document.getElementById("header").style.paddingRight = "0px";
+    //  document.getElementById("header").style.paddingRight = "0px";
   } else {
-    document.getElementById("header").style.paddingRight = "15px";
+    //  document.getElementById("header").style.paddingRight = "15px";
+    // document.getElementById("header").style.maxWidth = "1838px";
+
     document.getElementById("header").classList.add("unstick");
   }
   if (
     sliderTriggers.getBoundingClientRect().top < 0 &&
     Math.abs(sliderTriggers.getBoundingClientRect().top) <
-    sliderTriggers.offsetHeight
+      sliderTriggers.offsetHeight
   ) {
-    svgRender(Math.abs(sliderTriggers.getBoundingClientRect().top) / 3.8)
+    svgRender(Math.abs(sliderTriggers.getBoundingClientRect().top) / 3.8);
   }
+});
+
+const lottie = bodymovin.loadAnimation({
+  container: document.getElementById("lottie1"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/1-Hero.json",
+});
+
+const lottie2 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie2"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/2-Why_we_exist.json",
+});
+const lottie3 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie3"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/3.json",
+});
+const lottie4 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie4"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/4.json",
+});
+const lottie5 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie5"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/5.json",
+});
+const lottie6 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie6"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/6.json",
+});
+const lottie7 = bodymovin.loadAnimation({
+  container: document.getElementById("lottie7"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "/lottie/7-Contact_Stars.json",
 });
