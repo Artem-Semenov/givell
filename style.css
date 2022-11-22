@@ -165,10 +165,10 @@ color: #101010;
 .li-background a.active > span{
   background: url(img/little-yellow-Subtract.svg) 0px -1px no-repeat
 }
-.li-background:hover a {
-  background-color: #F99090;
+ .li-background:hover >a {
+  background-color: #F99090 !important;
   box-shadow: none;
-}
+} 
 header > div > img {
  margin-top: 5px;
 }
@@ -1314,8 +1314,75 @@ footer {
     line-height: 25px !important;
     top: 20px !important;
   }
- 
- 
+/*   .Givell_Landing_Page_Desktop {
+  }
+   .Give_the_gift_of_awesome0 {
+    left: -561.75px !important;
+  }
+
+  .Give_the_gift_of_awesome {
+left: -105.37px !important;
+  }
+  .Give_the_gift_of_awesome1 {
+left: 472.12px !important;
+  }
+  .Give_the_gift_of_awesome2 {
+left: 1038.87px !important;
+  }
+  .Give_the_gift_of_awesome3 {
+left: 1605.62px;
+  }
+  .Give_the_gift_of_awesome4 {
+left: 2172.62px;
+  }  */
+ /*  @keyframes Give_the_gift_of_awesome0 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  }
+  @keyframes Give_the_gift_of_awesome {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  }
+  @keyframes Give_the_gift_of_awesome1 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  }
+  @keyframes Give_the_gift_of_awesome2 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  }
+  @keyframes Give_the_gift_of_awesome3 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  }
+  @keyframes Give_the_gift_of_awesome4 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(468px);
+    }
+  } */
   .second-page-text-wrapper h3  {
     font-size: 25px;
     line-height: 35px;
@@ -1461,7 +1528,7 @@ overflow-x: hidden;
       position: absolute;
       width: 528px;
       height: 41px;
-      left: -566.75px;
+      left: -561.75px;
       top: 39.91px;
       font-family: 'Subjectivity';
       font-style: normal;
