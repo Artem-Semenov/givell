@@ -2,35 +2,12 @@
 
 const trackers = document.querySelectorAll('[id^="tracker"]');
 const hedaderNavAnchors = document.querySelectorAll(".header-anchor");
-const locomotiveText = document.getElementById("locomotive-text");
-const bottomLocomotiveText = document.getElementById("bottom-locomotive-text");
 const headerFormAnchor = document.getElementById("header-form-anchor");
 const sliderNav = document.querySelector(".slider-nav");
 
 const sliderAnchors = document.querySelectorAll('[id^="anchor"]');
-let deltaLocomotiveTop = -550;
-let deltaLocomotiveBottom = -550;
 
 /** SMOOTH SCROLL */
-/*  class SmoothAnchorScroll {
-  init() {
-    const anchors = document.querySelectorAll('a[href^="#"]');
-    for (const anchor of anchors) {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      });
-    }
-  }
-} 
-
-const smoothAnchorScroll = new SmoothAnchorScroll();
-smoothAnchorScroll.init(); */
 
 /** QUCK SCROLL FOR SLIDER ANCHORS*/
 /* class SliderQuickScroll {
@@ -70,133 +47,7 @@ class SmoothAnchorScroll {
 const smoothAnchorScroll = new SmoothAnchorScroll();
 smoothAnchorScroll.init();
 /** LOCOMOTIVE */
-/* 
-if (!navigator.userAgent.includes("Chrome")) {
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    lerp: 0.07,
-    multiplier: 1.1,
-    reloadOnContextChange: true,
-    touchMultiplier: 2,
-    smoothMobile: 1,
-    smartphone: {
-      lerp: 0.2,
-      smooth: true,
-      breakpoint: 640,
-    },
-    tablet: {
-      smooth: true,
-      breakpoint: 1024,
-    },
-  });
-} else {
-  document.querySelector("header").style.transform = "none";
- 
 
-  locomotiveText.style.transition = "all ease 1.2s";
-  bottomLocomotiveText.style.transition = "all ease 1.2s";
-  document.addEventListener("wheel", function (event) {
-    deltaLocomotiveTop += event.deltaY;
-    deltaLocomotiveBottom -= event.deltaY;
-    locomotiveText.style.left = deltaLocomotiveTop + "px";
-    bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
-    if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
-    if (deltaLocomotiveTop < -1200) {
-      locomotiveText.insertAdjacentHTML(
-        "beforeend",
-        "<p>Give the gift of awesome</p>"
-      );
-    }
-    if (deltaLocomotiveBottom < -1300) deltaLocomotiveBottom = -550;
-    if (deltaLocomotiveBottom > 0) {
-      bottomLocomotiveText.insertAdjacentHTML(
-        "beforeend",
-        "<p>We make wishes come true</p>"
-      );
-    }
-  }); */
-
-  /**
-   * mobile locomotive in chrome
-   */
-
-  /* let x1 = null;
-  let y1 = null;
-
-  document.addEventListener("touchstart", function (e) {
-    const firstTouch = e.touches[0];
-    x1 = firstTouch.clientX;
-    y1 = firstTouch.clientY;
-  });
-
-  document.addEventListener("touchmove", function (event) {
-    // console.log(event.touches[0].clientY);
-    let x2 = event.touches[0].clientX;
-    let y2 = event.touches[0].clientY;
-    let xDiff = x2 - x1;
-    let yDiff = y2 - y1;
-    locomotiveText.style.transition = "all ease 0s";
-    bottomLocomotiveText.style.transition = "all ease 0s";
-
-    if (Math.abs(yDiff) > Math.abs(xDiff)) {
-      if (yDiff <
-         0) {
-        console.log('>0');
-        deltaLocomotiveTop -= 2;
-        deltaLocomotiveBottom += 2;
-      } else {
-        console.log('<0');
-        deltaLocomotiveTop += 2;
-        deltaLocomotiveBottom -= 2;
-      }
-
-      locomotiveText.style.left = deltaLocomotiveTop + "px";
-      bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
-      if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
-      if (deltaLocomotiveTop < -1200) {
-        locomotiveText.insertAdjacentHTML(
-          "beforeend",
-          "<p>Give the gift of awesome</p>"
-        );
-      }
-      if (deltaLocomotiveBottom < -700) deltaLocomotiveBottom = -700;
-      if (deltaLocomotiveBottom > 100) {
-        bottomLocomotiveText.insertAdjacentHTML(
-          "beforeend",
-          "<p>We make wishes come true</p>"
-        );
-      }
-      x1 = null;
-      y1 = null;
-    } else {
-      return;
-    }
-  });
-  ////
-} */
-
-/*   document.addEventListener("wheel", function (event) {
-  deltaLocomotiveTop += event.deltaY;
-  deltaLocomotiveBottom -= event.deltaY;
-  locomotiveText.style.left = deltaLocomotiveTop + "px";
-  bottomLocomotiveText.style.left = deltaLocomotiveBottom + "px";
-  if (deltaLocomotiveTop > 0) deltaLocomotiveTop = 0;
-  if (deltaLocomotiveTop < -1200) {
-    locomotiveText.insertAdjacentHTML(
-      "beforeend",
-      "<p>Give the gift of awesome</p>"
-    );
-  }
-  if (deltaLocomotiveBottom > 0) deltaLocomotiveBottom = -1300;
-  if (deltaLocomotiveBottom < -1300) {
-    bottomLocomotiveText.insertAdjacentHTML(
-      "afterbegin",
-      "<p>We make wishes come true</p>"
-    );
-  }
-});  
- */
 //////App Scroller/////
 $(".first-trigger").on("inview", function (event, isInView) {
   if (isInView) {
@@ -204,10 +55,6 @@ $(".first-trigger").on("inview", function (event, isInView) {
     $(".first-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[0].classList.add("active");
-    test = sizePoint;
-    svgRender(sizePoint);
-    /*     trackers.forEach((el) => el.classList.remove("active"));
-    trackers[0].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
     sliderNav.classList.remove("show");
@@ -220,10 +67,6 @@ $(".second-trigger").on("inview", function (event, isInView) {
     $(".second-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[1].classList.add("active");
-    test = 8 * sizePoint - 50;
-    svgRender(test);
-    /*     trackers.forEach((el) => el.classList.remove("active"));
-    trackers[1].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
   }
@@ -235,10 +78,6 @@ $(".third-trigger").on("inview", function (event, isInView) {
     $(".third-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[2].classList.add("active");
-    test = 16 * sizePoint - 110;
-    svgRender(test);
-    /*     trackers.forEach((el) => el.classList.remove("active"));
-    trackers[2].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
   }
@@ -249,10 +88,6 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
     $(".fourth-slide").fadeIn(300);
     sliderAnchors.forEach((el) => el.classList.remove("active"));
     sliderAnchors[3].classList.add("active");
-    test = 24 * sizePoint - 180;
-    svgRender(test);
-    /*     trackers.forEach((el) => el.classList.remove("active"));
-    trackers[3].classList.add("active"); */
     sliderNav.classList.add("show");
   } else {
   }
@@ -278,6 +113,14 @@ $(".second-page-text-wrapper").on("inview", function (event, isInView) {
   }
 });
 
+$(".slider-content-wrapper").on("inview", function (event, isInView) {
+  if (isInView) {
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[2].classList.add("active");
+  } else {
+  }
+}); 
 /* $(".slider-element").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
@@ -460,59 +303,39 @@ console.log(
     "M10 33L1.33974 18H18.6603L10 33Z")
 ); */
 
-const sizePoint = document.body.clientHeight / 23;
+const sliderTriggers = document.getElementById("triggers");
+const arrowSize = sliderTriggers.offsetHeight / 5;
+const minArrowSize = sliderTriggers.offsetHeight / 109
+svgTracker.attributes.height.value = arrowSize +20;
+svgTracker.attributes.viewBox.textContent = `0 0 20 ${arrowSize}`;
 
 function svgRender(num) {
-  svgTracker.attributes.height.value = document.body.clientHeight / 1.05;
-  svgTracker.attributes.viewBox.textContent = `0 0 20 ${svgTracker.attributes.height.value}`;
-  svgTracker.childNodes[1].attributes.height.value = num - 8;
+  if (num < minArrowSize) num = minArrowSize
+  if (num > arrowSize) num = arrowSize
+ // svgTracker.attributes.height.value = num + 20;
+ // svgTracker.attributes.viewBox.textContent = `0 0 20 ${num}`;
+  svgTracker.childNodes[1].attributes.height.value = num ;
   svgTracker.childNodes[3].attributes.d.textContent = `M10 ${
     num + 10
   }L1.33974 ${num - 5}H18.6603L10 ${num + 10}Z`;
 }
 
-svgRender(sizePoint);
 
-let test = sizePoint + 10;
-function scrollFn(e) {
-  if (e.deltaY > 0) {
-    test += sizePoint - 10;
-  } else if (e.deltaY < 0) {
-    test -= sizePoint - 10;
-  }
-  if (test < sizePoint + 10) test = sizePoint + 10;
-  if (test > document.body.clientHeight / 1.26)
-    test = document.body.clientHeight / 1.26;
-  // svgTracker.attributes.height.value = test;
-  // svgTracker.attributes.viewBox.textContent = `0 0 20 ${test+20}`;
-  svgTracker.childNodes[1].attributes.height.value = test - 10;
-  svgTracker.childNodes[3].attributes.d.textContent = `M10 ${test}L1.33974 ${
-    test - 13
-  }H18.6603L10 ${test}Z`;
-}
+svgRender(minArrowSize)
 
-$(".slider-content-wrapper").on("inview", function (event, isInView) {
-  if (isInView) {
-    document.addEventListener("wheel", scrollFn);
-    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
-    headerFormAnchor.classList.remove("active");
-    hedaderNavAnchors[2].classList.add("active");
+window.addEventListener("scroll", function (event) {
+  if (window.pageYOffset === 0) {
+    document.getElementById("header").classList.remove("unstick");
+    document.getElementById("header").style.paddingRight = "0px";
   } else {
-    document.removeEventListener("wheel", scrollFn);
+    document.getElementById("header").style.paddingRight = "15px";
+    document.getElementById("header").classList.add("unstick");
+  }
+  if (
+    sliderTriggers.getBoundingClientRect().top < 0 &&
+    Math.abs(sliderTriggers.getBoundingClientRect().top) <
+    sliderTriggers.offsetHeight
+  ) {
+    svgRender(Math.abs(sliderTriggers.getBoundingClientRect().top) / 3.8)
   }
 });
-
-/* setInterval(() => {
-  console.log(document.querySelector(".slider").offsetTop);
-  console.log(window.body.scr);
-}, 1000
-  */
-
-window.addEventListener('scroll', function(event) {
-  if (window.pageYOffset === 0 ) {
-    document.getElementById("header").classList.remove("unstick")
-  } else {
-    document.getElementById("header").classList.add("unstick")
-  }
-})
-

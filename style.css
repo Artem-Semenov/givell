@@ -111,7 +111,6 @@ header{
   padding-left: 34px;
   display: flex;
   justify-content: space-between;
-padding-right: 15px;
 align-items: center;
 height: 70px;  
 border-radius: 5px;
@@ -278,38 +277,6 @@ position: relative;
   margin-left: -60px;
 }
 
-
-.locomotive {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: -2px;
-  width: 110vw;
-  margin: 0 -20px;
-  z-index: 1;
-  height: 121px;
-background: #C1F4F8;
-border: 3px solid #101010;
-box-shadow: 3px 3px 0px #101010;
-transform: rotate(3.8deg);
-}
-.locomotive-text {
-  display: flex;
-  position: absolute;
-  left: -100px;
-   /* transition: 1.2s ease-in-out;  */
-}
-
-.locomotive-text p {
-width: 600px;
-  font-family: 'Subjectivity';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 41px;
-  color: #101010;
-}
 
 .main-second-page {
   margin-top: -90px;
@@ -718,42 +685,6 @@ color: #101010;
 .main-third-page > div.main-third-page-content> div:last-child {
 background: #FFDCDC;
 }
-.locomotive-bottom {
-  position: relative;
-  z-index: 1;
-  display: flex;
-flex-direction: row;
-align-items: flex-start;
-gap: 40px;
-padding: 40px 0;
-margin: 0 -20px;
-width: 110vw;
-  height: 121px;
-  overflow: hidden;
-background: #F3EC33;
-border: 3px solid #101010;
-box-shadow: 3px 3px 0px #101010;
-transform: rotate(-4deg);
-
-
-}
-.locomotive-bottom-text {
-  display: flex;
-  position: absolute;
-  left: 0px;
-  /* transition: ease-out 1.2s; */
-}
-
-.locomotive-bottom-text p {
-  width: 600px;
-  margin-right: 40px;
-  font-family: 'Subjectivity';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 41px;
-  color: #101010;
-}
 
 
 
@@ -776,10 +707,10 @@ transform: rotate(-4deg);
   position: relative;
   z-index: 1;
   margin-top: 0px;
-  padding: 180px 45px 0px 50px;
+  padding: 110px 45px 0px 50px;
   height: 885px;
 width: 100%;
- min-width: 705px;
+ /* min-width: 705px; */
  max-width: 1800px;
 display: flex;
 justify-content: left;
@@ -787,7 +718,8 @@ margin-left: auto;
 margin-right: auto;
 }
 .form-content {
-  max-width: 705px;
+  max-width: 655px;
+  width: 46vw;
   padding-right: 50px;
 }
 .form-wrapper > div > h2 {
@@ -1140,10 +1072,7 @@ color: #101010;
     max-width: 550px;
   }
 
-  .locomotive, .locomotive-bottom {
-    width: 110vw;
-    margin-left: -28px;
-  }
+ 
   body {
     font-family: 'Subjectivity';
 font-style: normal;
@@ -1366,6 +1295,11 @@ height: 460px;
 .form-section > div {
   max-width: 550px;
 }
+.form-content {
+  width: 100%;
+  padding-right: 0;
+}
+
 .names-inp {
   flex-wrap: wrap;
 }
@@ -1425,24 +1359,17 @@ footer {
     font-size: 30px;
     line-height: 45px;
   }
-  .locomotive, .locomotive-bottom {
-    height: 86px;
-    width: 104vw;
-    margin-left: -8px;
+  .Givell_Landing_loco-bottom, .Givell_Landing_Page_Desktop {
+    height: 86px !important;
   }
-  .locomotive-bottom {
  
-    padding: 0;
-    display: flex;
-    align-items: center;
+  [class*="Give_the_gift_of_awesome"], [class*="We_make_wishes_come_true"] {
+    font-size: 25px !important;
+    line-height: 25px !important;
+    top: 20px !important;
   }
-  .locomotive-text, .locomotive-bottom-text {
-    left: -550px;
-  }
-  .locomotive-text p, .locomotive-bottom-text p {
-    font-size: 25px;
-    width: 400px;
-  }
+ 
+ 
   .second-page-text-wrapper h3  {
     font-size: 25px;
     line-height: 35px;
@@ -1497,6 +1424,7 @@ background-position-y: 14px;
   padding-top: 60px;
  }
 
+
 }
 @media(max-width: 498px) {
   .main-text-wrapper {
@@ -1532,7 +1460,7 @@ height: 530px;
     gap: 0;
   }
 }
-@media(max-width:1210px) {
+/* @media(max-width:1210px) {
   .form-content {
     max-width: 550px !important;
   }
@@ -1546,7 +1474,7 @@ height: 530px;
   .form-content {
     max-width: 650px;
   }
-}
+} */
  @media(min-width: 1450px) {
 .main-third-page {
   padding: 300px 0px 0px 0px;
@@ -1749,6 +1677,7 @@ font-size: 36px;
   height: 310px;
   display: flex;
   align-items: center;
+ overflow: hidden;
 width: 100vw;
 overflow-x: hidden;
 }
@@ -1867,4 +1796,429 @@ html.has-scroll-dragging {
     width: 100vw;
   }  */
 
-  
+  .Givell_Landing_Page_Desktop {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    box-sizing: border-box;
+    width: 110vw;
+    margin: 0 -20px;
+    height: 121px;
+    background: #C1F4F8;
+    border: 3px solid #101010;
+    box-shadow: 3px 3px 0px #101010;
+    transform: rotate(3.8deg);
+    }
+
+    .Give_the_gift_of_awesome0{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: -566.75px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(3.8deg);
+    }
+    
+
+    .Give_the_gift_of_awesome{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 5.37px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(3.8deg);
+    }
+    
+    .Give_the_gift_of_awesome1{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 572.12px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(3.8deg);
+    }
+    
+    .Give_the_gift_of_awesome2{
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 1138.87px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(3.8deg);
+    }
+    
+    .Give_the_gift_of_awesome3{
+      position: absolute;
+    width: 528px;
+    height: 41px;
+    left: 1705.62px;
+    top: 39.91px;
+    
+    font-family: 'Subjectivity';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    
+    color: #101010;
+    
+    transform: rotate(3.8deg);
+    }
+    
+    .Give_the_gift_of_awesome4 {
+      position: absolute;
+      width: 528px;
+      height: 41px;
+      left: 2272.62px;
+      top: 39.91px;
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: #101010;
+
+      transform: rotate(3.8deg);
+    }
+    
+    
+    .Give_the_gift_of_awesome {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      
+    }
+    .Give_the_gift_of_awesome0 {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      
+    }
+    @keyframes Give_the_gift_of_awesome0 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+
+    @keyframes Give_the_gift_of_awesome {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+    .Give_the_gift_of_awesome1 {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes Give_the_gift_of_awesome1 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+    .Give_the_gift_of_awesome2 {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes Give_the_gift_of_awesome2 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+    .Give_the_gift_of_awesome3 {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes Give_the_gift_of_awesome3 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+
+    .Give_the_gift_of_awesome4 {
+      animation: 2s linear 0s 1 normal forwards running Give_the_gift_of_awesome;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    }
+    @keyframes Give_the_gift_of_awesome4 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(568px);
+      }
+    }
+
+
+
+    .Givell_Landing_loco-bottom {
+      /* Frame 293 */
+position: relative;
+z-index: 2;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      width: 110vw;
+      margin: 0 -20px;
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 40px 0px;
+gap: 40px;
+height: 121px;
+background: #F3EC33;
+border: 3px solid #101010;
+box-shadow: 3px 3px 0px #101010;
+transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 2.79px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true1 {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 619.29px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(-4deg);
+    }
+    .We_make_wishes_come_true2 {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 1235.78px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(-4deg);
+      
+    
+    }
+    .We_make_wishes_come_true3 {
+      position: absolute;
+      width: 578px;
+      height: 41px;
+      left: 1852.27px;
+      top: 39.91px;
+      
+      font-family: 'Subjectivity';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      
+      color: #101010;
+      
+      transform: rotate(-4deg);
+    
+    }
+    .We_make_wishes_come_true4 {
+      
+position: absolute;
+width: 578px;
+height: 41px;
+left: 2468.76px;
+top: 39.91px;
+
+font-family: 'Subjectivity';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 41px;
+display: flex;
+align-items: center;
+
+color: #101010;
+
+transform: rotate(-4deg);
+    }
+
+    .We_make_wishes_come_true {
+      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      
+    }
+    @keyframes We_make_wishes_come_true {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-616.5px);
+      }
+    }
+    .We_make_wishes_come_true1 {
+      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true1 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-616.5px);
+      }
+    }
+    .We_make_wishes_come_true2 {
+      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true2 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-616.5px);
+      }
+    }
+    .We_make_wishes_come_true3 {
+      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true3 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-616.5px);
+      }
+    }
+    
+    .We_make_wishes_come_true4 {
+      animation: 2s linear 0s 1 normal forwards running We_make_wishes_come_true;
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+    
+    }
+    @keyframes We_make_wishes_come_true4 {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-616.5px);
+      }
+    }
