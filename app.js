@@ -293,7 +293,7 @@ const lottie = bodymovin.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/1-Hero.json",
+  path: "lottie/1-Hero.json",
 });
 
 const lottie2 = bodymovin.loadAnimation({
@@ -301,40 +301,40 @@ const lottie2 = bodymovin.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/2-Why_we_exist.json",
+  path: "lottie/2-Why_we_exist.json",
 });
 const lottie3 = bodymovin.loadAnimation({
   container: document.getElementById("lottie3"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/3.json",
+  path: "lottie/3.json",
 });
 const lottie4 = bodymovin.loadAnimation({
   container: document.getElementById("lottie4"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/4.json",
+  path: "lottie/4.json",
 });
 const lottie5 = bodymovin.loadAnimation({
   container: document.getElementById("lottie5"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/5.json",
+  path: "lottie/5.json",
 });
 const lottie6 = bodymovin.loadAnimation({
   container: document.getElementById("lottie6"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/6.json",
+  path: "lottie/6.json",
 });
 const lottie7 = bodymovin.loadAnimation({
   container: document.getElementById("lottie7"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "/lottie/7-Contact_Stars.json",
+  path: "lottie/7-Contact_Stars.json",
 });
