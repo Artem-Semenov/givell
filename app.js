@@ -206,6 +206,40 @@ form.addEventListener("submit", async function (event) {
     console.log("email not valid");
   } else {
     overlay.classList.add("show");
+    
+      const th = $(this);
+      $.ajax({
+        type: "POST",
+        url: "mail.php", //Change
+        data: th.serialize()
+      }).done(function() {
+        popup.classList.add("show");
+      document.addEventListener("click", function (event) {
+        if (event.target.id === "overAll") {
+          popup.classList.remove("show");
+          overlay.classList.remove("show");
+          return;
+        }
+      })
+      setTimeout(function() {
+        th.trigger("reset");
+      }, 1000);
+      }).fail(function() {
+        popupFail.classList.add("show");
+        document.addEventListener("click", function (event) {
+          if (event.target.id === "overAll") {
+            popupFail.classList.remove("show");
+            overlay.classList.remove("show");
+
+            return;
+          }
+        });
+      });
+      return false;
+  }
+  
+  /* {
+    overlay.classList.add("show");
     let response = await fetch("mail.php", {
       method: "POST",
       body: formData,
@@ -232,7 +266,7 @@ form.addEventListener("submit", async function (event) {
       });
       
     }
-  }
+  } */
 });
 
 popupCloseButtons.forEach((el) => {
@@ -407,9 +441,6 @@ window.onload = function() {
 
 
 
-/* $(document).ready(function() {
-
-	//E-mail Ajax Send
 	$("form").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
@@ -425,5 +456,3 @@ window.onload = function() {
 		});
 		return false;
 	});
-
-}); */
