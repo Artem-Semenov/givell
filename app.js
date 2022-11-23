@@ -112,7 +112,7 @@ $(".main-third-page-content").on("inview", function (event, isInView) {
   } else {
   }
 });
-$(".submit-button").on("inview", function (event, isInView) {
+$(".textarea").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
     headerFormAnchor.classList.add("active");
