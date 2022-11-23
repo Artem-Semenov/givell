@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
 	//E-mail Ajax Send
-	$("form").submit(function() { //Change
+	$("form").submit(function() {
+
+		 /////
+
 		var th = $(this);
 		$.ajax({
 			type: "POST",

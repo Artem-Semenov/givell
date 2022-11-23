@@ -19,7 +19,7 @@
         <a href="/"><img src="img/logo.svg" alt="" /></a>
       </div>
       <a class="display-none mobile-button all-ease" href="#form-section"
-        >Sign up for beta</a
+        ><span>Sign up for beta</span></a
       >
       <div class="mobile-display-none">
         <nav class="header-nav">
@@ -46,7 +46,7 @@
     <main>
       <div class="background-test" id="test-id"></div>
       <div class="main-display-rectangle-bg mobile-display-none"></div>
-      <section class="main-section animation-reveal">
+      <section class="main-section">
         <div class="main-text-wrapper">
           <h1>A brand-new solution that will</h1>
           <h2>
@@ -412,6 +412,9 @@
               today!
             </p>
             <form class="form" id="form" novalidate>
+              <input type="hidden" name="project_name" value="Site Name">
+              <input type="hidden" name="admin_email" value="admin@mail.com">
+              <input type="hidden" name="form_subject" value="Form Subject">
               <div class="names-inp">
                 <div>
                   <p>First name</p>

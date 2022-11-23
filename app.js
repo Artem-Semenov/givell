@@ -206,14 +206,13 @@ form.addEventListener("submit", async function (event) {
     console.log("email not valid");
   } else {
     overlay.classList.add("show");
-    let response = await fetch("sendmail.php", {
+    let response = await fetch("mail.php", {
       method: "POST",
       body: formData,
     });
     if (response.ok) {
       let result = await response.json();
-      form.reset();
-      form.classList.remove("_sending");
+      form.reset();;
       popup.classList.add("show");
       document.addEventListener("click", function (event) {
         if (event.target.id === "overAll") {
@@ -224,7 +223,6 @@ form.addEventListener("submit", async function (event) {
       });
     } else {
       popupFail.classList.add("show");
-      overlay.classList.add("show");
       document.addEventListener("click", function (event) {
         if (event.target.id === "overAll") {
           popupFail.classList.remove("show");
@@ -232,8 +230,7 @@ form.addEventListener("submit", async function (event) {
           return;
         }
       });
-
-      form.classList.remove("_sending");
+      
     }
   }
 });
@@ -409,17 +406,24 @@ window.onload = function() {
 }
 
 
-/* function reveal() {
-  const reveals = document.querySelectorAll(".reveal");
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 150;
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
-    }
-  }
-}
- */
+
+/* $(document).ready(function() {
+
+	//E-mail Ajax Send
+	$("form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			alert("Thank you!");
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
+
+}); */
