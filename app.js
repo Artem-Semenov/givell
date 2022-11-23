@@ -77,16 +77,16 @@ $(".fourth-trigger").on("inview", function (event, isInView) {
 
 /** HEADER NAV - ACTIVE ANCHORS */
 
-$(".main-section").on("inview", function (event, isInView) {
+/* $(".main-section").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
     headerFormAnchor.classList.remove("active");
     hedaderNavAnchors[0].classList.add("active");
   } else {
   }
-});
+}); */
 
-$(".second-page-text-wrapper").on("inview", function (event, isInView) {
+$(".second-page-anchor").on("inview", function (event, isInView) {
   if (isInView) {
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
     headerFormAnchor.classList.remove("active");
@@ -137,7 +137,7 @@ const lastNamePlaceholder = lastName.placeholder;
 const submitButton = document.getElementById("submitButton");
 
 form.addEventListener("input", function (event) {
-  if (firstName.value || lastName.value) {
+  if (firstName.value && lastName.value && email.value) {
     submitButton.disabled = false;
   } else {
     submitButton.disabled = true;
@@ -270,8 +270,12 @@ function svgRender(num) {
 svgRender(minArrowSize);
 
 window.addEventListener("scroll", function (event) {
+  // reveal()
   if (window.pageYOffset === 0) {
     document.getElementById("header").classList.remove("unstick");
+    hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
+    headerFormAnchor.classList.remove("active");
+    hedaderNavAnchors[0].classList.add("active");
     //  document.getElementById("header").style.paddingRight = "0px";
   } else {
     //  document.getElementById("header").style.paddingRight = "15px";
@@ -306,8 +310,8 @@ const lottie1_mobile = bodymovin.loadAnimation({
 const lottie2 = bodymovin.loadAnimation({
   container: document.getElementById("lottie2"),
   renderer: "svg",
-  loop: true,
-  autoplay: true,
+  loop: false,
+  autoplay: false,
   path: "lottie/2-Why_we_exist.json",
 });
 const lottie3 = bodymovin.loadAnimation({
@@ -315,56 +319,56 @@ const lottie3 = bodymovin.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/3.json",
+  path: "lottie/01.json",
 });
 const lottie3_mobile = bodymovin.loadAnimation({
   container: document.getElementById("lottie3-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/3.json",
+  path: "lottie/01.json",
 });
 const lottie4 = bodymovin.loadAnimation({
   container: document.getElementById("lottie4"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/4.json",
+  path: "lottie/04.json",
 });
 const lottie4_mobile = bodymovin.loadAnimation({
   container: document.getElementById("lottie4-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/4.json",
+  path: "lottie/04.json",
 });
 const lottie5 = bodymovin.loadAnimation({
   container: document.getElementById("lottie5"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/5.json",
+  path: "lottie/03.json",
 });
 const lottie5_mobile = bodymovin.loadAnimation({
   container: document.getElementById("lottie5-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/5.json",
+  path: "lottie/03.json",
 });
 const lottie6 = bodymovin.loadAnimation({
   container: document.getElementById("lottie6"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/6.json",
+  path: "lottie/02.json",
 });
 const lottie6_mobile = bodymovin.loadAnimation({
   container: document.getElementById("lottie6-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie/6.json",
+  path: "lottie/02.json",
 });
 const lottie7 = bodymovin.loadAnimation({
   container: document.getElementById("form-section"),
@@ -373,3 +377,49 @@ const lottie7 = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/7-Contact_Stars.json",
 });
+
+
+
+
+
+
+
+
+
+
+// "listen" & check when header is out of viewport 
+// (i set 50% = visible => threshold: 0.5 (to set))
+const lottieViewport = function() {
+  let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+  }
+
+  let observer = new IntersectionObserver(function(entries, observer) {
+      entries[0].isIntersecting === true ? lottie2.play() : lottie2.goToAndStop(0, 0);
+  }, options);
+
+  observer.observe(document.querySelector('#lottie2'));
+}
+
+// on window load
+window.onload = function() {
+  lottieViewport();
+}
+
+
+/* function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+ */

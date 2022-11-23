@@ -162,10 +162,9 @@ color: #101010;
 }
 .li-background > a > span {
   padding: 0 25px;
-}
-.li-background a.active > span{
   background: url(img/little-yellow-Subtract.svg) 0px -1px no-repeat
 }
+
  .li-background:hover >a {
   background-color: #F99090 !important;
   box-shadow: none;
@@ -247,7 +246,7 @@ margin-bottom: 32px;
   z-index: 2;
 width: 209px;
 height: 48px;
-background: url(./img/little-yellow-Subtract.svg) 18px 12px no-repeat,#F99090;
+background: #F99090;
 border: 2px solid #101010;
 box-shadow: 2px 2px 0px #101010;
 border-radius: 5px;
@@ -260,6 +259,10 @@ font-weight: 700;
 font-size: 16px;
 line-height: 16px;
 color: #101010;
+}
+.main-text-wrapper a>span {
+  padding-left: 20px;
+background: url(./img/little-yellow-Subtract.svg) 0px -2px no-repeat;
 }
 .main-text-wrapper a:hover {
   background-color: #CDBFF5;
@@ -362,7 +365,6 @@ padding-top: 150px;
   margin-bottom: 32px;
 }
 .second-page-text-wrapper a {
-  padding-left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,7 +380,11 @@ font-weight: 700;
 font-size: 16px;
 line-height: 16px;
 color: #101010;
-background: url(img/little-yellow-Subtract.svg) 25px 13px no-repeat, #CDBFF5;
+background: #CDBFF5;
+}
+.second-page-text-wrapper a > span {
+padding-left: 20px;
+background: url(img/little-yellow-Subtract.svg) 0px -2px no-repeat;
 }
 .second-page-text-wrapper a:hover {
   background-color: #F99090;
@@ -553,8 +559,8 @@ border-radius: 5px;
 display: block;
 width: 32vw !important;
 height: 33vw !important;
-max-width: 461px;
-max-height: 476px;
+max-width: 724px;
+max-height: 693px;
 }
 
 .slider-element-left-wrap h2 {
@@ -1053,6 +1059,9 @@ background-color: white;
 
 
 @media (max-width: 1024px) {
+  .logo-wrapper {
+    margin-left: 10px;
+  }
   .form-section svg {
     display: none;
   }
@@ -1100,9 +1109,7 @@ box-shadow: 2px 2px 0px #101010;
 border-radius: 5px;
 color: #101010;
   }
-  header {
-    padding-left: 40px;
-  }
+
   .mobile-button:hover {
     background-color: #F99090;
     box-shadow: none;
@@ -1130,18 +1137,23 @@ margin-bottom: 32px;
 margin-left: auto;
 margin-right: auto;
 width: 100%;
-max-width: 350px;
 background-position-x: 85px;
 background-position-y: 13px;
 }
-
+.mobile-main-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: right;
+  padding-left: 20px;
+  margin-top: -100px;
+  margin-bottom: -100px;
+}
 .mobile-main-img svg {
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: -30px;
+ 
   display: block;
-  margin-bottom: 50px;
- width: 543px !important;
- height: 425px !important;
+ width: 843px !important;
+ height: 725px !important;
 }
 .main-section {
   margin-bottom: 20px;
@@ -1180,11 +1192,9 @@ background-position-y: 13px;
   top: 0;
 }
 .second-page-text-wrapper a {
-  width: 343px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-position-x: 90px;
-  background-position-y: 13px;
 }
 .mobile-slider-section {
   display: flex;
@@ -1344,9 +1354,13 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .mobile-main-img {
+    margin-top: -30px;
+    margin-bottom: 0;
+  }
   .mobile-main-img svg {
-   width: 343px !important;
-   height: 225px !important;
+   width: 493px !important;
+   height: 375px !important;
   }
   #locomotive-wrapper-mobile {
     display: flex;
@@ -1355,7 +1369,7 @@ footer {
 display: none;
     }
   header {
-    width: calc(100% - 30px)
+    width: calc(100% - 50px)
   }
   .mobile-button {
     margin-right: 0;
@@ -1748,7 +1762,6 @@ transform: rotate(-4deg);
     padding-bottom: 18px;
   }
   .second-img-wrapper {
-    margin-left: -25px;
     padding-top: 0px;
   }
   .mobile-slider-element svg {
@@ -1830,6 +1843,21 @@ height: 530px;
 
 } 
 @media (min-width: 1830px) {
+  .second-page-text-wrapper {
+padding-top: 300px;
+  }
+  .second-img-wrapper {
+    padding-top: 300px;
+  }
+  .main-second-page {
+    padding-bottom: 333px;
+  }
+  .main-third-page {
+    padding-top: 400px;
+  }
+  .main-third-page-content {
+    margin-bottom: 350px;
+  }
   .form-wrapper {
     padding-left: 0;
   }
@@ -2246,5 +2274,29 @@ transform: rotate(-4deg);
       }
       100% {
         transform: translateX(-616.5px);
+      }
+    }
+
+  /*   .reveal{
+      position: relative;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: 1s all ease;
+    }
+    .reveal.active{
+      transform: translateY(0);
+      opacity: 1;
+    } */
+
+.animation-reveal {
+  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+}
+
+    @keyframes reveal {
+      0% {
+        transform: translate(0,100%);
+      }
+      100% {
+        transform: translate(0,0);
       }
     }
