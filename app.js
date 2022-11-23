@@ -295,6 +295,13 @@ const lottie = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/1-Hero.json",
 });
+const lottie1_mobile = bodymovin.loadAnimation({
+  container: document.getElementById("lottie1-mobile"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "lottie/1-Hero.json",
+});
 
 const lottie2 = bodymovin.loadAnimation({
   container: document.getElementById("lottie2"),
@@ -310,8 +317,22 @@ const lottie3 = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/3.json",
 });
+const lottie3_mobile = bodymovin.loadAnimation({
+  container: document.getElementById("lottie3-mobile"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "lottie/3.json",
+});
 const lottie4 = bodymovin.loadAnimation({
   container: document.getElementById("lottie4"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "lottie/4.json",
+});
+const lottie4_mobile = bodymovin.loadAnimation({
+  container: document.getElementById("lottie4-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
@@ -324,6 +345,13 @@ const lottie5 = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/5.json",
 });
+const lottie5_mobile = bodymovin.loadAnimation({
+  container: document.getElementById("lottie5-mobile"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "lottie/5.json",
+});
 const lottie6 = bodymovin.loadAnimation({
   container: document.getElementById("lottie6"),
   renderer: "svg",
@@ -331,8 +359,15 @@ const lottie6 = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/6.json",
 });
+const lottie6_mobile = bodymovin.loadAnimation({
+  container: document.getElementById("lottie6-mobile"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "lottie/6.json",
+});
 const lottie7 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie7"),
+  container: document.getElementById("form-section"),
   renderer: "svg",
   loop: true,
   autoplay: true,
