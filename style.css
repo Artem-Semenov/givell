@@ -680,7 +680,7 @@ background: #FFDCDC;
   overflow: hidden;
   z-index: 1;
   position: relative;
-  /* background: url(img/footer-bg.svg) left, #fff; */
+   /* background: url(img/footer-bg.svg) left, #fff;  */
   margin-top: -157px;
   padding-top: 61px;
   display: flex;
@@ -1036,7 +1036,9 @@ display: none;
 }
 .form-section svg{
   position: absolute;
-  right: -400px;
+  width: 2000px !important;
+  height: 2000px !important;
+  right: -370px;
   top: -400px;
   z-index: -1;
 transform: rotate(45deg) !important;
