@@ -1807,7 +1807,7 @@ top: 0px;
 border-radius: 0;
 filter: none; 
 background: none;
-background: url(/img/test-bg1.png) -50px -150px; 
+background: url(img/test-bg1.png) -50px -150px; 
   }
   .locomotive-wrapper {
     margin-top: -80px;
