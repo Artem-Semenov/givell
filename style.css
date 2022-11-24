@@ -294,6 +294,9 @@ position: relative;
   margin-right: auto;
 
 }
+.second-main-svg {
+  position: relative;
+}
 .second-img-wrapper {
   padding: 155px 0px 0px 40px;
   position: relative;
@@ -310,21 +313,22 @@ position: relative;
   display: block;
 }
 .second-page-bg-rectangle {
-  position: absolute;
-  z-index: 0;
+   position: absolute; 
+   z-index: 0; 
   width: 494px;
 height: 493px;
 border-radius: 500px;
 left: 0px;
 top: 141px;
-background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50, 237, 0.4) 93.85%);
-filter: blur(147px); 
+/* background: url(/img/test-bg1.png); */
+background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50, 237, 0.4) 93.85%); 
+ filter: blur(147px);  
 }
 .md-white-subst {
 display: block;
   position: absolute;
-  top: 10px;
-  left: 0;
+  top: -140px;
+  left: -30px;
 }
 
 .md-yellow-subst {
@@ -1178,6 +1182,11 @@ background-position-y: 13px;
   padding-top: 0px;
   padding-left: 0;
 }
+.second-main-svg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 418px !important;
+}
 .second-img-wrapper svg {
   margin-left: auto;
   margin-right: auto;
@@ -1193,7 +1202,8 @@ background-position-y: 13px;
   padding-top: 60px;
 }
 .second-page-bg-rectangle {
-  left: calc(50% - 248px);
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
 }
 .second-page-text-wrapper a {
@@ -1767,29 +1777,37 @@ transform: rotate(-4deg);
     line-height: 35px;
   }
   .main-second-page {
-    padding-bottom: 18px;
+    padding-bottom: 0px;
   }
   .second-img-wrapper {
     padding-top: 0px;
+    width: 100%;
+    height: 100%;
+    /* background: url(/img/test-bg1.png); */
   }
-  .mobile-slider-element svg {
+  .second-main-svg {
+    width: 337px !important;
+  }
+ .mobile-slider-element svg {
     margin-left: auto;
     margin-right: auto;
     width: 337px !important;
     height: 360px !important;
     }
-  .second-img-wrapper svg {
+ .second-img-wrapper svg {
     width: 318px !important;
     height: 396px !important;
   }
   .second-page-bg-rectangle {
-    width: 371.11px;
-height: 370.56px;
-left: calc(50% - 185px);
+/* width: 371.11px; */
+/* height: 370.56px; */
+width: 110%;
+height: 100%;;
 top: 0px;
-
-background: linear-gradient(136deg, rgba(249, 144, 144, 0.4) 14.9%, rgba(144, 50, 237, 0.4) 93.85%);
-filter: blur(80.6736px);
+border-radius: 0;
+filter: none; 
+background: none;
+background: url(/img/test-bg1.png) -50px -150px; 
   }
   .locomotive-wrapper {
     margin-top: -80px;
