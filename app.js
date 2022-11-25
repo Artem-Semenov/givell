@@ -332,19 +332,20 @@ const lottie = bodymovin.loadAnimation({
   autoplay: true,
   path: "lottie/1-Hero.json",
 });
-const lottie1_mobile = bodymovin.loadAnimation({
+
+ const lottie1_mobile = bodymovin.loadAnimation({
   container: document.getElementById("lottie1-mobile"),
   renderer: "svg",
   loop: true,
   autoplay: true,
   path: "lottie/1-Hero.json",
-});
+}); 
 
 const lottie2 = bodymovin.loadAnimation({
   container: document.getElementById("lottie2"),
   renderer: "svg",
   loop: false,
-  autoplay: false,
+  autoplay: true,
   path: "lottie/2-Why_we_exist.json",
 });
 
@@ -366,7 +367,7 @@ window.addEventListener("load", (event) => {
     autoplay: true,
     path: "lottie/01.json",
   });
-  lottie3_mobile = bodymovin.loadAnimation({
+   lottie3_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie3-mobile"),
     renderer: "svg",
     loop: true,
@@ -386,7 +387,7 @@ window.addEventListener("load", (event) => {
     loop: true,
     autoplay: true,
     path: "lottie/04.json",
-  });
+  }); 
   lottie5 = bodymovin.loadAnimation({
     container: document.getElementById("lottie5"),
     renderer: "svg",
@@ -394,13 +395,13 @@ window.addEventListener("load", (event) => {
     autoplay: true,
     path: "lottie/03.json",
   });
-  lottie5_mobile = bodymovin.loadAnimation({
+   lottie5_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie5-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/03.json",
-  });
+  }); 
   lottie6 = bodymovin.loadAnimation({
     container: document.getElementById("lottie6"),
     renderer: "svg",
@@ -414,7 +415,7 @@ window.addEventListener("load", (event) => {
     loop: true,
     autoplay: true,
     path: "lottie/02.json",
-  });
+  }); 
   lottie7 = bodymovin.loadAnimation({
     container: document.getElementById("form-section"),
     renderer: "svg",
@@ -424,9 +425,9 @@ window.addEventListener("load", (event) => {
   });
 });
 
-// "listen" & check when header is out of viewport
-// (i set 50% = visible => threshold: 0.5 (to set))
-const lottieViewport = function () {
+
+
+ const lottieViewport = function () {
   let options = {
     root: null,
     rootMargin: "0px",
@@ -440,9 +441,10 @@ const lottieViewport = function () {
   }, options);
 
   observer.observe(document.querySelector("#lottie2"));
-};
+}; 
 
 // on window load
-window.onload = function () {
+ window.onload = function () {
   lottieViewport();
 };
+ 
