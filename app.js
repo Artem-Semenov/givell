@@ -302,18 +302,17 @@ function svgRender(num) {
 
 svgRender(minArrowSize);
 
+
+/* show/hide header border + svg render for slider on scroll **/
+
+
 window.addEventListener("scroll", function (event) {
-  // reveal()
   if (window.pageYOffset === 0) {
     document.getElementById("header").classList.remove("unstick");
     hedaderNavAnchors.forEach((el) => el.classList.remove("active"));
     headerFormAnchor.classList.remove("active");
     hedaderNavAnchors[0].classList.add("active");
-    //  document.getElementById("header").style.paddingRight = "0px";
   } else {
-    //  document.getElementById("header").style.paddingRight = "15px";
-    // document.getElementById("header").style.maxWidth = "1838px";
-
     document.getElementById("header").classList.add("unstick");
   }
   if (
@@ -325,6 +324,10 @@ window.addEventListener("scroll", function (event) {
   }
 });
 
+
+/* 
+* Lottie files
+**/
 let lottie
 let lottie2
 let lottie3
@@ -346,7 +349,7 @@ if(window.matchMedia('(max-width: 1024px').matches) {
     autoplay: true,
     path: "lottie/1-Hero.json",
   }); 
-  
+
   lottie2 = bodymovin.loadAnimation({
     container: document.getElementById("lottie2"),
     renderer: "svg",
@@ -450,11 +453,6 @@ if(window.matchMedia('(max-width: 1024px').matches) {
   
   
 }
-
-
-
-
-
 
 /*
 *Second lottie plays only 1 time when in view
