@@ -345,7 +345,7 @@ const lottie2 = bodymovin.loadAnimation({
   container: document.getElementById("lottie2"),
   renderer: "svg",
   loop: false,
-  autoplay: true,
+  autoplay: false,
   path: "lottie/2-Why_we_exist.json",
 });
 
@@ -427,7 +427,23 @@ window.addEventListener("load", (event) => {
 
 
 
-  const lottieViewport = function () {
+/*
+*Second lottie plays only 1 time when in view
+**/
+$(".lottie2").on("inview", function (event, isInView) {
+  if (isInView) {
+    setTimeout(() =>lottie2.play(), 500)
+  } else {
+    lottie2.goToAndStop(0, 0);
+  }
+});
+
+
+
+
+
+
+/*   const lottieViewport = function () {
   lottie2.play()
   let options = {
     root: null,
@@ -449,4 +465,18 @@ window.addEventListener("load", (event) => {
   lottieViewport();
   lottie2.play()
 }; 
-  
+   */
+/* const inViewport = (entries, observer) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+  });
+};
+
+const Obs = new IntersectionObserver(inViewport);
+const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
+
+// Attach observer to every [data-inviewport] element:
+const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+ELs_inViewport.forEach(EL => {
+  Obs.observe(EL, obsOptions);
+}); */
