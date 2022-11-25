@@ -345,7 +345,7 @@ const lottie2 = bodymovin.loadAnimation({
   container: document.getElementById("lottie2"),
   renderer: "svg",
   loop: false,
-  autoplay: true,
+  autoplay: false,
   path: "lottie/2-Why_we_exist.json",
 });
 
@@ -426,8 +426,9 @@ window.addEventListener("load", (event) => {
 });
 
 
-/* 
+
  const lottieViewport = function () {
+  lottie2.play()
   let options = {
     root: null,
     rootMargin: "0px",
@@ -446,5 +447,5 @@ window.addEventListener("load", (event) => {
 // on window load
  window.onload = function () {
   lottieViewport();
-}; */
+}; 
  
