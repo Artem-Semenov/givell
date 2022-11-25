@@ -426,7 +426,7 @@ window.addEventListener("load", (event) => {
 });
 
 
-
+/* 
  const lottieViewport = function () {
   let options = {
     root: null,
@@ -446,5 +446,5 @@ window.addEventListener("load", (event) => {
 // on window load
  window.onload = function () {
   lottieViewport();
-};
+}; */
  
