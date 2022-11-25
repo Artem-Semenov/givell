@@ -325,62 +325,45 @@ window.addEventListener("scroll", function (event) {
   }
 });
 
-const lottie = bodymovin.loadAnimation({
-  container: document.getElementById("lottie1"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/1-Hero.json",
-});
-
- const lottie1_mobile = bodymovin.loadAnimation({
-  container: document.getElementById("lottie1-mobile"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/1-Hero.json",
-}); 
-
-const lottie2 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie2"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "lottie/2-Why_we_exist.json",
-});
-
-let lottie3;
+let lottie
+let lottie2
+let lottie3
+let lottie4
+let lottie5
+let lottie6
+let lottie7
+let lottie1_mobile
 let lottie3_mobile;
-let lottie4;
 let lottie4_mobile;
-let lottie5;
 let lottie5_mobile;
-let lottie6;
 let lottie6_mobile;
-let lottie7;
 
-window.addEventListener("load", (event) => {
-  lottie3 = bodymovin.loadAnimation({
-    container: document.getElementById("lottie3"),
+if(window.matchMedia('(max-width: 1024px').matches) {
+   lottie1_mobile = bodymovin.loadAnimation({
+    container: document.getElementById("lottie1-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "lottie/01.json",
+    path: "lottie/1-Hero.json",
+  }); 
+  
+  lottie2 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie2"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "lottie/2-Why_we_exist.json",
   });
-   lottie3_mobile = bodymovin.loadAnimation({
+
+  lottie3_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie3-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/01.json",
   });
-  lottie4 = bodymovin.loadAnimation({
-    container: document.getElementById("lottie4"),
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-    path: "lottie/04.json",
-  });
+
+
   lottie4_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie4-mobile"),
     renderer: "svg",
@@ -388,27 +371,15 @@ window.addEventListener("load", (event) => {
     autoplay: true,
     path: "lottie/04.json",
   }); 
-  lottie5 = bodymovin.loadAnimation({
-    container: document.getElementById("lottie5"),
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-    path: "lottie/03.json",
-  });
-   lottie5_mobile = bodymovin.loadAnimation({
+
+  lottie5_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie5-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/03.json",
   }); 
-  lottie6 = bodymovin.loadAnimation({
-    container: document.getElementById("lottie6"),
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-    path: "lottie/02.json",
-  });
+
   lottie6_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie6-mobile"),
     renderer: "svg",
@@ -416,6 +387,59 @@ window.addEventListener("load", (event) => {
     autoplay: true,
     path: "lottie/02.json",
   }); 
+} else {
+
+  lottie = bodymovin.loadAnimation({
+    container: document.getElementById("lottie1"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/1-Hero.json",
+  });
+  
+  
+  
+  lottie2 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie2"),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "lottie/2-Why_we_exist.json",
+  });
+  
+  
+   lottie3 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie3"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/01.json",
+  });
+  
+   lottie4 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie4"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/04.json",
+  });
+  
+  lottie5 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie5"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/03.json",
+  });
+  
+ lottie6 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie6"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/02.json",
+  });
+  
   lottie7 = bodymovin.loadAnimation({
     container: document.getElementById("form-section"),
     renderer: "svg",
@@ -423,7 +447,12 @@ window.addEventListener("load", (event) => {
     autoplay: true,
     path: "lottie/7-Contact_Stars.json",
   });
-});
+  
+  
+}
+
+
+
 
 
 
@@ -440,43 +469,3 @@ $(".lottie2").on("inview", function (event, isInView) {
 
 
 
-
-
-
-/*   const lottieViewport = function () {
-  lottie2.play()
-  let options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  };
-
-  let observer = new IntersectionObserver(function (entries, observer) {
-    entries[0].isIntersecting === true
-      ? lottie2.play()
-      : lottie2.goToAndStop(0, 0);
-  }, options);
-
-  observer.observe(document.querySelector("#lottie2"));
-}; 
-
-// on window load
- window.onload = function () {
-  lottieViewport();
-  lottie2.play()
-}; 
-   */
-/* const inViewport = (entries, observer) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
-  });
-};
-
-const Obs = new IntersectionObserver(inViewport);
-const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
-
-// Attach observer to every [data-inviewport] element:
-const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
-ELs_inViewport.forEach(EL => {
-  Obs.observe(EL, obsOptions);
-}); */
