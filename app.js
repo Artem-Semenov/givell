@@ -341,7 +341,7 @@ let lottie4_mobile;
 let lottie5_mobile;
 let lottie6_mobile;
 
-if(window.matchMedia('(max-width: 1024px').matches) {
+if(window.innerWidth < 1025) {
    lottie1_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie1-mobile"),
     renderer: "svg",
