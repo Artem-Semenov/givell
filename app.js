@@ -206,25 +206,27 @@ form.addEventListener("submit", async function (event) {
     console.log("email not valid");
   } else {
     overlay.classList.add("show");
-    
-      const th = $(this);
-      $.ajax({
-        type: "POST",
-        url: "mail.php", //Change
-        data: th.serialize()
-      }).done(function() {
+
+    const th = $(this);
+    $.ajax({
+      type: "POST",
+      url: "mail.php", //Change
+      data: th.serialize(),
+    })
+      .done(function () {
         popup.classList.add("show");
-      document.addEventListener("click", function (event) {
-        if (event.target.id === "overAll") {
-          popup.classList.remove("show");
-          overlay.classList.remove("show");
-          return;
-        }
+        document.addEventListener("click", function (event) {
+          if (event.target.id === "overAll") {
+            popup.classList.remove("show");
+            overlay.classList.remove("show");
+            return;
+          }
+        });
+        setTimeout(function () {
+          th.trigger("reset");
+        }, 1000);
       })
-      setTimeout(function() {
-        th.trigger("reset");
-      }, 1000);
-      }).fail(function() {
+      .fail(function () {
         popupFail.classList.add("show");
         document.addEventListener("click", function (event) {
           if (event.target.id === "overAll") {
@@ -235,9 +237,9 @@ form.addEventListener("submit", async function (event) {
           }
         });
       });
-      return false;
+    return false;
   }
-  
+
   /* {
     overlay.classList.add("show");
     let response = await fetch("mail.php", {
@@ -345,114 +347,102 @@ const lottie2 = bodymovin.loadAnimation({
   autoplay: false,
   path: "lottie/2-Why_we_exist.json",
 });
-const lottie3 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie3"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/01.json",
+
+let lottie3;
+let lottie3_mobile;
+let lottie4;
+let lottie4_mobile;
+let lottie5;
+let lottie5_mobile;
+let lottie6;
+let lottie6_mobile;
+let lottie7;
+
+window.addEventListener("load", (event) => {
+  lottie3 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie3"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/01.json",
+  });
+  lottie3_mobile = bodymovin.loadAnimation({
+    container: document.getElementById("lottie3-mobile"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/01.json",
+  });
+  lottie4 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie4"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/04.json",
+  });
+  lottie4_mobile = bodymovin.loadAnimation({
+    container: document.getElementById("lottie4-mobile"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/04.json",
+  });
+  lottie5 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie5"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/03.json",
+  });
+  lottie5_mobile = bodymovin.loadAnimation({
+    container: document.getElementById("lottie5-mobile"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/03.json",
+  });
+  lottie6 = bodymovin.loadAnimation({
+    container: document.getElementById("lottie6"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/02.json",
+  });
+  lottie6_mobile = bodymovin.loadAnimation({
+    container: document.getElementById("lottie6-mobile"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/02.json",
+  });
+  lottie7 = bodymovin.loadAnimation({
+    container: document.getElementById("form-section"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "lottie/7-Contact_Stars.json",
+  });
 });
-const lottie3_mobile = bodymovin.loadAnimation({
-  container: document.getElementById("lottie3-mobile"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/01.json",
-});
-const lottie4 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie4"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/04.json",
-});
-const lottie4_mobile = bodymovin.loadAnimation({
-  container: document.getElementById("lottie4-mobile"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/04.json",
-});
-const lottie5 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie5"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/03.json",
-});
-const lottie5_mobile = bodymovin.loadAnimation({
-  container: document.getElementById("lottie5-mobile"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/03.json",
-});
-const lottie6 = bodymovin.loadAnimation({
-  container: document.getElementById("lottie6"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/02.json",
-});
-const lottie6_mobile = bodymovin.loadAnimation({
-  container: document.getElementById("lottie6-mobile"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/02.json",
-});
-const lottie7 = bodymovin.loadAnimation({
-  container: document.getElementById("form-section"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "lottie/7-Contact_Stars.json",
-});
 
-
-
-
-
-
-
-
-
-
-// "listen" & check when header is out of viewport 
+// "listen" & check when header is out of viewport
 // (i set 50% = visible => threshold: 0.5 (to set))
-const lottieViewport = function() {
+const lottieViewport = function () {
   let options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5
-  }
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
 
-  let observer = new IntersectionObserver(function(entries, observer) {
-      entries[0].isIntersecting === true ? lottie2.play() : lottie2.goToAndStop(0, 0);
+  let observer = new IntersectionObserver(function (entries, observer) {
+    entries[0].isIntersecting === true
+      ? lottie2.play()
+      : lottie2.goToAndStop(0, 0);
   }, options);
 
-  observer.observe(document.querySelector('#lottie2'));
-}
+  observer.observe(document.querySelector("#lottie2"));
+};
 
 // on window load
-window.onload = function() {
+window.onload = function () {
   lottieViewport();
-}
-
-
-
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
+};
