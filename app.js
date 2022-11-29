@@ -302,9 +302,7 @@ function svgRender(num) {
 
 svgRender(minArrowSize);
 
-
 /* show/hide header border + svg render for slider on scroll **/
-
 
 window.addEventListener("scroll", function (event) {
   if (window.pageYOffset === 0) {
@@ -324,31 +322,30 @@ window.addEventListener("scroll", function (event) {
   }
 });
 
-
-/* 
-* Lottie files
-**/
-let lottie
-let lottie2
-let lottie3
-let lottie4
-let lottie5
-let lottie6
-let lottie7
-let lottie1_mobile
+/*
+ * Lottie files
+ **/
+let lottie;
+let lottie2;
+let lottie3;
+let lottie4;
+let lottie5;
+let lottie6;
+let lottie7;
+let lottie1_mobile;
 let lottie3_mobile;
 let lottie4_mobile;
 let lottie5_mobile;
 let lottie6_mobile;
 
-if(window.innerWidth < 1025) {
-   lottie1_mobile = bodymovin.loadAnimation({
+if (window.innerWidth < 1025) {
+  lottie1_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie1-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/1-Hero.json",
-  }); 
+  });
 
   lottie2 = bodymovin.loadAnimation({
     container: document.getElementById("lottie2"),
@@ -366,14 +363,13 @@ if(window.innerWidth < 1025) {
     path: "lottie/01.json",
   });
 
-
   lottie4_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie4-mobile"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/04.json",
-  }); 
+  });
 
   lottie5_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie5-mobile"),
@@ -381,7 +377,7 @@ if(window.innerWidth < 1025) {
     loop: true,
     autoplay: true,
     path: "lottie/03.json",
-  }); 
+  });
 
   lottie6_mobile = bodymovin.loadAnimation({
     container: document.getElementById("lottie6-mobile"),
@@ -389,9 +385,8 @@ if(window.innerWidth < 1025) {
     loop: true,
     autoplay: true,
     path: "lottie/02.json",
-  }); 
+  });
 } else {
-
   lottie = bodymovin.loadAnimation({
     container: document.getElementById("lottie1"),
     renderer: "svg",
@@ -399,9 +394,7 @@ if(window.innerWidth < 1025) {
     autoplay: true,
     path: "lottie/1-Hero.json",
   });
-  
-  
-  
+
   lottie2 = bodymovin.loadAnimation({
     container: document.getElementById("lottie2"),
     renderer: "svg",
@@ -409,24 +402,23 @@ if(window.innerWidth < 1025) {
     autoplay: false,
     path: "lottie/2-Why_we_exist.json",
   });
-  
-  
-   lottie3 = bodymovin.loadAnimation({
+
+  lottie3 = bodymovin.loadAnimation({
     container: document.getElementById("lottie3"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/01.json",
   });
-  
-   lottie4 = bodymovin.loadAnimation({
+
+  lottie4 = bodymovin.loadAnimation({
     container: document.getElementById("lottie4"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/04.json",
   });
-  
+
   lottie5 = bodymovin.loadAnimation({
     container: document.getElementById("lottie5"),
     renderer: "svg",
@@ -434,15 +426,15 @@ if(window.innerWidth < 1025) {
     autoplay: true,
     path: "lottie/03.json",
   });
-  
- lottie6 = bodymovin.loadAnimation({
+
+  lottie6 = bodymovin.loadAnimation({
     container: document.getElementById("lottie6"),
     renderer: "svg",
     loop: true,
     autoplay: true,
     path: "lottie/02.json",
   });
-  
+
   lottie7 = bodymovin.loadAnimation({
     container: document.getElementById("form-section"),
     renderer: "svg",
@@ -450,20 +442,15 @@ if(window.innerWidth < 1025) {
     autoplay: true,
     path: "lottie/7-Contact_Stars.json",
   });
-  
-  
 }
 
 /*
-*Second lottie plays only 1 time when in view
-**/
+ *Second lottie plays only 1 time when in view
+ **/
 $(".lottie2").on("inview", function (event, isInView) {
   if (isInView) {
-    setTimeout(() =>lottie2.play(), 500)
+    setTimeout(() => lottie2.play(), 500);
   } else {
     lottie2.goToAndStop(0, 0);
   }
 });
-
-
-
